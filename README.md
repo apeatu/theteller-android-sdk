@@ -1,12 +1,12 @@
-# Rave's Android Drop In UI
+# theteller's Android Drop In UI
 
-Rave's Android Drop-In is a readymade UI that allows you to accept card and bank payments in your Android app.
+theteller's Android Drop-In is a readymade UI that allows you to accept card and bank payments in your Android app.
 
 <img alt="Screenshot of Drop-In" src="https://firebasestorage.googleapis.com/v0/b/saveup-9e594.appspot.com/o/Group.png?alt=media&token=e0c89192-b2a4-47e0-a883-3a78005acd2a" width="600"/>
 
 ## Before you begin
-- [Create your Rave staging keys from the sandbox environment](https://flutterwavedevelopers.readme.io/blog/how-to-get-your-staging-keys-from-the-rave-sandbox-environment)
-- [Create your Rave live keys from the Rave Dashboard](https://flutterwavedevelopers.readme.io/blog/how-to-get-your-live-keys-from-the-rave-dashboard)
+- [Create your theteller staging keys from the sandbox environment](https://flutterwavedevelopers.readme.io/blog/how-to-get-your-staging-keys-from-the-theteller-sandbox-environment)
+- [Create your theteller live keys from the theteller Dashboard](https://flutterwavedevelopers.readme.io/blog/how-to-get-your-live-keys-from-the-theteller-dashboard)
 
 ## Requirements
 
@@ -28,7 +28,7 @@ The minimum supported SDK version is 15
 **Step 2.** Add the dependency
 
     dependencies {
-	     compile 'com.github.Flutterwave:rave-android:1.0.27'
+	     compile 'com.github.Flutterwave:theteller-android:1.0.27'
 	}
 
 **Step 3.** Add the required permission
@@ -44,10 +44,10 @@ Add the `READ_PHONE_PERMISSION` and `INTERNET` permissions to your android manif
 
 ## Usage
 
-###  1. Create a `RavePayManager` instance
-Set the public key, private key and other required parameters. The `RavePayManager` accepts a mandatory instance of  the calling `Activity`
+###  1. Create a `thetellerManager` instance
+Set the public key, private key and other required parameters. The `thetellerManager` accepts a mandatory instance of  the calling `Activity`
 
-        new RavePayManager(activity).setAmount(amount)
+        new thetellerManager(activity).setAmount(amount)
                         .setCountry(country)
                         .setCurrency(currency)
                         .setEmail(email)
@@ -88,7 +88,7 @@ Set the public key, private key and other required parameters. The `RavePayManag
 | setMeta(`List<Meta>`) | Pass in any other custom data you wish to pass. It takes in a `List` of `Meta` objects | List<Meta> | Not Required
 | withTheme(styleId) | Sets the theme of the UI. | `int` | Not Required
 | setPaymentPlan(payment_plan) | If you want to do recurrent payment, this is the payment plan ID to use for the recurring payment, you can see how to create payment plans [here](https://flutterwavedevelopers.readme.io/v2.0/reference#create-payment-plan) and [here](https://flutterwavedevelopers.readme.io/docs/recurring-billing). This is only available for card payments | `String` | Not Required
-| initialize() | Launch the Rave Payment UI  |  N/A | Required
+| initialize() | Launch the theteller Payment UI  |  N/A | Required
 
 > **SECURITY ALERT**
 > You should never store your **SECRET KEY** on the user's device
@@ -98,15 +98,15 @@ In the calling activity, override the `onActivityResult` method to receive the p
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == RaveConstants.RAVE_REQUEST_CODE && data != null) {
+        if (requestCode == thetellerConstants.theteller_REQUEST_CODE && data != null) {
             String reason = data.getStringExtra("response");
-            if (resultCode == RavePayActivity.RESULT_SUCCESS) {
+            if (resultCode == thetellerActivity.RESULT_SUCCESS) {
                 Toast.makeText(this, "SUCCESS " + reason, Toast.LENGTH_SHORT).show();
             }
-            else if (resultCode == RavePayActivity.RESULT_ERROR) {
+            else if (resultCode == thetellerActivity.RESULT_ERROR) {
                 Toast.makeText(this, "ERROR " + reason, Toast.LENGTH_SHORT).show();
             }
-            else if (resultCode == RavePayActivity.RESULT_CANCELLED) {
+            else if (resultCode == thetellerActivity.RESULT_CANCELLED) {
                 Toast.makeText(this, "CANCELLED " + reason, Toast.LENGTH_SHORT).show();
             }
         }
@@ -114,7 +114,7 @@ In the calling activity, override the `onActivityResult` method to receive the p
             super.onActivityResult(requestCode, resultCode, data);
         }
     }
-The intent's `reason` object contains the raw JSON response from the Rave API. This can be parsed to retrieve any additional payment information needed.
+The intent's `reason` object contains the raw JSON response from the theteller API. This can be parsed to retrieve any additional payment information needed.
 
 ###  3. Customize the look
 You can apply a new look by changing the color of certain parts of the UI to highlight your brand colors
@@ -134,7 +134,7 @@ You can apply a new look by changing the color of certain parts of the UI to hig
 
 ##  Help
 * Have issues integrating? Join our [Slack community](https://join.slack.com/t/flutterwavedevelopers/shared_invite/enQtMjU2MjkyNDM5MTcxLWFlOWNlYmE5MTIxNjAwYzc5MDVjZjNhYTJjNTA0ZTQyNDJlMDhhZjJkN2QwZGJmNWMyODhlYjMwNGUyZDQxNTE) for support
-* Find a bug? [Open an issue](https://github.com/Flutterwave/rave-android/issues)
+* Find a bug? [Open an issue](https://github.com/Flutterwave/theteller-android/issues)
 * Want to contribute? [Check out contributing guidelines]() and [submit a pull request](https://help.github.com/articles/creating-a-pull-request).
 
 ## Want to contribute?
@@ -145,7 +145,7 @@ Feel free to create issues and pull requests. The more concise the pull requests
 ## License
 
 ```
-Rave's Android DropIn UI
+theteller's Android DropIn UI
 MIT License
 
 Copyright (c) 2017
