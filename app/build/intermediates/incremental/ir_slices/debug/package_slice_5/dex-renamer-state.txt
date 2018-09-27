@@ -1,0 +1,4 @@
+#Thu Sep 27 13:45:47 UTC 2018
+base.0=C\:\\Users\\sgyimah\\Desktop\\M_Apps\\theteller-android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\23
+path.0=classes.dex
+renamed.0=classes.dex

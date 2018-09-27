@@ -18,6 +18,7 @@ import android.support.v7.widget.SwitchCompat;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.text.util.Linkify.TransformFilter;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -49,6 +50,7 @@ import java.util.regex.Matcher;
 
 import static android.text.TextUtils.isEmpty;
 import static android.view.View.GONE;
+import static gh.com.payswitch.thetellerandroid.card.CreditCardView.cardType;
 import static gh.com.payswitch.thetellerandroid.thetellerConstants.AVS_VBVSECURECODE;
 import static gh.com.payswitch.thetellerandroid.thetellerConstants.PIN;
 import static gh.com.payswitch.thetellerandroid.thetellerConstants.theteller_REQUEST_CODE;
@@ -549,8 +551,9 @@ public class CardFragment extends Fragment implements View.OnClickListener, Card
                     cardNoTv.getText().toString(),
                     cardExpiryTv.getText().toString().substring(0,2),
                     cardExpiryTv.getText().toString().substring(3,5),
-                    null);
+                    cardType);
         }
+        Log.wtf("card type", cardType);
 
         Intent intent = new Intent();
         intent.putExtra("response", responseAsJSONString);

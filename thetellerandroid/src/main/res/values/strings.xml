@@ -25,7 +25,7 @@
     <string name="otp">OTP</string>
     <string name="enter_your_one_ntime_password_otp">Enter your one  time password (OTP)</string>
     <string name="card_number">Card Number</string>
-    <string name="powered_by">by theteller</string>
+    <string name="powered_by"></string>
     <string name="please_enter_your_card_pin_nto_continue_your_transaction">Please enter your card pin  to continue your transaction.</string>
     <string name="otp_icon">otp icon</string>
     <string name="cvc_cvv2">CVC/CVV2</string>

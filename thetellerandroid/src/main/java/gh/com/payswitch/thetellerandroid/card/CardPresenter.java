@@ -157,15 +157,23 @@ public class CardPresenter implements CardContract.UserActionsListener {
                 savedCard.setExpiryMonth(month);
                 savedCard.setExpiryYear(year);
 //                savedCard.setCardType(cardType);
-//                Log.wtf("card type", cardType);
-//                switch (cardType){
-//                    case "visa":
-//                        savedCard.setCardType(R.drawable.visa);
-//                    case "master":
-//                        savedCard.setCardType(R.drawable.mastercard);
-//                    default:
-//                        savedCard.setCardType(R.drawable.creditcard);
-//                }
+                switch (cardType){
+                    case "visa":
+                        savedCard.setCardType(R.drawable.visa);
+                        break;
+                    case "mastercard":
+                        savedCard.setCardType(R.drawable.mastercard);
+                        break;
+                    case "verve":
+                        savedCard.setCardType(R.drawable.verve);
+                        break;
+                    case "amex":
+                        savedCard.setCardType(R.drawable.amex);
+                        break;
+                    default:
+                        savedCard.setCardType(R.drawable.creditcard);
+                        break;
+                }
                 sharedPrefsRequest.saveACard(savedCard, apiKey, email);
             }
             catch (Exception e) {

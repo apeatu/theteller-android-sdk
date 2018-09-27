@@ -12,7 +12,7 @@ public class SavedCard implements ItemModel{
     private String maskedPan;
     private String expiryYear;
     private String expiryMonth;
-    private String cardType;
+    private int cardType;
 
     public String getFirst6() {
         return first6;
@@ -62,11 +62,11 @@ public class SavedCard implements ItemModel{
         this.expiryYear = expiryYear;
     }
 
-    public String getCardType() {
+    public int getCardType() {
         return cardType;
     }
 
-    public void setCardType(String cardType) {
+    public void setCardType(int cardType) {
         this.cardType = cardType;
     }
 

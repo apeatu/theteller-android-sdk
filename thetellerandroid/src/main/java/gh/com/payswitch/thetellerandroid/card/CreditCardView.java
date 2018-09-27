@@ -23,7 +23,7 @@ public class CreditCardView extends TextInputEditText {
     private int mCurrentDrawableResId = 0;
     private Drawable mCurrentDrawable;
     String lastFormattedText;
-    String cardType = null;
+    public static String cardType = null;
 
     public CreditCardView(Context context) {
         super(context);
@@ -122,25 +122,21 @@ public class CreditCardView extends TextInputEditText {
             mCurrentDrawableResId = mDefaultDrawableResId;
         }
 
-//        if (mDrawableResId == R.drawable.visa) {
-//            this.cardType = "visa";
-//        }else if(mDrawableResId == R.drawable.mastercard) {
-//            this.cardType = "mastercard";
-//        }else if(mDrawableResId == R.drawable.amex) {
-//            this.cardType = "amex";
-//        }else if(mDrawableResId == R.drawable.verve) {
-//            this.cardType = "verve";
-//        }else{
-//            this.cardType = null;
-//        }
+        if (mDrawableResId == R.drawable.visa) {
+            cardType = "visa";
+        }else if(mDrawableResId == R.drawable.mastercard) {
+            cardType = "mastercard";
+        }else if(mDrawableResId == R.drawable.amex) {
+            cardType = "amex";
+        }else if(mDrawableResId == R.drawable.verve) {
+            cardType = "verve";
+        }else{
+            cardType = null;
+        }
 
         mCurrentDrawable = getResources()
                 .getDrawable(mCurrentDrawableResId);
 
-
     }
 
-    public String getCardType() {
-        return cardType;
-    }
 }

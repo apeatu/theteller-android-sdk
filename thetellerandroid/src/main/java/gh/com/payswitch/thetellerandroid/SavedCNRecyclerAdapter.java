@@ -100,7 +100,7 @@ public class SavedCNRecyclerAdapter extends RecyclerView.Adapter<ViewHolder>{
         public void bindType(ItemModel savedCard) {
             this.savedCard = (SavedCard) savedCard;
             itemTv.setText(this.savedCard.getMaskedPan());
-            cardTypeIv.setImageResource(R.drawable.creditcard);
+            cardTypeIv.setImageResource(this.savedCard.getCardType());
         }
     }
 

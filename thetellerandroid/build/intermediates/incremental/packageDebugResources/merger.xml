@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main$Generated" generated="true"><source path="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\src\main\res"><file path="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\src\main\res\drawable\ic_arrow_back_black_24dp.xml" preprocessing="true" qualifiers=""><generated-file path="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\build\generated\res\pngs\debug\drawable-xxxhdpi\ic_arrow_back_black_24dp.png" qualifiers="xxxhdpi-v4" type="drawable"/><generated-file path="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\build\generated\res\pngs\debug\drawable-mdpi\ic_arrow_back_black_24dp.png" qualifiers="mdpi-v4" type="drawable"/><generated-file path="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\build\generated\res\pngs\debug\drawable-ldpi\ic_arrow_back_black_24dp.png" qualifiers="ldpi-v4" type="drawable"/><generated-file path="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\build\generated\res\pngs\debug\drawable-xxhdpi\ic_arrow_back_black_24dp.png" qualifiers="xxhdpi-v4" type="drawable"/><generated-file path="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\build\generated\res\pngs\debug\drawable-hdpi\ic_arrow_back_black_24dp.png" qualifiers="hdpi-v4" type="drawable"/><generated-file path="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\build\generated\res\pngs\debug\drawable-xhdpi\ic_arrow_back_black_24dp.png" qualifiers="xhdpi-v4" type="drawable"/><generated-file path="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\build\generated\res\pngs\debug\drawable-anydpi-v21\ic_arrow_back_black_24dp.xml" qualifiers="anydpi-v21" type="drawable"/></file><file path="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\src\main\res\drawable\ic_lock_outline_black_24dp.xml" preprocessing="true" qualifiers=""><generated-file path="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\build\generated\res\pngs\debug\drawable-xxxhdpi\ic_lock_outline_black_24dp.png" qualifiers="xxxhdpi-v4" type="drawable"/><generated-file path="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\build\generated\res\pngs\debug\drawable-mdpi\ic_lock_outline_black_24dp.png" qualifiers="mdpi-v4" type="drawable"/><generated-file path="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\build\generated\res\pngs\debug\drawable-ldpi\ic_lock_outline_black_24dp.png" qualifiers="ldpi-v4" type="drawable"/><generated-file path="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\build\generated\res\pngs\debug\drawable-xxhdpi\ic_lock_outline_black_24dp.png" qualifiers="xxhdpi-v4" type="drawable"/><generated-file path="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\build\generated\res\pngs\debug\drawable-hdpi\ic_lock_outline_black_24dp.png" qualifiers="hdpi-v4" type="drawable"/><generated-file path="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\build\generated\res\pngs\debug\drawable-xhdpi\ic_lock_outline_black_24dp.png" qualifiers="xhdpi-v4" type="drawable"/><generated-file path="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\build\generated\res\pngs\debug\drawable-anydpi-v21\ic_lock_outline_black_24dp.xml" qualifiers="anydpi-v21" type="drawable"/></file><file path="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\src\main\res\drawable\ic_theteller_logo.xml" preprocessing="true" qualifiers=""><generated-file path="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\build\generated\res\pngs\debug\drawable-xxxhdpi\ic_theteller_logo.png" qualifiers="xxxhdpi-v4" type="drawable"/><generated-file path="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\build\generated\res\pngs\debug\drawable-mdpi\ic_theteller_logo.png" qualifiers="mdpi-v4" type="drawable"/><generated-file path="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\build\generated\res\pngs\debug\drawable-ldpi\ic_theteller_logo.png" qualifiers="ldpi-v4" type="drawable"/><generated-file path="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\build\generated\res\pngs\debug\drawable-xxhdpi\ic_theteller_logo.png" qualifiers="xxhdpi-v4" type="drawable"/><generated-file path="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\build\generated\res\pngs\debug\drawable-hdpi\ic_theteller_logo.png" qualifiers="hdpi-v4" type="drawable"/><generated-file path="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\build\generated\res\pngs\debug\drawable-xhdpi\ic_theteller_logo.png" qualifiers="xhdpi-v4" type="drawable"/><generated-file path="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\build\generated\res\pngs\debug\drawable-anydpi-v21\ic_theteller_logo.xml" qualifiers="anydpi-v21" type="drawable"/></file><file path="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\src\main\res\drawable\ic_delete_white_24dp.xml" preprocessing="true" qualifiers=""><generated-file path="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\build\generated\res\pngs\debug\drawable-xxxhdpi\ic_delete_white_24dp.png" qualifiers="xxxhdpi-v4" type="drawable"/><generated-file path="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\build\generated\res\pngs\debug\drawable-mdpi\ic_delete_white_24dp.png" qualifiers="mdpi-v4" type="drawable"/><generated-file path="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\build\generated\res\pngs\debug\drawable-ldpi\ic_delete_white_24dp.png" qualifiers="ldpi-v4" type="drawable"/><generated-file path="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\build\generated\res\pngs\debug\drawable-xxhdpi\ic_delete_white_24dp.png" qualifiers="xxhdpi-v4" type="drawable"/><generated-file path="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\build\generated\res\pngs\debug\drawable-hdpi\ic_delete_white_24dp.png" qualifiers="hdpi-v4" type="drawable"/><generated-file path="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\build\generated\res\pngs\debug\drawable-xhdpi\ic_delete_white_24dp.png" qualifiers="xhdpi-v4" type="drawable"/><generated-file path="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\build\generated\res\pngs\debug\drawable-anydpi-v21\ic_delete_white_24dp.xml" qualifiers="anydpi-v21" type="drawable"/></file></source><source path="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\build\generated\res\rs\debug"/><source path="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\build\generated\res\resValues\debug"/></dataSet><dataSet config="main" generated-set="main$Generated"><source path="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\src\main\res"><file name="amex" path="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\src\main\res\drawable\amex.png" qualifiers="" type="drawable"/><file name="black_pin_bg" path="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\src\main\res\drawable\black_pin_bg.xml" qualifiers="" type="drawable"/><file name="blue_btn_curved" path="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\src\main\res\drawable\blue_btn_curved.xml" qualifiers="" type="drawable"/><file name="broken_link" path="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\src\main\res\drawable\broken_link.png" qualifiers="" type="drawable"/><file name="creditcard" path="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\src\main\res\drawable\creditcard.png" qualifiers="" type="drawable"/><file name="green_btn_curved" path="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\src\main\res\drawable\green_btn_curved.xml" qualifiers="" type="drawable"/><file name="mastercard" path="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\src\main\res\drawable\mastercard.png" qualifiers="" type="drawable"/><file name="mastercard30" path="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\src\main\res\drawable\mastercard30.png" qualifiers="" type="drawable"/><file name="otp_button_curved" path="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\src\main\res\drawable\otp_button_curved.xml" qualifiers="" type="drawable"/><file name="theteller_icon" path="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\src\main\res\drawable\theteller_icon.png" qualifiers="" type="drawable"/><file name="verve" path="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\src\main\res\drawable\verve.png" qualifiers="" type="drawable"/><file name="visa" path="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\src\main\res\drawable\visa.png" qualifiers="" type="drawable"/><file name="otp" path="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\src\main\res\drawable-hdpi\otp.png" qualifiers="hdpi-v4" type="drawable"/><file name="otp" path="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\src\main\res\drawable-mdpi\otp.png" qualifiers="mdpi-v4" type="drawable"/><file name="otp" path="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\src\main\res\drawable-xhdpi\otp.png" qualifiers="xhdpi-v4" type="drawable"/><file name="otp" path="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\src\main\res\drawable-xxhdpi\otp.png" qualifiers="xxhdpi-v4" type="drawable"/><file name="otp" path="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\src\main\res\drawable-xxxhdpi\otp.png" qualifiers="xxxhdpi-v4" type="drawable"/><file name="activity_card_or_number" path="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\src\main\res\layout\activity_card_or_number.xml" qualifiers="" type="layout"/><file name="activity_theteller" path="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\src\main\res\layout\activity_theteller.xml" qualifiers="" type="layout"/><file name="add_exisiting_bank" path="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\src\main\res\layout\add_exisiting_bank.xml" qualifiers="" type="layout"/><file name="avsvbv_layout" path="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\src\main\res\layout\avsvbv_layout.xml" qualifiers="" type="layout"/><file name="content_theteller" path="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\src\main\res\layout\content_theteller.xml" qualifiers="" type="layout"/><file name="fragment_account" path="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\src\main\res\layout\fragment_account.xml" qualifiers="" type="layout"/><file name="fragment_card" path="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\src\main\res\layout\fragment_card.xml" qualifiers="" type="layout"/><file name="fragment_cvv" path="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\src\main\res\layout\fragment_cvv.xml" qualifiers="" type="layout"/><file name="fragment_gh_mobile_money" path="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\src\main\res\layout\fragment_gh_mobile_money.xml" qualifiers="" type="layout"/><file name="fragment_mpesa" path="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\src\main\res\layout\fragment_mpesa.xml" qualifiers="" type="layout"/><file name="otp_layout" path="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\src\main\res\layout\otp_layout.xml" qualifiers="" type="layout"/><file name="pick_saved_card_layout" path="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\src\main\res\layout\pick_saved_card_layout.xml" qualifiers="" type="layout"/><file name="pick_saved_number_layout" path="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\src\main\res\layout\pick_saved_number_layout.xml" qualifiers="" type="layout"/><file name="pin_layout" path="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\src\main\res\layout\pin_layout.xml" qualifiers="" type="layout"/><file name="select_bank_list_item" path="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\src\main\res\layout\select_bank_list_item.xml" qualifiers="" type="layout"/><file name="menu_card_or_number" path="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\src\main\res\menu\menu_card_or_number.xml" qualifiers="" type="menu"/><file path="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\src\main\res\values\attrs.xml" qualifiers=""><attr format="reference" name="PayButtonStyle"/><attr format="reference" name="OTPButtonStyle"/><attr format="reference" name="OTPHeaderStyle"/><attr format="reference" name="PinHeaderStyle"/><attr format="reference" name="PinButtonStyle"/><attr format="reference" name="SavedCardButtonStyle"/><attr format="reference" name="TabLayoutStyle"/></file><file path="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\src\main\res\values\colors.xml" qualifiers=""><color name="colorPrimary">#212e67</color><color name="colorPrimaryDark">#303F9F</color><color name="colorAccent">#FF4081</color><color name="otpColorTheme">#dd7a32</color><color name="pinColorTheme">#dd7a32</color><color name="tabIndicatorColor">@color/colorPrimary</color><color name="white">#fff</color></file><file path="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\src\main\res\values\dimens.xml" qualifiers=""><dimen name="fab_margin">16dp</dimen><dimen name="attribution_text_size">10sp</dimen><dimen name="app_bar_height">180dp</dimen><dimen name="text_margin">16dp</dimen></file><file path="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\src\main\res\values\strings.xml" qualifiers=""><string name="app_name">thetellerAndroid</string><string name="action_settings">Settings</string><string name="hello_blank_fragment">Hello blank fragment</string><string name="permissions_are_required_to_complete_payment">theteller requires READ PHONE STATE permissions to work</string><string name="grant_permission">Grant permission</string><string name="permission_required_image">permission_required_image</string><string name="title_activity_entry">EntryActivity</string><string name="account_number">Account number</string><string name="bank">Bank</string><string name="email_address">Email address</string><string name="phone_number">Phone number</string><string name="amount">Amount</string><string name="pci_dss_compliant">PCI-DSS COMPLIANT</string><string name="pin">PIN</string><string name="cancel">CANCEL</string><string name="enter">ENTER</string><string name="choose_saved_card">CHOOSE SAVED CARD</string><string name="choose_saved_phone">CHOOSE SAVED NUMBER</string><string name="pay">PAY</string><string name="save_card">Save card</string><string name="save_GH_mobile_money">Save number</string><string name="otp">OTP</string><string name="enter_your_one_ntime_password_otp">Enter your one  time password (OTP)</string><string name="card_number">Card Number</string><string name="powered_by"/><string name="please_enter_your_card_pin_nto_continue_your_transaction">Please enter your card pin  to continue your transaction.</string><string name="otp_icon">otp icon</string><string name="cvc_cvv2">CVC/CVV2</string><string name="expiration">Expiration</string><string name="email">Email</string><string name="enter_your_billing_address_details">Enter your billing address details</string><string name="billing_zip_code">Zip code e.g. 928302</string><string name="date_of_birth">Date of Birth</string><string name="use_a_different_card_or_number">Use a different card or number</string><string-array name="gh_mobile_money_networks">
+        <item>Select network</item>
+        <item>MTN</item>
+        <item>TIGO</item>
+        <item>VODAFONE</item>
+        <item>AIRTEL</item>
+    </string-array><string name="title_activity_card_or_number">cardOrNumberActivity</string><string name="large_text">
+        "Material is the metaphor.\n\n"
+
+        "A material metaphor is the unifying theory of a rationalized space and a system of motion."
+        "The material is grounded in tactile reality, inspired by the study of paper and ink, yet "
+        "technologically advanced and open to imagination and magic.\n"
+        "Surfaces and edges of the material provide visual cues that are grounded in reality. The "
+        "use of familiar tactile attributes helps users quickly understand affordances. Yet the "
+        "flexibility of the material creates new affordances that supercede those in the physical "
+        "world, without breaking the rules of physics.\n"
+        "The fundamentals of light, surface, and movement are key to conveying how objects move, "
+        "interact, and exist in space and in relation to each other. Realistic lighting shows "
+        "seams, divides space, and indicates moving parts.\n\n"
+
+        "Bold, graphic, intentional.\n\n"
+
+        "The foundational elements of print based design typography, grids, space, scale, color, "
+        "and use of imagery guide visual treatments. These elements do far more than please the "
+        "eye. They create hierarchy, meaning, and focus. Deliberate color choices, edge to edge "
+        "imagery, large scale typography, and intentional white space create a bold and graphic "
+        "interface that immerse the user in the experience.\n"
+        "An emphasis on user actions makes core functionality immediately apparent and provides "
+        "waypoints for the user.\n\n"
+
+        "Motion provides meaning.\n\n"
+
+        "Motion respects and reinforces the user as the prime mover. Primary user actions are "
+        "inflection points that initiate motion, transforming the whole design.\n"
+        "All action takes place in a single environment. Objects are presented to the user without "
+        "breaking the continuity of experience even as they transform and reorganize.\n"
+        "Motion is meaningful and appropriate, serving to focus attention and maintain continuity. "
+        "Feedback is subtle yet clear. Transitions are efﬁcient yet coherent.\n\n"
+
+        "3D world.\n\n"
+
+        "The material environment is a 3D space, which means all objects have x, y, and z "
+        "dimensions. The z-axis is perpendicularly aligned to the plane of the display, with the "
+        "positive z-axis extending towards the viewer. Every sheet of material occupies a single "
+        "position along the z-axis and has a standard 1dp thickness.\n"
+        "On the web, the z-axis is used for layering and not for perspective. The 3D world is "
+        "emulated by manipulating the y-axis.\n\n"
+
+        "Light and shadow.\n\n"
+
+        "Within the material environment, virtual lights illuminate the scene. Key lights create "
+        "directional shadows, while ambient light creates soft shadows from all angles.\n"
+        "Shadows in the material environment are cast by these two light sources. In Android "
+        "development, shadows occur when light sources are blocked by sheets of material at "
+        "various positions along the z-axis. On the web, shadows are depicted by manipulating the "
+        "y-axis only. The following example shows the card with a height of 6dp.\n\n"
+
+        "Resting elevation.\n\n"
+
+        "All material objects, regardless of size, have a resting elevation, or default elevation "
+        "that does not change. If an object changes elevation, it should return to its resting "
+        "elevation as soon as possible.\n\n"
+
+        "Component elevations.\n\n"
+
+        "The resting elevation for a component type is consistent across apps (e.g., FAB elevation "
+        "does not vary from 6dp in one app to 16dp in another app).\n"
+        "Components may have different resting elevations across platforms, depending on the depth "
+        "of the environment (e.g., TV has a greater depth than mobile or desktop).\n\n"
+
+        "Responsive elevation and dynamic elevation offsets.\n\n"
+
+        "Some component types have responsive elevation, meaning they change elevation in response "
+        "to user input (e.g., normal, focused, and pressed) or system events. These elevation "
+        "changes are consistently implemented using dynamic elevation offsets.\n"
+        "Dynamic elevation offsets are the goal elevation that a component moves towards, relative "
+        "to the component’s resting state. They ensure that elevation changes are consistent "
+        "across actions and component types. For example, all components that lift on press have "
+        "the same elevation change relative to their resting elevation.\n"
+        "Once the input event is completed or cancelled, the component will return to its resting "
+        "elevation.\n\n"
+
+        "Avoiding elevation interference.\n\n"
+
+        "Components with responsive elevations may encounter other components as they move between "
+        "their resting elevations and dynamic elevation offsets. Because material cannot pass "
+        "through other material, components avoid interfering with one another any number of ways, "
+        "whether on a per component basis or using the entire app layout.\n"
+        "On a component level, components can move or be removed before they cause interference. "
+        "For example, a floating action button (FAB) can disappear or move off screen before a "
+        "user picks up a card, or it can move if a snackbar appears.\n"
+        "On the layout level, design your app layout to minimize opportunities for interference. "
+        "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
+        "when a user tries to pick up one of cards.\n\n"
+    </string></file><file path="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\src\main\res\values\styles.xml" qualifiers=""><style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style><style name="tabLayoutStyle" parent="Widget.Design.TabLayout">
+        <item name="tabIndicatorColor">@color/tabIndicatorColor</item>
+    </style><style name="tabLayoutStyle2" parent="Widget.Design.TabLayout">
+        <item name="tabIndicatorColor">#607d8b</item>
+    </style><style name="otpHeaderStyle">
+        <item name="android:background">@color/otpColorTheme</item>
+    </style><style name="pinHeaderStyle">
+        <item name="android:background">@color/pinColorTheme</item>
+    </style><style name="otpBtnStyle" parent="@android:style/Widget.Button">
+        <item name="android:background">@drawable/otp_button_curved</item>
+        <item name="android:textColor">@color/white</item>
+    </style><style name="pinButtonStyle" parent="@android:style/Widget.Button">
+        <item name="android:background">@drawable/otp_button_curved</item>
+        <item name="android:textColor">@color/white</item>
+    </style><style name="svdCardsBtnStyle" parent="@android:style/Widget.Button">
+        <item name="android:background">@drawable/blue_btn_curved</item>
+        <item name="android:textColor">@color/white</item>
+    </style><style name="payBtnStyle" parent="@android:style/Widget.Button">
+        <item name="android:background">@drawable/green_btn_curved</item>
+        <item name="android:textColor">@color/white</item>
+    </style><style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style><style name="DefaultTheme" parent="AppTheme.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="OTPButtonStyle">@style/otpBtnStyle</item>
+        <item name="PayButtonStyle">@style/payBtnStyle</item>
+        <item name="PinButtonStyle">@style/pinButtonStyle</item>
+        <item name="OTPHeaderStyle">@style/otpHeaderStyle</item>
+        <item name="TabLayoutStyle">@style/tabLayoutStyle</item>
+        <item name="PinHeaderStyle">@style/pinHeaderStyle</item>
+        <item name="SavedCardButtonStyle">@style/svdCardsBtnStyle</item>
+    </style><style name="otpHeaderStyle2">
+        <item name="android:background">#5d4037</item>
+    </style><style name="pinHeaderStyle2">
+        <item name="android:background">#37474f</item>
+    </style><style name="otpBtnStyle2" parent="@android:style/Widget.Button">
+        <item name="android:background">@drawable/otp_button_curved</item>
+        <item name="android:textColor">#009688</item>
+    </style><style name="svdCardsBtnStyle2" parent="@android:style/Widget.Button">
+        <item name="android:background">@drawable/blue_btn_curved</item>
+        <item name="android:textColor">#039be5</item>
+    </style><style name="payBtnStyle2" parent="@android:style/Widget.Button">
+        <item name="android:background">@drawable/green_btn_curved</item>
+        <item name="android:textColor">#bcaaa4</item>
+    </style><style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/><style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/></file><file name="mobile_money_number_item" path="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\src\main\res\layout\mobile_money_number_item.xml" qualifiers="" type="layout"/></source><source path="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\build\generated\res\rs\debug"/><source path="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\build\generated\res\resValues\debug"/></dataSet><dataSet config="debug$Generated" generated="true"><source path="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\src\debug\res"/></dataSet><dataSet config="debug" generated-set="debug$Generated"><source path="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\src\debug\res"/></dataSet><mergedItems/></merger>
