@@ -2,11 +2,10 @@
 
 theteller's Android Drop-In is a readymade UI that allows you to accept card and bank payments in your Android app.
 
-<img alt="Screenshot of Drop-In" src="https://firebasestorage.googleapis.com/v0/b/saveup-9e594.appspot.com/o/Group.png?alt=media&token=e0c89192-b2a4-47e0-a883-3a78005acd2a" width="600"/>
+<img alt="Screenshot of Drop-In" src="" width="600"/>
 
 ## Before you begin
-- [Create your theteller staging keys from the sandbox environment](https://flutterwavedevelopers.readme.io/blog/how-to-get-your-staging-keys-from-the-theteller-sandbox-environment)
-- [Create your theteller live keys from the theteller Dashboard](https://flutterwavedevelopers.readme.io/blog/how-to-get-your-live-keys-from-the-theteller-dashboard)
+
 
 ## Requirements
 
@@ -28,7 +27,7 @@ The minimum supported SDK version is 15
 **Step 2.** Add the dependency
 
     dependencies {
-	     compile 'com.github.Flutterwave:theteller-android:1.0.27'
+	     compile 'com.github.apeatu:theteller-android:1.0.27'
 	}
 
 **Step 3.** Add the required permission
@@ -70,7 +69,7 @@ Set the public key, private key and other required parameters. The `thetellerMan
 | function        | parameter           | type | required  |
 | ------------- |:-------------:| -----:| -----:|
 | setAmount(amount)      |  This is the amount to be charged from card/account | `double` | Required
-| setCountry(country)     | This is the route country for the transaction with respect to the currency. You can find a list of supported countries and currencies [here](https://flutterwavedevelopers.readme.io/docs/multicurrency-payments) | `String` | Required
+| setCountry(country)     | This is the route country for the transaction with respect to the currency. You can find a list of supported countries and currencies [here](https://apeatudevelopers.readme.io/docs/multicurrency-payments) | `String` | Required
 | setCurrency(currency) | This is the specified currency to charge the card in | `String` | Required
 | setfName(fName) | This is the first name of the card holder or the customer  | `String` | Required
 | setlName(lName) | This is the last name of the card holder or the customer | `String` | Required
@@ -87,7 +86,7 @@ Set the public key, private key and other required parameters. The `thetellerMan
 | allowSaveCardFeature(boolean) | Set to `true` if you want your users to be able to save their cards for later reuse otherwise set to `false` | `boolean` | Required
 | setMeta(`List<Meta>`) | Pass in any other custom data you wish to pass. It takes in a `List` of `Meta` objects | List<Meta> | Not Required
 | withTheme(styleId) | Sets the theme of the UI. | `int` | Not Required
-| setPaymentPlan(payment_plan) | If you want to do recurrent payment, this is the payment plan ID to use for the recurring payment, you can see how to create payment plans [here](https://flutterwavedevelopers.readme.io/v2.0/reference#create-payment-plan) and [here](https://flutterwavedevelopers.readme.io/docs/recurring-billing). This is only available for card payments | `String` | Not Required
+| setPaymentPlan(payment_plan) | If you want to do recurrent payment, this is the payment plan ID to use for the recurring payment, you can see how to create payment plans [here](https://apeatudevelopers.readme.io/v2.0/reference#create-payment-plan) and [here](https://apeatudevelopers.readme.io/docs/recurring-billing). This is only available for card payments | `String` | Not Required
 | initialize() | Launch the theteller Payment UI  |  N/A | Required
 
 > **SECURITY ALERT**
@@ -133,8 +132,7 @@ You can apply a new look by changing the color of certain parts of the UI to hig
     </style>
 
 ##  Help
-* Have issues integrating? Join our [Slack community](https://join.slack.com/t/flutterwavedevelopers/shared_invite/enQtMjU2MjkyNDM5MTcxLWFlOWNlYmE5MTIxNjAwYzc5MDVjZjNhYTJjNTA0ZTQyNDJlMDhhZjJkN2QwZGJmNWMyODhlYjMwNGUyZDQxNTE) for support
-* Find a bug? [Open an issue](https://github.com/Flutterwave/theteller-android/issues)
+* Find a bug? [Open an issue](https://github.com/apeatu/theteller-android/issues)
 * Want to contribute? [Check out contributing guidelines]() and [submit a pull request](https://help.github.com/articles/creating-a-pull-request).
 
 ## Want to contribute?
