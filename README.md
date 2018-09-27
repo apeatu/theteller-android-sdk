@@ -2,7 +2,7 @@
 
 theteller's Android Drop-In is a readymade UI that allows you to accept card and bank payments in your Android app.
 
-<img alt="Screenshot of Drop-In" src="https://firebasestorage.googleapis.com/v0/b/theteller-android-sdk.appspot.com/o/theteller-android-sdk-screenshots.png?alt=media&token=18ad0388-aa0e-438d-a7b1-5508fb3da676" width="800"/>
+<img alt="Screenshot of Drop-In" src="https://firebasestorage.googleapis.com/v0/b/theteller-android-sdk.appspot.com/o/theteller-android-sdk-screenshots.png?alt=media&token=18ad0388-aa0e-438d-a7b1-5508fb3da676" width="1200"/>
 
 ## Before you begin
 
