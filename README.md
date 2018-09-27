@@ -44,7 +44,7 @@ Add the `READ_PHONE_PERMISSION` and `INTERNET` permissions to your android manif
 ## Usage
 
 ###  1. Create a `thetellerManager` instance
-Set the public key, private key and other required parameters. The `thetellerManager` accepts a mandatory instance of  the calling `Activity`
+Set the api key and other required parameters. The `thetellerManager` accepts a mandatory instance of  the calling `Activity`
 
         new thetellerManager(activity).setAmount(amount)
                         .setCurrency(currency)
