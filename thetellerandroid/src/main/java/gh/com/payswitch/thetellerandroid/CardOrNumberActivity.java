@@ -101,7 +101,7 @@ public class CardOrNumberActivity extends FragmentActivity {
                             .setIP(Utils.getDeviceImei(CardOrNumberActivity.this))
                             .setTxRef(thetellerInitializer.getTxRef())
                             .setMeta(thetellerInitializer.getMeta())
-                            .setPBFPubKey(thetellerInitializer.getApiKey())
+                            .setApiKey(thetellerInitializer.getApiKey())
                             .setDevice_fingerprint(Utils.getDeviceImei(CardOrNumberActivity.this));
 
                     if (thetellerInitializer.getPayment_plan() != null) {

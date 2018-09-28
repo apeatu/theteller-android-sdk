@@ -62,7 +62,7 @@ public class PayloadBuilder {
         return this;
     }
 
-    public PayloadBuilder setPBFPubKey(String pbfPubKey) {
+    public PayloadBuilder setApiKey(String pbfPubKey) {
         this.pbfPubKey = pbfPubKey;
         return this;
     }

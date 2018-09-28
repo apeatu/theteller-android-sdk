@@ -158,16 +158,16 @@ public class CardPresenter implements CardContract.UserActionsListener {
                 savedCard.setExpiryYear(year);
 //                savedCard.setCardType(cardType);
                 switch (cardType){
-                    case "visa":
+                    case "VIS":
                         savedCard.setCardType(R.drawable.visa);
                         break;
-                    case "mastercard":
+                    case "MAS":
                         savedCard.setCardType(R.drawable.mastercard);
                         break;
-                    case "verve":
+                    case "VER":
                         savedCard.setCardType(R.drawable.verve);
                         break;
-                    case "amex":
+                    case "AME":
                         savedCard.setCardType(R.drawable.amex);
                         break;
                     default:

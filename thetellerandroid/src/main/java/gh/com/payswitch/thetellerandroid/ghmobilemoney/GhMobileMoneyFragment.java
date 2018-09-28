@@ -34,7 +34,6 @@ import gh.com.payswitch.thetellerandroid.thetellerInitializer;
 import gh.com.payswitch.thetellerandroid.Utils;
 
 import static android.view.View.GONE;
-import static gh.com.payswitch.thetellerandroid.thetellerConstants.theteller_REQUEST_CODE;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -169,7 +168,7 @@ public class GhMobileMoneyFragment extends Fragment implements GhMobileMoneyCont
                     .setMeta(thetellerInitializer.getMeta())
                     .setNetwork(network)
                     .setPhonenumber(phone)
-                    .setPBFPubKey(thetellerInitializer.getApiKey())
+                    .setApiKey(thetellerInitializer.getApiKey())
                     .setDevice_fingerprint(Utils.getDeviceImei(getActivity()));
 
             if (thetellerInitializer.getPayment_plan() != null) {
@@ -346,7 +345,7 @@ public class GhMobileMoneyFragment extends Fragment implements GhMobileMoneyCont
                             .setIP(Utils.getDeviceImei(getActivity()))
                             .setTxRef(thetellerInitializer.getTxRef())
                             .setMeta(thetellerInitializer.getMeta())
-                            .setPBFPubKey(thetellerInitializer.getApiKey())
+                            .setApiKey(thetellerInitializer.getApiKey())
                             .setDevice_fingerprint(Utils.getDeviceImei(getActivity()));
 
                     if (thetellerInitializer.getPayment_plan() != null) {

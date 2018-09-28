@@ -4,24 +4,17 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.TextInputEditText;
 import android.support.design.widget.TextInputLayout;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import org.parceler.Parcels;
-
-import gh.com.payswitch.thetellerandroid.card.CardContract;
-import gh.com.payswitch.thetellerandroid.card.CardFragment;
-import gh.com.payswitch.thetellerandroid.card.CardPresenter;
 import gh.com.payswitch.thetellerandroid.card.SavedCardVP;
 import gh.com.payswitch.thetellerandroid.data.SavedCard;
 
@@ -70,12 +63,14 @@ public class CVVFragment extends DialogFragment {
                 if (isValid()) {
                     final PayloadBuilder builder = new PayloadBuilder();
                     builder.setAmount(thetellerInitializer.getAmount() + "")
+                            .setEmail(thetellerInitializer.getEmail())
                             .setCurrency(thetellerInitializer.getCurrency())
                             .setFirstname(thetellerInitializer.getfName())
-                            .setLastname(thetellerInitializer.getlName()).setIP(Utils.getDeviceImei(getActivity()))
+                            .setLastname(thetellerInitializer.getlName())
+                            .setIP(Utils.getDeviceImei(getActivity()))
                             .setTxRef(thetellerInitializer.getTxRef())
                             .setMeta(thetellerInitializer.getMeta())
-                            .setPBFPubKey(thetellerInitializer.getApiKey())
+                            .setApiKey(thetellerInitializer.getApiKey())
                             .setDevice_fingerprint(Utils.getDeviceImei(getActivity()));
 
                     if (thetellerInitializer.getPayment_plan() != null) {
@@ -86,7 +81,6 @@ public class CVVFragment extends DialogFragment {
                     builder.setExpirymonth(savedCard.getExpiryMonth());
                     builder.setCvv(getCvv());
                     builder.setCardType(cardType);
-                    Log.wtf("card type in CVVFragment", cardType+" ..");
                     final Payload body = builder.createPayload();
                     cardPresenter.chargeCard(body, thetellerConstants.API_KEY, getActivity());
 

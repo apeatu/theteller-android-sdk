@@ -18,7 +18,6 @@ import android.support.v7.widget.SwitchCompat;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.text.util.Linkify.TransformFilter;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -48,12 +47,10 @@ import java.util.Calendar;
 import java.util.List;
 import java.util.regex.Matcher;
 
-import static android.text.TextUtils.isEmpty;
 import static android.view.View.GONE;
 import static gh.com.payswitch.thetellerandroid.card.CreditCardView.cardType;
 import static gh.com.payswitch.thetellerandroid.thetellerConstants.AVS_VBVSECURECODE;
 import static gh.com.payswitch.thetellerandroid.thetellerConstants.PIN;
-import static gh.com.payswitch.thetellerandroid.thetellerConstants.theteller_REQUEST_CODE;
 
 
 /**
@@ -375,7 +372,7 @@ public class CardFragment extends Fragment implements View.OnClickListener, Card
                 .setLastname(thetellerInitializer.getlName()).setIP(Utils.getDeviceImei(getActivity())).setTxRef(thetellerInitializer.getTxRef())
                 .setExpiryyear(expiryDate.substring(3,5)).setExpirymonth(expiryDate.substring(0,2))
                 .setMeta(thetellerInitializer.getMeta())
-                .setPBFPubKey(thetellerInitializer.getApiKey())
+                .setApiKey(thetellerInitializer.getApiKey())
                 .setDevice_fingerprint(Utils.getDeviceImei(getActivity()))
                 .setCardType(cardType);
 
@@ -548,12 +545,12 @@ public class CardFragment extends Fragment implements View.OnClickListener, Card
 
         if (shouldISaveThisCard && status.equals("000")) {
             presenter.saveThisCard(
-                    thetellerInitializer.getEmail(),
-                    thetellerActivity.getApiKey(),
-                    cardNoTv.getText().toString(),
-                    cardExpiryTv.getText().toString().substring(0,2),
-                    cardExpiryTv.getText().toString().substring(3,5),
-                    cardType);
+                thetellerInitializer.getEmail(),
+                thetellerActivity.getApiKey(),
+                cardNoTv.getText().toString(),
+                cardExpiryTv.getText().toString().substring(0,2),
+                cardExpiryTv.getText().toString().substring(3,5),
+                cardType);
         }
 
         Intent intent = new Intent();
@@ -785,23 +782,6 @@ public class CardFragment extends Fragment implements View.OnClickListener, Card
 
         }
 
-//        @Override
-//        public void onPageFinished(WebView view, String url) {
-//            super.onPageFinished(view, url);
-//            showFullProgressIndicator(false);
-//
-//            if (initialUrl == null) {
-//                initialUrl = url;
-//            }
-//            else {
-//                if (url.contains("/complete") || url.contains("submitting_mock_form")) {
-//                    presenter.requeryTx(flwRef, thetellerInitializer.getApiKey(), shouldISaveThisCard); // requery transaction when a url with /complete or /submit...
-//                    //is hit
-//                }
-//            }
-//            Log.d("URLS", url);
-//
-//        }
     }
 
     private class ExpiryWatcher implements TextWatcher {

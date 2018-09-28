@@ -123,13 +123,13 @@ public class CreditCardView extends TextInputEditText {
         }
 
         if (mDrawableResId == R.drawable.visa) {
-            cardType = "visa";
+            cardType = "VIS";
         }else if(mDrawableResId == R.drawable.mastercard) {
-            cardType = "mastercard";
+            cardType = "MAS";
         }else if(mDrawableResId == R.drawable.amex) {
-            cardType = "amex";
+            cardType = "AME";
         }else if(mDrawableResId == R.drawable.verve) {
-            cardType = "verve";
+            cardType = "VER";
         }else{
             cardType = null;
         }
