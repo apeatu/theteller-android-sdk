@@ -6,7 +6,7 @@
     density="560dpi"
     format="10"
     plugin-version="3.1.4"
-    timestamp="1538161301682"
+    timestamp="1538162682221"
     token="7280364910114471540"
     verifier="COMPATIBLE" >
 
@@ -15,13 +15,13 @@
         duration="0" />
     <task
         name="instant-run-dex"
-        duration="31" />
+        duration="113" />
     <task
         name="instant-run-transform"
-        duration="24" />
+        duration="81" />
     <task
         name="verifier"
-        duration="5" />
+        duration="38" />
 
     <artifact
         location="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\app\build\intermediates\reload-dex\debug\classes.dex"
@@ -82,6 +82,14 @@
     <build
         build-mode="HOT_WARM"
         timestamp="1538161301682"
+        verifier="COMPATIBLE" >
+        <artifact
+            location="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\app\build\intermediates\builds\debug\1538161301682\classes.dex"
+            type="RELOAD_DEX" />
+    </build>
+    <build
+        build-mode="HOT_WARM"
+        timestamp="1538162682221"
         verifier="COMPATIBLE" >
         <artifact
             location="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\app\build\intermediates\reload-dex\debug\classes.dex"

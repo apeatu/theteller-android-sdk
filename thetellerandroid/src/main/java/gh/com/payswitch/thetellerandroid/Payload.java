@@ -244,7 +244,7 @@ public class Payload
 
     private String pin;
 
-    private String redirect_url = "https://test.theteller.net/redirecturl";
+    private String redirect_url = "https://www.theteller.net/sdk/response/redirecturl";
 
     public String getPBFSecKey() {
         return PBFSecKey;
