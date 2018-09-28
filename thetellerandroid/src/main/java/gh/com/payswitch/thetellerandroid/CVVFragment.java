@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import gh.com.payswitch.thetellerandroid.card.CardFragment;
 import gh.com.payswitch.thetellerandroid.card.SavedCardVP;
 import gh.com.payswitch.thetellerandroid.data.SavedCard;
 
@@ -47,15 +48,16 @@ public class CVVFragment extends DialogFragment {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         // Get the layout inflater
         LayoutInflater inflater = getActivity().getLayoutInflater();
-        View v;
+        final View v;
         v = inflater.inflate(R.layout.fragment_cvv, null);
         cardPresenter = new SavedCardVP();
 
         // Inflate and set the layout for the dialog
         // Pass null as the parent view because its going in the dialog layout
-        builder.setView(v);// Add action buttons
         cvvTv = (TextInputEditText) v.findViewById(R.id.theteller_cvvTv2);
         cvvTil = (TextInputLayout) v.findViewById(R.id.theteller_cvvTil2);
+
+        // Add action buttons
         builder.setPositiveButton(R.string.pay, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -64,9 +66,10 @@ public class CVVFragment extends DialogFragment {
                     final PayloadBuilder builder = new PayloadBuilder();
                     builder.setAmount(thetellerInitializer.getAmount() + "")
                             .setEmail(thetellerInitializer.getEmail())
-                            .setCurrency(thetellerInitializer.getCurrency())
+                            .setCurrency("GHS")
                             .setFirstname(thetellerInitializer.getfName())
                             .setLastname(thetellerInitializer.getlName())
+                            .setNarration(thetellerInitializer.getNarration())
                             .setIP(Utils.getDeviceImei(getActivity()))
                             .setTxRef(thetellerInitializer.getTxRef())
                             .setMeta(thetellerInitializer.getMeta())
@@ -76,19 +79,33 @@ public class CVVFragment extends DialogFragment {
                     if (thetellerInitializer.getPayment_plan() != null) {
                         builder.setPaymentPlan(thetellerInitializer.getPayment_plan());
                     }
-                    builder.setCardno(savedCard.getPan());
+                    String cardNoStripped = savedCard.getPan().replaceAll("\\s", "");
+                    builder.setCardno(cardNoStripped);
                     builder.setExpiryyear(savedCard.getExpiryYear());
                     builder.setExpirymonth(savedCard.getExpiryMonth());
                     builder.setCvv(getCvv());
-                    builder.setCardType(cardType);
+                    if (savedCard.getCardType() == R.drawable.visa) {
+                        builder.setCardType("VIS");
+                    }else if (savedCard.getCardType() == R.drawable.mastercard) {
+                        builder.setCardType("MAS");
+                    }else if (savedCard.getCardType() == R.drawable.verve) {
+                        builder.setCardType("VER");
+                    }else if (savedCard.getCardType() == R.drawable.amex) {
+                        builder.setCardType("AME");
+                    }
+                    else{
+                        builder.setCardType(null);
+                    }
+
                     final Payload body = builder.createPayload();
-                    cardPresenter.chargeCard(body, thetellerConstants.API_KEY, getActivity());
+                    cardPresenter.chargeCard(body, thetellerConstants.API_KEY, getActivity(), v.getRootView());
 
                 }else {
                     Toast.makeText(getActivity(), "Invalid CVV", Toast.LENGTH_SHORT).show();
                 }
             }
         });
+        builder.setView(v);
 
         return builder.create();
     }

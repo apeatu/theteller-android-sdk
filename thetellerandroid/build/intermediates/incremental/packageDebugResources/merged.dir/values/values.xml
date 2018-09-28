@@ -4,7 +4,7 @@
         <item>Select network</item>
         <item>MTN</item>
         <item>TIGO</item>
-        <item>VODAFONE</item>
+        <!--<item>VODAFONE</item>-->
         <item>AIRTEL</item>
     </string-array>
     <attr format="reference" name="OTPButtonStyle"/>
@@ -150,7 +150,7 @@
     <string name="title_activity_entry">EntryActivity</string>
     <string name="use_a_different_card_or_number">Use a different card or number</string>
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <!-- Customize your theme here. -->
+        
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>

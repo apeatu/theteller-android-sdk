@@ -18,6 +18,7 @@ import android.support.v7.widget.SwitchCompat;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.text.util.Linkify.TransformFilter;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -81,6 +82,7 @@ public class CardFragment extends Fragment implements View.OnClickListener, Card
     thetellerInitializer thetellerInitializer;
     WebView webView;
     String initialUrl = null;
+    Payload body;
 //    private TextView pcidss_tv;
     private AlertDialog dialog;
     FrameLayout progressContainer;
@@ -112,8 +114,8 @@ public class CardFragment extends Fragment implements View.OnClickListener, Card
         cvvTv = (TextInputEditText) v.findViewById(R.id.theteller_cvvTv);
         payButton = (Button) v.findViewById(R.id.theteller_payButton);
         saveCardSwitch = (SwitchCompat) v.findViewById(R.id.theteller_saveCardSwitch);
-        amountTil = (TextInputLayout) v.findViewById(R.id.theteller_amountTil);
-        emailTil = (TextInputLayout) v.findViewById(R.id.theteller_emailTil);
+//        amountTil = (TextInputLayout) v.findViewById(R.id.theteller_amountTil);
+//        emailTil = (TextInputLayout) v.findViewById(R.id.theteller_emailTil);
         cardNoTil = (TextInputLayout) v.findViewById(R.id.theteller_cardNoTil);
         cardExpiryTil = (TextInputLayout) v.findViewById(R.id.theteller_cardExpiryTil);
         cvvTil = (TextInputLayout) v.findViewById(R.id.theteller_cvvTil);
@@ -303,16 +305,6 @@ public class CardFragment extends Fragment implements View.OnClickListener, Card
         }
     }
 
-//    @Override
-//    public void onValidateCardChargeFailed(String flwRef, String responseAsJSON) {
-//
-//        dismissDialog();
-//        bottomSheetBehaviorVBV.setState(BottomSheetBehavior.STATE_COLLAPSED);
-//
-//        presenter.requeryTx(flwRef, thetellerInitializer.getApiKey(), false);
-//
-//    }
-
     /**
      *  Validate card details and get the fee if available
      */
@@ -366,11 +358,16 @@ public class CardFragment extends Fragment implements View.OnClickListener, Card
 
             //make request
             PayloadBuilder builder = new PayloadBuilder();
-            builder.setAmount(thetellerInitializer.getAmount() + "").setCardno(cardNoStripped)
+            builder.setAmount(thetellerInitializer.getAmount() + "")
+                .setCardno(cardNoStripped)
+                .setEmail(thetellerInitializer.getEmail())
                 .setCurrency(thetellerInitializer.getCurrency())
                 .setCvv(cvv).setFirstname(thetellerInitializer.getfName())
-                .setLastname(thetellerInitializer.getlName()).setIP(Utils.getDeviceImei(getActivity())).setTxRef(thetellerInitializer.getTxRef())
-                .setExpiryyear(expiryDate.substring(3,5)).setExpirymonth(expiryDate.substring(0,2))
+                .setLastname(thetellerInitializer.getlName())
+                .setIP(Utils.getDeviceImei(getActivity()))
+                .setTxRef(thetellerInitializer.getTxRef())
+                .setExpiryyear(expiryDate.substring(3,5))
+                .setExpirymonth(expiryDate.substring(0,2))
                 .setMeta(thetellerInitializer.getMeta())
                 .setApiKey(thetellerInitializer.getApiKey())
                 .setDevice_fingerprint(Utils.getDeviceImei(getActivity()))
@@ -380,7 +377,7 @@ public class CardFragment extends Fragment implements View.OnClickListener, Card
                 builder.setPaymentPlan(thetellerInitializer.getPayment_plan());
             }
 
-            Payload body = builder.createPayload();
+            body = builder.createPayload();
 
             presenter.chargeCard(body, thetellerConstants.API_KEY);
         }
@@ -513,12 +510,10 @@ public class CardFragment extends Fragment implements View.OnClickListener, Card
      * that loads the authURL
      *
      * @param authUrlCrude = URL to display in webview
-     * @param flwRef = reference of the payment transaction
      */
     @Override
-    public void onVBVAuthModelUsed(String authUrlCrude, String flwRef) {
+    public void onVBVAuthModelUsed(String authUrlCrude) {
 
-        this.flwRef = flwRef;
         webView.getSettings().setLoadsImagesAutomatically(true);
         webView.getSettings().setJavaScriptEnabled(true);
         webView.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
@@ -759,7 +754,9 @@ public class CardFragment extends Fragment implements View.OnClickListener, Card
     }
 
     // Manages the behavior when URLs are loaded
-    private class MyBrowser extends WebViewClient {
+    public class MyBrowser extends WebViewClient {
+        FrameLayout progressContainer;
+
         @SuppressWarnings("deprecation")
         @Override
         public boolean shouldOverrideUrlLoading(WebView view, String url) {
@@ -778,10 +775,44 @@ public class CardFragment extends Fragment implements View.OnClickListener, Card
         @Override
         public void onPageStarted(WebView view, String url, Bitmap favicon) {
             super.onPageStarted(view, url, favicon);
-            showFullProgressIndicator(true);
-
+            showFullProgressIndicator(true, getView());
+            if (url != null) {
+                showFullProgressIndicator(false, getView());
+            }
         }
 
+        @Override
+        public void onPageFinished(WebView view, String url) {
+            super.onPageFinished(view, url);
+
+            if (initialUrl == null) {
+                initialUrl = url;
+            }
+            else {
+                if (url.contains("/submit")) {
+                    presenter.chargeCard(body, thetellerConstants.API_KEY); //
+                }
+            }
+            Log.d("URLS", url);
+        }
+
+        public void showFullProgressIndicator(boolean active, View v) {
+
+            progressContainer = (FrameLayout) v.findViewById(R.id.theteller_progressContainer);
+
+            if (progressContainer == null) {
+                progressContainer = (FrameLayout) v.findViewById(R.id.theteller_progressContainer);
+            }
+
+            if (active) {
+                progressContainer.setVisibility(View.VISIBLE);
+            }
+            else {
+                progressContainer.setVisibility(GONE);
+            }
+
+
+        }
     }
 
     private class ExpiryWatcher implements TextWatcher {

@@ -88,8 +88,8 @@ public final class R {
         public static final int tag_transition_group = 0x7f0900b9;
         public static final int text = 0x7f0900ba;
         public static final int text2 = 0x7f0900bb;
-        public static final int time = 0x7f0900f5;
-        public static final int title = 0x7f0900f6;
+        public static final int time = 0x7f0900f6;
+        public static final int title = 0x7f0900f7;
     }
     public static final class integer {
         public static final int status_bar_notification_info_maxnum = 0x7f0a0009;

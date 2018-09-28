@@ -20,7 +20,7 @@
             android:hint="@string/cvc_cvv2"
             android:imeOptions="actionDone"
             android:inputType="numberPassword"
-            android:maxLength="4" />
+            android:maxLength="3" />
     </android.support.design.widget.TextInputLayout>
 
     <!--<EditText-->

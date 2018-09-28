@@ -117,7 +117,7 @@
                             android:layout_height="wrap_content"
                             android:hint="@string/cvc_cvv2"
                             android:inputType="numberPassword"
-                            android:maxLength="4"
+                            android:maxLength="3"
                             android:id="@+id/theteller_cvvTv"
                             android:imeOptions="actionDone"
                             android:layout_below="@+id/rave_card1"

@@ -2032,7 +2032,7 @@ public final class R {
      * <tr><td>barrier</td><td>2</td><td></td></tr>
      * <tr><td>chains</td><td>4</td><td></td></tr>
      * <tr><td>dimensions</td><td>8</td><td></td></tr>
-     * <tr><td>direct</td><td>1</td><td>for now only direct & barriers</td></tr>
+     * <tr><td>direct</td><td>1</td><td></td></tr>
      * <tr><td>none</td><td>0</td><td></td></tr>
      * <tr><td>standard</td><td>3</td><td></td></tr>
      * </table>
@@ -3882,27 +3882,28 @@ public final class R {
     public static final int theteller_title_textView=0x7f0900ef;
     public static final int theteller_topLay=0x7f0900f0;
     public static final int theteller_webview=0x7f0900f1;
-    public static final int theteller_zipButton=0x7f0900f2;
-    public static final int theteller_zipEt=0x7f0900f3;
-    public static final int theteller_zipTil=0x7f0900f4;
-    public static final int time=0x7f0900f5;
-    public static final int title=0x7f0900f6;
-    public static final int titleDividerNoCustom=0x7f0900f7;
-    public static final int title_template=0x7f0900f8;
-    public static final int top=0x7f0900f9;
-    public static final int topPanel=0x7f0900fa;
-    public static final int touch_outside=0x7f0900fb;
-    public static final int transition_current_scene=0x7f0900fc;
-    public static final int transition_scene_layoutid_cache=0x7f0900fd;
-    public static final int txRefEt=0x7f0900fe;
-    public static final int uniform=0x7f0900ff;
-    public static final int up=0x7f090100;
-    public static final int useLogo=0x7f090101;
-    public static final int view_offset_helper=0x7f090102;
-    public static final int visible=0x7f090103;
-    public static final int withText=0x7f090104;
-    public static final int wrap=0x7f090105;
-    public static final int wrap_content=0x7f090106;
+    public static final int theteller_webview2=0x7f0900f2;
+    public static final int theteller_zipButton=0x7f0900f3;
+    public static final int theteller_zipEt=0x7f0900f4;
+    public static final int theteller_zipTil=0x7f0900f5;
+    public static final int time=0x7f0900f6;
+    public static final int title=0x7f0900f7;
+    public static final int titleDividerNoCustom=0x7f0900f8;
+    public static final int title_template=0x7f0900f9;
+    public static final int top=0x7f0900fa;
+    public static final int topPanel=0x7f0900fb;
+    public static final int touch_outside=0x7f0900fc;
+    public static final int transition_current_scene=0x7f0900fd;
+    public static final int transition_scene_layoutid_cache=0x7f0900fe;
+    public static final int txRefEt=0x7f0900ff;
+    public static final int uniform=0x7f090100;
+    public static final int up=0x7f090101;
+    public static final int useLogo=0x7f090102;
+    public static final int view_offset_helper=0x7f090103;
+    public static final int visible=0x7f090104;
+    public static final int withText=0x7f090105;
+    public static final int wrap=0x7f090106;
+    public static final int wrap_content=0x7f090107;
   }
   public static final class integer {
     public static final int abc_config_activityDefaultDur=0x7f0a0000;
@@ -9146,7 +9147,7 @@ public final class R {
      * <tr><td>barrier</td><td>2</td><td></td></tr>
      * <tr><td>chains</td><td>4</td><td></td></tr>
      * <tr><td>dimensions</td><td>8</td><td></td></tr>
-     * <tr><td>direct</td><td>1</td><td>for now only direct & barriers</td></tr>
+     * <tr><td>direct</td><td>1</td><td></td></tr>
      * <tr><td>none</td><td>0</td><td></td></tr>
      * <tr><td>standard</td><td>3</td><td></td></tr>
      * </table>

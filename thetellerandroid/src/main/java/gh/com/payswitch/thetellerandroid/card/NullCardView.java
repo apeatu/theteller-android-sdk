@@ -63,7 +63,7 @@ public class NullCardView extends Fragment implements View.OnClickListener, Card
 //    }
 
     @Override
-    public void onVBVAuthModelUsed(String authUrlCrude, String flwRef) {
+    public void onVBVAuthModelUsed(String authUrlCrude) {
 
     }
 

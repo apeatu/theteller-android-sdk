@@ -40,7 +40,7 @@
         <item>Select network</item>
         <item>MTN</item>
         <item>TIGO</item>
-        <item>VODAFONE</item>
+        <!--<item>VODAFONE</item>-->
         <item>AIRTEL</item>
     </string-array>
     <string name="title_activity_card_or_number">cardOrNumberActivity</string>

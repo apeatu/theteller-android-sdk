@@ -24,7 +24,7 @@ public interface CardContract {
 
 //        void onValidateError(String message);
 
-        void onVBVAuthModelUsed(String authUrlCrude, String flwRef);
+        void onVBVAuthModelUsed(String authUrlCrude);
 
         void onPaymentSuccessful(String status, String responseAsString);
 

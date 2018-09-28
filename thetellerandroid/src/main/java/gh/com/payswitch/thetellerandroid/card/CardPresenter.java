@@ -60,6 +60,9 @@ public class CardPresenter implements CardContract.UserActionsListener {
 
                     if (code.equals("000")) {
                         mView.onPaymentSuccessful(code, responseAsJSONString);
+                    }else if(Integer.parseInt(code) == 200) {
+                        String vbvUrl = response.getReason();
+                        mView.onVBVAuthModelUsed(vbvUrl);
                     }
                     else {
                         mView.showProgressIndicator(false);

@@ -47,7 +47,6 @@ Add the `READ_PHONE_PERMISSION` and `INTERNET` permissions to your android manif
 Set the api key and other required parameters. The `thetellerManager` accepts a mandatory instance of  the calling `Activity`
 
         new thetellerManager(activity).setAmount(amount)
-                        .setCurrency(currency)
                         .setEmail(email)
                         .setfName(fName)
                         .setlName(lName)
@@ -66,7 +65,6 @@ Set the api key and other required parameters. The `thetellerManager` accepts a 
 | function        | parameter           | type | required  |
 | ------------- |:-------------:| -----:| -----:|
 | setAmount(amount)      |  This is the amount to be charged from card/account | `double` | Required
-| setCurrency(currency) | This is the specified currency to charge the card in | `String` | Required
 | setfName(fName) | This is the first name of the card holder or the customer  | `String` | Required
 | setlName(lName) | This is the last name of the card holder or the customer | `String` | Required
 | setEmail(email) | This is the email address of the customer | `String` | Required

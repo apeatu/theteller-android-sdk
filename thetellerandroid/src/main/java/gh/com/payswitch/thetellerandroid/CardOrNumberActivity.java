@@ -32,6 +32,7 @@ public class CardOrNumberActivity extends FragmentActivity {
     boolean withCard = true;
     boolean withGHMobileMoney = true;
     boolean isLive = false;
+    public View v;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -4,21 +4,33 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.os.Build;
+import android.support.design.widget.BottomSheetBehavior;
 import android.util.Log;
+import android.view.View;
+import android.webkit.WebResourceRequest;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
+import android.widget.FrameLayout;
 import android.widget.Toast;
 
 import gh.com.payswitch.thetellerandroid.CardOrNumberActivity;
 import gh.com.payswitch.thetellerandroid.Payload;
+import gh.com.payswitch.thetellerandroid.R;
 import gh.com.payswitch.thetellerandroid.Utils;
 import gh.com.payswitch.thetellerandroid.data.Callbacks;
 import gh.com.payswitch.thetellerandroid.data.NetworkRequestImpl;
 import gh.com.payswitch.thetellerandroid.responses.ChargeResponse;
 import gh.com.payswitch.thetellerandroid.thetellerActivity;
 
+import static android.view.View.GONE;
+
 public class SavedCardVP {
 
     private ProgressDialog progressDialog;
     private ProgressDialog pollingProgressDialog ;
+    WebView webView;
 
     public void showProgressIndicator(boolean active, Activity activity) {
 
@@ -77,6 +89,22 @@ public class SavedCardVP {
         }
     }
 
+    public void onVBVAuthModelUsed(String authUrlCrude, View v) {
+        webView = (WebView) v.findViewById(R.id.theteller_webview2);
+
+        if (webView != null){
+            webView.getSettings().setLoadsImagesAutomatically(true);
+            webView.getSettings().setJavaScriptEnabled(true);
+            webView.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
+            // Configure the client to use when opening URLs
+            webView.setWebViewClient(new MyBrowser());
+            // Load the initial URL
+            webView.loadUrl(authUrlCrude);
+        }else {
+            Log.wtf("webView","web view is still null");
+        }
+    }
+
     public void onPaymentFailed(String message, String responseAsJSONString, Activity activity) {
         Intent intent = new Intent();
         intent.putExtra("response", responseAsJSONString);
@@ -86,7 +114,7 @@ public class SavedCardVP {
         }
     }
 
-    public void chargeCard(final Payload payload, final String secretKey, final Activity activity) {
+    public void chargeCard(final Payload payload, final String secretKey, final Activity activity, final View v) {
 
         String cardRequestBodyAsString = Utils.convertChargeRequestPayloadToJson(payload);
         String encryptedCardRequestBody = Utils.getEncryptedData(cardRequestBodyAsString, secretKey).trim().replaceAll("\\n", "");
@@ -118,6 +146,9 @@ public class SavedCardVP {
 
                     if (code.equals("000")) {
                         onPaymentSuccessful(code, responseAsJSONString, activity);
+                    }else if(Integer.parseInt(code) == 200) {
+                        String vbvUrl = response.getReason();
+                        onVBVAuthModelUsed(vbvUrl, v);
                     } else {
                         showProgressIndicator(false, activity);
                         onPaymentFailed(status, responseAsJSONString, activity);
@@ -134,5 +165,49 @@ public class SavedCardVP {
                 onPaymentError(message, activity);
             }
         });
+    }
+    // Manages the behavior when URLs are loaded
+    public class MyBrowser extends WebViewClient {
+        FrameLayout progressContainer;
+
+        @SuppressWarnings("deprecation")
+        @Override
+        public boolean shouldOverrideUrlLoading(WebView view, String url) {
+            view.loadUrl(url);
+            return true;
+        }
+
+        @Override
+        public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                view.loadUrl(request.getUrl().toString());
+            }
+            return true;
+        }
+
+        @Override
+        public void onPageStarted(WebView view, String url, Bitmap favicon) {
+            super.onPageStarted(view, url, favicon);
+            showFullProgressIndicator(true, view.getRootView());
+
+        }
+
+        public void showFullProgressIndicator(boolean active, View v) {
+
+            progressContainer = (FrameLayout) v.findViewById(R.id.theteller_progressContainer);
+
+            if (progressContainer == null) {
+                progressContainer = (FrameLayout) v.findViewById(R.id.theteller_progressContainer);
+            }
+
+            if (active) {
+                progressContainer.setVisibility(View.VISIBLE);
+            }
+            else {
+                progressContainer.setVisibility(GONE);
+            }
+
+
+        }
     }
 }
