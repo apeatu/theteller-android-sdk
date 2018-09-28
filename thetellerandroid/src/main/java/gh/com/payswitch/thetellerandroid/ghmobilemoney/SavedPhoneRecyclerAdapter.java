@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
@@ -49,21 +50,21 @@ public class SavedPhoneRecyclerAdapter extends RecyclerView.Adapter<SavedPhoneRe
 
     public class PhoneViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         private TextView itemTv;
-        private TextView r_switchTv;
+        private ImageView r_switchIv;
         SavedPhone savedPhone;
 
 
         PhoneViewHolder(View v) {
             super(v);
             itemTv = (TextView) v.findViewById(R.id.phoneNumberTv);
-            r_switchTv = (TextView) v.findViewById(R.id.r_switchIv);
+            r_switchIv = (ImageView) v.findViewById(R.id.r_switchIv);
             v.setOnClickListener(this);
         }
 
         public void bind(SavedPhone savedPhone) {
             this.savedPhone = savedPhone;
             itemTv.setText(this.savedPhone.getPhoneNumber());
-            r_switchTv.setText(this.savedPhone.getNetwork());
+            r_switchIv.setImageResource(this.savedPhone.getNetworkImage());
         }
 
         @Override

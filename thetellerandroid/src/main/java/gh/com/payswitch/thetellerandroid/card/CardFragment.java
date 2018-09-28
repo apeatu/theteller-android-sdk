@@ -375,7 +375,9 @@ public class CardFragment extends Fragment implements View.OnClickListener, Card
                 .setLastname(thetellerInitializer.getlName()).setIP(Utils.getDeviceImei(getActivity())).setTxRef(thetellerInitializer.getTxRef())
                 .setExpiryyear(expiryDate.substring(3,5)).setExpirymonth(expiryDate.substring(0,2))
                 .setMeta(thetellerInitializer.getMeta())
-                .setPBFPubKey(thetellerInitializer.getApiKey()).setDevice_fingerprint(Utils.getDeviceImei(getActivity()));
+                .setPBFPubKey(thetellerInitializer.getApiKey())
+                .setDevice_fingerprint(Utils.getDeviceImei(getActivity()))
+                .setCardType(cardType);
 
             if (thetellerInitializer.getPayment_plan() != null) {
                 builder.setPaymentPlan(thetellerInitializer.getPayment_plan());
@@ -553,7 +555,6 @@ public class CardFragment extends Fragment implements View.OnClickListener, Card
                     cardExpiryTv.getText().toString().substring(3,5),
                     cardType);
         }
-        Log.wtf("card type", cardType);
 
         Intent intent = new Intent();
         intent.putExtra("response", responseAsJSONString);

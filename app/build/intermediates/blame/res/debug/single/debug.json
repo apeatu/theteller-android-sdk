@@ -372,12 +372,20 @@
         "source": "C:\\Users\\sgyimah\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\8772542112e85df65d23f3733b90f587\\res\\color-v23\\abc_tint_edittext.xml"
     },
     {
+        "merged": "C:\\Users\\sgyimah\\Desktop\\M_Apps\\theteller-android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_mtn_momo.png.flat",
+        "source": "C:\\Users\\sgyimah\\Desktop\\M_Apps\\theteller-android\\thetellerandroid\\build\\intermediates\\packaged_res\\debug\\drawable\\mtn_momo.png"
+    },
+    {
         "merged": "C:\\Users\\sgyimah\\Desktop\\M_Apps\\theteller-android\\app\\build\\intermediates\\res\\merged\\debug\\animator-v21_design_appbar_state_list_animator.xml.flat",
         "source": "C:\\Users\\sgyimah\\.gradle\\caches\\transforms-1\\files-1.1\\design-25.4.0.aar\\59ef0255f7775eb315a4e0a578cb6bd0\\res\\animator-v21\\design_appbar_state_list_animator.xml"
     },
     {
         "merged": "C:\\Users\\sgyimah\\Desktop\\M_Apps\\theteller-android\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_tint_edittext.xml.flat",
         "source": "C:\\Users\\sgyimah\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\8772542112e85df65d23f3733b90f587\\res\\color\\abc_tint_edittext.xml"
+    },
+    {
+        "merged": "C:\\Users\\sgyimah\\Desktop\\M_Apps\\theteller-android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_airtel_tigo_momo.png.flat",
+        "source": "C:\\Users\\sgyimah\\Desktop\\M_Apps\\theteller-android\\thetellerandroid\\build\\intermediates\\packaged_res\\debug\\drawable\\airtel_tigo_momo.png"
     },
     {
         "merged": "C:\\Users\\sgyimah\\Desktop\\M_Apps\\theteller-android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_ic_star_half_black_16dp.png.flat",
@@ -642,10 +650,6 @@
     {
         "merged": "C:\\Users\\sgyimah\\Desktop\\M_Apps\\theteller-android\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_primary_text_disable_only_material_light.xml.flat",
         "source": "C:\\Users\\sgyimah\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\8772542112e85df65d23f3733b90f587\\res\\color\\abc_primary_text_disable_only_material_light.xml"
-    },
-    {
-        "merged": "C:\\Users\\sgyimah\\Desktop\\M_Apps\\theteller-android\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_mpesa.xml.flat",
-        "source": "C:\\Users\\sgyimah\\Desktop\\M_Apps\\theteller-android\\thetellerandroid\\build\\intermediates\\packaged_res\\debug\\layout\\fragment_mpesa.xml"
     },
     {
         "merged": "C:\\Users\\sgyimah\\Desktop\\M_Apps\\theteller-android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_round.png.flat",
@@ -1102,6 +1106,10 @@
     {
         "merged": "C:\\Users\\sgyimah\\Desktop\\M_Apps\\theteller-android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_list_pressed_holo_light.9.png.flat",
         "source": "C:\\Users\\sgyimah\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\8772542112e85df65d23f3733b90f587\\res\\drawable-hdpi-v4\\abc_list_pressed_holo_light.9.png"
+    },
+    {
+        "merged": "C:\\Users\\sgyimah\\Desktop\\M_Apps\\theteller-android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_v_cash.png.flat",
+        "source": "C:\\Users\\sgyimah\\Desktop\\M_Apps\\theteller-android\\thetellerandroid\\build\\intermediates\\packaged_res\\debug\\drawable\\v_cash.png"
     },
     {
         "merged": "C:\\Users\\sgyimah\\Desktop\\M_Apps\\theteller-android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_ic_menu_paste_mtrl_am_alpha.png.flat",

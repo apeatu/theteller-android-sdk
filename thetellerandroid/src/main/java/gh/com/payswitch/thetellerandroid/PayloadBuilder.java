@@ -17,6 +17,7 @@ public class PayloadBuilder {
     private String cardno;
     private String payment_plan;
     private String network;
+    private String cardType;
 
     public PayloadBuilder setIs_mobile_money_gh(String is_mobile_money_gh) {
         this.is_mobile_money_gh = is_mobile_money_gh;
@@ -139,31 +140,12 @@ public class PayloadBuilder {
                 firstname, currency,
                 amount, email, expiryyear,
                 cvv, device_fingerprint,
-                cardno, txRef);
+                cardno, txRef, cardType);
 
         if (payment_plan != null) {
             payload.setPayment_plan(payment_plan);
         }
 
-        return payload;
-    }
-
-    public Payload createBankPayload() {
-        List<Meta> metaObj = Utils.pojofyMetaString(meta);
-        Payload payload = new Payload(metaObj, narration, ip, accountnumber, accountbank, lastname,
-                firstname, currency, amount, email, device_fingerprint, txRef, pbfPubKey);
-        payload.setPayment_type("account");
-
-        return payload;
-    }
-
-    public Payload createMpesaPayload() {
-        List<Meta> metaObj = Utils.pojofyMetaString(meta);
-        Payload payload = new Payload(phonenumber, metaObj, narration, ip, lastname,
-                firstname, currency, amount, email, device_fingerprint, txRef, pbfPubKey);
-        payload.setPayment_type("mpesa");
-        payload.setIs_mpesa("1");
-        payload.setIs_mpesa_lipa("1");
         return payload;
     }
 
@@ -190,5 +172,13 @@ public class PayloadBuilder {
     public PayloadBuilder setNetwork(String network) {
         this.network = network;
         return this;
+    }
+
+    public String getCardType() {
+        return cardType;
+    }
+
+    public void setCardType(String cardType) {
+        this.cardType = cardType;
     }
 }

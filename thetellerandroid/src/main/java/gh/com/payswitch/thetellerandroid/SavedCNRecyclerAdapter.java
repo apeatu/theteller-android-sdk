@@ -107,12 +107,12 @@ public class SavedCNRecyclerAdapter extends RecyclerView.Adapter<ViewHolder>{
     public class PhoneViewHolder extends ViewHolder implements View.OnClickListener {
         private TextView itemTv;
         SavedPhone savedPhone;
-        private TextView r_switchTv;
+        private ImageView r_switchIv;
 
         PhoneViewHolder(View v) {
             super(v);
             itemTv = (TextView) v.findViewById(R.id.phoneNumberTv);
-            r_switchTv = (TextView) v.findViewById(R.id.r_switchIv);
+            r_switchIv = (ImageView) v.findViewById(R.id.r_switchIv);
             v.setOnClickListener(this);
         }
 
@@ -125,7 +125,7 @@ public class SavedCNRecyclerAdapter extends RecyclerView.Adapter<ViewHolder>{
         public void bindType(ItemModel savedPhone) {
             this.savedPhone = (SavedPhone) savedPhone;
             itemTv.setText(this.savedPhone.getPhoneNumber());
-            r_switchTv.setText(this.savedPhone.getNetwork());
+            r_switchIv.setImageResource(this.savedPhone.getNetworkImage());
         }
     }
 

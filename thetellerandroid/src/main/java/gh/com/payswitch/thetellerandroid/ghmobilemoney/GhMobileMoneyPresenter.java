@@ -9,6 +9,7 @@ import java.util.List;
 
 import gh.com.payswitch.thetellerandroid.FeeCheckRequestBody;
 import gh.com.payswitch.thetellerandroid.Payload;
+import gh.com.payswitch.thetellerandroid.R;
 import gh.com.payswitch.thetellerandroid.data.SavedPhone;
 import gh.com.payswitch.thetellerandroid.data.SharedPrefsRequestImpl;
 import gh.com.payswitch.thetellerandroid.thetellerConstants;
@@ -35,39 +36,6 @@ public class GhMobileMoneyPresenter implements GhMobileMoneyContract.UserActions
         this.mView = mView;
     }
 
-//    @Override
-//    public void fetchFee(final Payload payload) {
-//        FeeCheckRequestBody body = new FeeCheckRequestBody();
-//        body.setAmount(payload.getAmount());
-//        body.setCurrency(payload.getCurrency());
-//        body.setPtype("3");
-//        body.setPBFPubKey(payload.getApiKey());
-//
-//        mView.showProgressIndicator(true);
-//
-//        new NetworkRequestImpl().getFee(body, new Callbacks.OnGetFeeRequestComplete() {
-//            @Override
-//            public void onSuccess(FeeCheckResponse response) {
-//                mView.showProgressIndicator(false);
-//
-//                try {
-//                    mView.displayFee(response.getData().getCharge_amount(), payload);
-//                }
-//                catch (Exception e) {
-//                    e.printStackTrace();
-//                    mView.showFetchFeeFailed("An error occurred while retrieving transaction fee");
-//                }
-//            }
-//
-//            @Override
-//            public void onError(String message) {
-//                mView.showProgressIndicator(false);
-//                Log.e(thetellerConstants.theteller, message);
-//                mView.showFetchFeeFailed("An error occurred while retrieving transaction fee");
-//            }
-//        });
-//    }
-
     @Override
     public void chargeGhMobileMoney(final Payload payload, final String apiKey) {
         String cardRequestBodyAsString = Utils.convertChargeRequestPayloadToJson(payload);
@@ -76,7 +44,6 @@ public class GhMobileMoneyPresenter implements GhMobileMoneyContract.UserActions
         Log.d("encrypted", encryptedCardRequestBody);
 
         ChargeRequestBody body = new ChargeRequestBody();
-//        body.setAlg("3DES-24");
         body.setApiKey(payload.getApiKey());
         body.setClient(encryptedCardRequestBody);
 
@@ -119,101 +86,6 @@ public class GhMobileMoneyPresenter implements GhMobileMoneyContract.UserActions
         });
     }
 
-//    @Override
-//    public void requeryTxv2(final String flwRef, final String txRef, final String apiKey) {
-//
-//        RequeryRequestBodyv2 body = new RequeryRequestBodyv2();
-//        body.setTxref(txRef);
-//        body.setSECKEY(apiKey);
-//
-//        mView.showPollingIndicator(true);
-//
-//        new NetworkRequestImpl().requeryTxv2(body, new Callbacks.OnRequeryRequestv2Complete() {
-//            @Override
-//            public void onSuccess(RequeryResponsev2 response, String responseAsJSONString) {
-//                if (response.getData() == null) {
-//                    mView.onPaymentFailed(response.getStatus(), responseAsJSONString);
-//                }
-//                else if (response.getData().getChargecode().equals("02")){
-//                    mView.onPollingRoundComplete(flwRef, txRef, apiKey);
-//                }
-//                else if (response.getData().getChargecode().equals("00")) {
-//                    requeryTx(flwRef, apiKey, true);
-//                }
-//                else {
-//                    mView.showProgressIndicator(false);
-//                    mView.onPaymentFailed(response.getData().getStatus(), responseAsJSONString);
-//                }
-//            }
-//
-//            @Override
-//            public void onError(String message, String responseAsJSONString) {
-//                mView.onPaymentFailed(message, responseAsJSONString);
-//            }
-//        });
-//
-//    }
-
-//    public void queryTx(String txRef, String apiKey) {
-//        mView.showPollingIndicator(false);
-//        mView.showProgressIndicator(true);
-//
-//        new NetworkRequestImpl().requeryTx(body, new Callbacks.OnRequeryRequestComplete() {
-//            @Override
-//            public void onSuccess(RequeryResponse response, String responseAsJSONString) {
-//                Log.d("response", response.getData().toString());
-//                mView.showProgressIndicator(false);
-//                mView.onPaymentSuccessful(response.getData().getStatus(), flwRef, responseAsJSONString);
-//            }
-//
-//            @Override
-//            public void onError(String message, String responseAsJSONString) {
-//                mView.showProgressIndicator(false);
-//                mView.onPaymentSuccessful(message, flwRef, responseAsJSONString);
-//            }
-//        });
-//    }
-
-//    public void requeryTx(final String flwRef, final String SECKEY, final boolean shouldISaveNumber) {
-//
-//        RequeryRequestBody body = new RequeryRequestBody();
-//        body.setFlw_ref(flwRef);
-//        body.setSECKEY(SECKEY);
-//
-//        mView.showPollingIndicator(false);
-//        mView.showProgressIndicator(true);
-//
-//        new NetworkRequestImpl().requeryTx(body, new Callbacks.OnRequeryRequestComplete() {
-//            @Override
-//            public void onSuccess(RequeryResponse response, String responseAsJSONString) {
-//                Log.d("response", response.getData().toString());
-//                mView.showProgressIndicator(false);
-//                mView.onPaymentSuccessful(response.getData().getStatus(), flwRef, responseAsJSONString);
-//            }
-//
-//            @Override
-//            public void onError(String message, String responseAsJSONString) {
-//                mView.showProgressIndicator(false);
-//                mView.onPaymentSuccessful(message, flwRef, responseAsJSONString);
-//            }
-//        });
-//    }
-
-
-//    @Override
-//    public void verifyRequeryResponse(RequeryResponse response, String responseAsJSONString, thetellerInitializer ravePayInitializer, String flwRef) {
-//        mView.showProgressIndicator(true);
-//        boolean wasTxSuccessful = Utils.wasTxSuccessful(ravePayInitializer, responseAsJSONString);
-//        mView.showFullProgressIndicator(false);
-//
-//        if (wasTxSuccessful) {
-//            mView.onPaymentSuccessful(response.getStatus(), flwRef, responseAsJSONString);
-//        }
-//        else {
-//            mView.onPaymentFailed(response.getStatus(), responseAsJSONString);
-//        }
-//    }
-
     @Override
     public void onSavedPhonesClicked(String email) {
 
@@ -245,7 +117,21 @@ public class GhMobileMoneyPresenter implements GhMobileMoneyContract.UserActions
         try {
             SavedPhone phone = new SavedPhone();
             phone.setPhoneNumber(phoneNumber);
-            phone.setNetwork(network);
+            switch (network){
+                case "MTN":
+                    phone.setNetworkImage(R.drawable.mtn_momo);
+                    break;
+                case "TIGO":
+                    phone.setNetworkImage(R.drawable.airtel_tigo_momo);
+                    break;
+                case "AIRTEL":
+                    phone.setNetworkImage(R.drawable.airtel_tigo_momo);
+                    break;
+                case "VODAFONE":
+                    phone.setNetworkImage(R.drawable.v_cash);
+                default:
+                    break;
+            }
             sharedPrefsRequest.saveAPhone(phone, secretKey, email);
         }
         catch (Exception e) {

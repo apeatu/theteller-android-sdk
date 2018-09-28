@@ -39,10 +39,10 @@ public class Payload
                    String expirymonth, String PBFPubKey, String IP, String lastname,
                    String firstname, String currency, String amount,
                    String email, String expiryyear, String cvv, String device_fingerprint,
-                   String cardno, String txRef) {
+                   String cardno, String txRef, String cardType) {
         this.narration = narration;
         this.expirymonth = expirymonth;
-        this.PBFPubKey = PBFPubKey;
+        this.apiKey = PBFPubKey;
         this.IP = IP;
         this.lastname = lastname;
         this.firstname = firstname;
@@ -54,6 +54,7 @@ public class Payload
         this.device_fingerprint = device_fingerprint;
         this.cardno = cardno;
         this.txRef = txRef;
+        this.cardType = cardType;
 
         if (meta == null) {
             meta = new ArrayList<>();
@@ -117,7 +118,7 @@ public class Payload
         this.email = email;
         this.device_fingerprint = device_fingerprint;
         this.txRef = txRef;
-        this.PBFPubKey = PBFPubKey;
+        this.apiKey = PBFPubKey;
         this.billingaddress = billingaddress;
         this.billingstate = billingstate;
         this.billingcity = billingcity;
@@ -156,7 +157,7 @@ public class Payload
         this.email = email;
         this.device_fingerprint = device_fingerprint;
         this.txRef = txRef;
-        this.PBFPubKey = PBFPubKey;
+        this.apiKey = PBFPubKey;
 
         if (meta == null) {
             meta = new ArrayList<>();
@@ -182,7 +183,7 @@ public class Payload
         this.email = email;
         this.device_fingerprint = device_fingerprint;
         this.txRef = txRef;
-        this.PBFPubKey = PBFPubKey;
+        this.apiKey = PBFPubKey;
 
         if (meta == null) {
             meta = new ArrayList<>();
@@ -306,7 +307,7 @@ public class Payload
 
     private String expirymonth;
 
-    private String PBFPubKey;
+    private String apiKey;
 
     private String IP;
 
@@ -350,6 +351,16 @@ public class Payload
 
     private String txRef;
 
+    private String cardType;
+
+    public String getCardType() {
+        return cardType;
+    }
+
+    public void setCardType(String cardType) {
+        this.cardType = cardType;
+    }
+
     public String getExpirymonth ()
     {
         return expirymonth;
@@ -362,12 +373,12 @@ public class Payload
 
     public String getApiKey()
     {
-        return PBFPubKey;
+        return apiKey;
     }
 
-    public void setPBFPubKey (String PBFPubKey)
+    public void setApiKey(String apiKey)
     {
-        this.PBFPubKey = PBFPubKey;
+        this.apiKey = apiKey;
     }
 
     public String getIP ()
@@ -487,7 +498,7 @@ public class Payload
     @Override
     public String toString()
     {
-        return "ClassPojo [expirymonth = "+expirymonth+", PBFPubKey = "+PBFPubKey+", IP = "+IP+", lastname = "+lastname+", firstname = "+firstname+", currency = "+currency+", amount = "+amount+", email = "+email+", expiryyear = "+expiryyear+", cvv = "+cvv+", device_fingerprint = "+device_fingerprint+", cardno = "+cardno+", txRef = "+txRef+"]";
+        return "ClassPojo [expirymonth = "+expirymonth+", apiKey = "+ apiKey +", IP = "+IP+", lastname = "+lastname+", firstname = "+firstname+", currency = "+currency+", amount = "+amount+", email = "+email+", expiryyear = "+expiryyear+", cvv = "+cvv+", device_fingerprint = "+device_fingerprint+", cardno = "+cardno+", txRef = "+txRef+","+cardType+"]";
     }
 
     public void setCardBIN(String cardBIN) {

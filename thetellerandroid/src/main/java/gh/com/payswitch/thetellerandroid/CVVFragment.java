@@ -25,6 +25,8 @@ import gh.com.payswitch.thetellerandroid.card.CardPresenter;
 import gh.com.payswitch.thetellerandroid.card.SavedCardVP;
 import gh.com.payswitch.thetellerandroid.data.SavedCard;
 
+import static gh.com.payswitch.thetellerandroid.card.CreditCardView.cardType;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -83,6 +85,8 @@ public class CVVFragment extends DialogFragment {
                     builder.setExpiryyear(savedCard.getExpiryYear());
                     builder.setExpirymonth(savedCard.getExpiryMonth());
                     builder.setCvv(getCvv());
+                    builder.setCardType(cardType);
+                    Log.wtf("card type in CVVFragment", cardType+" ..");
                     final Payload body = builder.createPayload();
                     cardPresenter.chargeCard(body, thetellerConstants.API_KEY, getActivity());
 

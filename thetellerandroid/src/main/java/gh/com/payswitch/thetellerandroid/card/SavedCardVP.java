@@ -61,20 +61,10 @@ public class SavedCardVP {
         }
     }
 
-
     public void onPaymentError(String message, Activity activity) {
 //        dismissDialog();
         Toast.makeText(activity, message, Toast.LENGTH_LONG).show();
     }
-
-
-//    @Override
-//    public void onChargePhoneNumberSuccessful(ChargeResponse response) {
-//        presenter
-//                .requeryTx(response.getData().getFlwRef(),
-//                        thetellerInitializer.getApiKey(),
-//                        shouldISaveThisPhoneNumber);
-//    }
 
     public void onPaymentSuccessful(String status, String responseAsString, Activity activity) {
 
@@ -104,7 +94,6 @@ public class SavedCardVP {
         Log.d("encrypted", encryptedCardRequestBody);
 
         ChargeRequestBody body = new ChargeRequestBody();
-//        body.setAlg("3DES-24");
         body.setApiKey(payload.getApiKey());
         body.setClient(encryptedCardRequestBody);
 
@@ -134,47 +123,6 @@ public class SavedCardVP {
                         onPaymentFailed(status, responseAsJSONString, activity);
                     }
 
-//                    if (response.getData().getSuggested_auth() != null) {
-//                        String suggested_auth = response.getData().getSuggested_auth();
-//
-//
-//                        if (suggested_auth.equals(thetellerConstants.PIN)) {
-//                            mView.onPinAuthModelSuggested(payload);
-//                        }
-//                        else if (suggested_auth.equals(AVS_VBVSECURECODE)) { //address verification then verification by visa
-//                            mView.onAVS_VBVSECURECODEModelSuggested(payload);
-//                        }
-//                        else if (suggested_auth.equalsIgnoreCase(thetellerConstants.NOAUTH_INTERNATIONAL)) {
-//                            mView.onNoAuthInternationalSuggested(payload);
-//                        }
-//                        else {
-//                            mView.onPaymentError("Unknown auth model");
-//                        }
-//                    }
-//                    else {
-//                        String authModelUsed = response.getData().getAuthModelUsed();
-//
-//                        if (authModelUsed != null) {
-//
-//                            if (authModelUsed.equalsIgnoreCase(thetellerConstants.VBV)) {
-//                                String authUrlCrude = response.getData().getAuthurl();
-//                                String flwRef = response.getData().getFlwRef();
-//
-//                                mView.onVBVAuthModelUsed(authUrlCrude, flwRef);
-//                            }
-//                            else if (authModelUsed.equalsIgnoreCase(thetellerConstants.GTB_OTP)) {
-//                                String flwRef = response.getData().getFlwRef();
-//                                String chargeResponseMessage = response.getData().getChargeResponseMessage();
-//                                chargeResponseMessage = chargeResponseMessage == null ? "Enter your one  time password (OTP)" : chargeResponseMessage;
-//                                mView.showOTPLayout(flwRef, chargeResponseMessage);
-//                            }
-//                            else if (authModelUsed.equalsIgnoreCase(thetellerConstants.NOAUTH)) {
-//                                String flwRef = response.getData().getFlwRef();
-//
-//                                mView.onNoAuthUsed(flwRef, secretKey);
-//                            }
-//                        }
-//                    }
                 } else {
                     onPaymentError("No response data was returned", activity);
                 }

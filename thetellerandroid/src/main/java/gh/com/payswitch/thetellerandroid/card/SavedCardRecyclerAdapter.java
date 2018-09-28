@@ -67,7 +67,7 @@ public class SavedCardRecyclerAdapter  extends RecyclerView.Adapter<SavedCardRec
         public void bind(SavedCard savedCard) {
             this.savedCard = savedCard;
             itemTv.setText(Utils.spacifyCardNumber(Utils.obfuscateCardNumber(this.savedCard.getFirst6(), this.savedCard.getLast4())));
-            cardTypeIv.setImageResource(R.drawable.creditcard);
+            cardTypeIv.setImageResource(this.savedCard.getCardType());
         }
 
         @Override
