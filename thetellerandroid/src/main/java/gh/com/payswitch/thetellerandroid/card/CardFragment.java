@@ -789,8 +789,9 @@ public class CardFragment extends Fragment implements View.OnClickListener, Card
                 initialUrl = url;
             }
             else {
-                if (url.contains("/submit")) {
-                    presenter.chargeCard(body, thetellerConstants.API_KEY); //
+                if (url.contains("code=000")) {
+                    getActivity().finish();
+//                    Save VBV Cards Here
                 }
             }
             Log.d("URLS", url);

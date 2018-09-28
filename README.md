@@ -27,7 +27,7 @@ The minimum supported SDK version is 15
 **Step 2.** Add the dependency
 
     dependencies {
-	     compile 'com.github.apeatu:theteller-android:1.0.27'
+	     compile 'com.github.apeatu:theteller-android:1.0'
 	}
 
 **Step 3.** Add the required permission

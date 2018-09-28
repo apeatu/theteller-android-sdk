@@ -2,42 +2,37 @@
 <instant-run
     abi="x86"
     api-level="28"
-    build-mode="COLD"
+    build-mode="HOT_WARM"
     density="560dpi"
     format="10"
     plugin-version="3.1.4"
-    timestamp="1538156183300"
+    timestamp="1538161301682"
     token="7280364910114471540"
-    verifier="COLD_SWAP_REQUESTED" >
+    verifier="COMPATIBLE" >
 
     <task
         name="javac"
         duration="0" />
     <task
         name="instant-run-dex"
-        duration="0" />
+        duration="31" />
     <task
         name="instant-run-transform"
-        duration="0" />
+        duration="24" />
     <task
         name="verifier"
-        duration="0" />
+        duration="5" />
+
+    <artifact
+        location="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\app\build\intermediates\reload-dex\debug\classes.dex"
+        type="RELOAD_DEX" />
 
     <build
         build-mode="FULL"
-        timestamp="1538131614977"
+        timestamp="1538159820632"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
-            location="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\app\build\intermediates\resources\instant-run\debug\resources-debug.apk"
-            type="SPLIT" />
-        <artifact
             location="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
             type="SPLIT" />
         <artifact
             location="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
@@ -49,7 +44,13 @@
             location="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
             type="SPLIT" />
         <artifact
+            location="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
+            type="SPLIT" />
+        <artifact
             location="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
             type="SPLIT" />
         <artifact
             location="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
@@ -64,49 +65,27 @@
             location="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
             type="SPLIT" />
         <artifact
+            location="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\app\build\intermediates\resources\instant-run\debug\resources-debug.apk"
+            type="SPLIT" />
+        <artifact
             location="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\app\build\intermediates\instant-run-apk\debug\app-debug.apk"
             type="SPLIT_MAIN" />
     </build>
     <build
-        build-mode="COLD"
-        timestamp="1538145253196"
-        verifier="R_CLASS_CHANGE" >
+        build-mode="HOT_WARM"
+        timestamp="1538160938737"
+        verifier="COMPATIBLE" >
         <artifact
-            location="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
-            type="SPLIT" />
+            location="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\app\build\intermediates\builds\debug\1538160938737\classes.dex"
+            type="RELOAD_DEX" />
     </build>
     <build
-        build-mode="COLD"
-        ir-eligibility="COMPATIBLE"
-        timestamp="1538153326780"
-        verifier="COLD_SWAP_REQUESTED" >
+        build-mode="HOT_WARM"
+        timestamp="1538161301682"
+        verifier="COMPATIBLE" >
         <artifact
-            location="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
-            type="SPLIT" />
+            location="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\app\build\intermediates\reload-dex\debug\classes.dex"
+            type="RELOAD_DEX" />
     </build>
-    <build
-        build-mode="COLD"
-        timestamp="1538154775017"
-        verifier="FIELD_ADDED" >
-        <artifact
-            location="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
-            type="SPLIT" />
-    </build>
-    <build
-        build-mode="COLD"
-        timestamp="1538156183300"
-        verifier="COLD_SWAP_REQUESTED" />
 
 </instant-run>
