@@ -18,7 +18,7 @@ public class thetellerManager {
     private String apiKey;
     private String txRef;
     private String narration = "";
-    private String currency = "GHS";
+    private String currency = "";
     private String fName = "";
     private String lName = "";
     private String meta = "";
@@ -94,7 +94,7 @@ public class thetellerManager {
     }
 
     public thetellerManager setCurrency(String currency) {
-        this.currency = currency;
+        this.currency = "GHS";
         return this;
     }
 
