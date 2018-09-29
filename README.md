@@ -27,7 +27,7 @@ The minimum supported SDK version is 15
 **Step 2.** Add the dependency
 
     dependencies {
-	     compile 'com.github.apeatu:theteller-android:1.0'
+	        implementation 'com.github.apeatu:theteller-android-sdk:v1.0.0-alpha'
 	}
 
 **Step 3.** Add the required permission
@@ -123,8 +123,9 @@ You can apply a new look by changing the color of certain parts of the UI to hig
     </style>
 
 ##  Help
-* Find a bug? [Open an issue](https://github.com/apeatu/theteller-android/issues)
+* Find a bug? [Open an issue](https://github.com/apeatu/theteller-android-sdk/issues)
 * Want to contribute? [Check out contributing guidelines]() and [submit a pull request](https://help.github.com/articles/creating-a-pull-request).
+[![](https://jitpack.io/v/apeatu/theteller-android-sdk.svg)](https://jitpack.io/#apeatu/theteller-android-sdk)
 
 ## Want to contribute?
 

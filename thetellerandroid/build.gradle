@@ -1,6 +1,6 @@
 apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
-group = 'com.github.theteller'
+group = 'com.github.apeatu'
 
 android {
     compileSdkVersion 28
