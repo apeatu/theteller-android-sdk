@@ -16,6 +16,7 @@ The minimum supported SDK version is 15
 
 
 **Step 1.** Add it in your root build.gradle at the end of repositories:
+[![](https://jitpack.io/v/apeatu/theteller-android-sdk.svg)](https://jitpack.io/#apeatu/theteller-android-sdk)
 
     allprojects {
 		repositories {
@@ -125,7 +126,6 @@ You can apply a new look by changing the color of certain parts of the UI to hig
 ##  Help
 * Find a bug? [Open an issue](https://github.com/apeatu/theteller-android-sdk/issues)
 * Want to contribute? [Check out contributing guidelines]() and [submit a pull request](https://help.github.com/articles/creating-a-pull-request).
-[![](https://jitpack.io/v/apeatu/theteller-android-sdk.svg)](https://jitpack.io/#apeatu/theteller-android-sdk)
 
 ## Want to contribute?
 
