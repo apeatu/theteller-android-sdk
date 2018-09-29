@@ -6,22 +6,22 @@
     density="560dpi"
     format="10"
     plugin-version="3.1.4"
-    timestamp="1538232145219"
+    timestamp="1538237317896"
     token="7280364910114471540"
     verifier="FULL_BUILD_REQUESTED" >
 
     <task
         name="javac"
-        duration="0" />
+        duration="2386" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="0" />
+        duration="196" />
     <task
         name="verifier"
-        duration="0" />
+        duration="83" />
 
     <artifact
         location="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
@@ -65,7 +65,7 @@
 
     <build
         build-mode="FULL"
-        timestamp="1538232145219"
+        timestamp="1538237317896"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="C:\Users\sgyimah\Desktop\M_Apps\theteller-android\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
