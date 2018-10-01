@@ -592,12 +592,12 @@
         "source": "C:\\Users\\sgyimah\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\8772542112e85df65d23f3733b90f587\\res\\drawable-xxhdpi-v4\\abc_scrubber_control_to_pressed_mtrl_005.png"
     },
     {
-        "merged": "C:\\Users\\sgyimah\\Desktop\\M_Apps\\theteller-android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_scrubber_primary_mtrl_alpha.9.png.flat",
-        "source": "C:\\Users\\sgyimah\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\8772542112e85df65d23f3733b90f587\\res\\drawable-hdpi-v4\\abc_scrubber_primary_mtrl_alpha.9.png"
-    },
-    {
         "merged": "C:\\Users\\sgyimah\\Desktop\\M_Apps\\theteller-android\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_account.xml.flat",
         "source": "C:\\Users\\sgyimah\\Desktop\\M_Apps\\theteller-android\\thetellerandroid\\build\\intermediates\\packaged_res\\debug\\layout\\fragment_account.xml"
+    },
+    {
+        "merged": "C:\\Users\\sgyimah\\Desktop\\M_Apps\\theteller-android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_scrubber_primary_mtrl_alpha.9.png.flat",
+        "source": "C:\\Users\\sgyimah\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\8772542112e85df65d23f3733b90f587\\res\\drawable-hdpi-v4\\abc_scrubber_primary_mtrl_alpha.9.png"
     },
     {
         "merged": "C:\\Users\\sgyimah\\Desktop\\M_Apps\\theteller-android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_btn_colored_material.xml.flat",

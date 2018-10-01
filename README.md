@@ -1,4 +1,4 @@
-# theteller's Android Drop In UI
+# theteller's Android Dev Kit
 
 theteller's Android Drop-In is a readymade UI that allows you to accept card and bank payments in your Android app.
 
@@ -28,6 +28,8 @@ The minimum supported SDK version is 15
 **Step 2.** Add the dependency
 
     dependencies {
+        implementation 'org.parceler:parceler-api:1.1.9'
+        annotationProcessor 'org.parceler:parceler:1.1.9'
 	        implementation 'com.github.apeatu:theteller-android-sdk:v1.0.0-alpha'
 	}
 
