@@ -1,8 +1,8 @@
 # theteller's Android Dev Kit
 
-theteller's Android Drop-In is a readymade UI that allows you to accept card and bank payments in your Android app.
+theteller's Android Dev Kit is a readymade UI that allows you to accept card and bank payments in your Android app.
 
-<img alt="Screenshot of Drop-In" src="https://firebasestorage.googleapis.com/v0/b/theteller-android-sdk.appspot.com/o/theteller-android-sdk-screenshots.png?alt=media&token=18ad0388-aa0e-438d-a7b1-5508fb3da676" width="1200"/>
+<img alt="Screenshot of Dev Kit" src="https://firebasestorage.googleapis.com/v0/b/theteller-android-sdk.appspot.com/o/theteller-android-sdk-screenshots.png?alt=media&token=18ad0388-aa0e-438d-a7b1-5508fb3da676" width="1200"/>
 
 ## Before you begin
 
@@ -30,7 +30,7 @@ The minimum supported SDK version is 15
     dependencies {
         implementation 'org.parceler:parceler-api:1.1.9'
         annotationProcessor 'org.parceler:parceler:1.1.9'
-	        implementation 'com.github.apeatu:theteller-android-sdk:v1.0.0-alpha'
+	    implementation 'com.github.apeatu:theteller-android-sdk:v1.0.0-alpha'
 	}
 
 **Step 3.** Add the required permission
@@ -109,22 +109,6 @@ In the calling activity, override the `onActivityResult` method to receive the p
     }
 The intent's `reason` object contains the raw JSON response from the theteller API. This can be parsed to retrieve any additional payment information needed.
 
-###  3. Customize the look
-You can apply a new look by changing the color of certain parts of the UI to highlight your brand colors
-
-    <style name="DefaultTheme" parent="AppTheme.NoActionBar">
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
-        <item name="OTPButtonStyle">@style/otpBtnStyle</item>
-        <item name="PayButtonStyle">@style/payBtnStyle</item>
-        <item name="PinButtonStyle">@style/pinButtonStyle</item>
-        <item name="OTPHeaderStyle">@style/otpHeaderStyle</item>
-        <item name="TabLayoutStyle">@style/tabLayoutStyle</item>
-        <item name="PinHeaderStyle">@style/pinHeaderStyle</item>
-        <item name="SavedCardButtonStyle">@style/svdCardsBtnStyle</item>
-    </style>
-
 ##  Help
 * Find a bug? [Open an issue](https://github.com/apeatu/theteller-android-sdk/issues)
 * Want to contribute? [Check out contributing guidelines]() and [submit a pull request](https://help.github.com/articles/creating-a-pull-request).
@@ -137,7 +121,7 @@ Feel free to create issues and pull requests. The more concise the pull requests
 ## License
 
 ```
-theteller's Android DropIn UI
+theteller's Android Dev Kit
 MIT License
 
 Copyright (c) 2017
