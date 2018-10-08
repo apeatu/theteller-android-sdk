@@ -6,7 +6,7 @@ public class thetellerConstants {
 
 //    public static String API_KEY = "";
 //    public static String PRIVATE_KEY = "";
-    public static String API_KEY = "MTk1NjQyMTQ4N3Rlc3R1c2VyVGh1LUZlYiAxNi0yMDE5"; //test
+    public static String API_KEY = "ODY3MzQ2NDkxN2Vuc2hpa2FUdWUtSnVuIDEzLTIwMTc="; //test
     public static String STAGING_URL = "https://test.theteller.net";
     public static String LIVE_URL = "https://prod.theteller.net/";
     public static String VBV = "VBVSECURECODE";

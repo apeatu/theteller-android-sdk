@@ -28,8 +28,14 @@ The minimum supported SDK version is 15
 **Step 2.** Add the dependency
 
     dependencies {
+        implementation 'com.squareup.picasso:picasso:2.5.2'
+        implementation 'com.squareup.retrofit2:retrofit:2.4.0'
+        implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
+        implementation 'com.squareup.okhttp3:logging-interceptor:3.8.0'
         implementation 'org.parceler:parceler-api:1.1.9'
         annotationProcessor 'org.parceler:parceler:1.1.9'
+        implementation 'com.squareup.retrofit2:converter-scalars:2.1.0'
+        implementation 'com.scottyab:aescrypt:0.0.1'
 	    implementation 'com.github.apeatu:theteller-android-sdk:v1.0.0-alpha'
 	}
 
