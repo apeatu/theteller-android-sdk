@@ -85,7 +85,7 @@ Set the api key and other required parameters. The `thetellerManager` accepts a 
 > You should never store your **API KEY** on the user's device
 
 ###  1.5 Saving Cards feature
-Use the GhMobileMoneyPresenter and  CardPresenter to check for saved mobile money numbers or saved cards
+Use the `GhMobileMoneyPresenter` and  `CardPresenter` to check for saved mobile money numbers or saved cards
 
             GhMobileMoneyPresenter ghMobileMoneyPresenter;
             CardPresenter cardPresenter;
