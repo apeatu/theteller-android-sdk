@@ -9,11 +9,11 @@
     </style>
 
     <style name="tabLayoutStyle" parent="Widget.Design.TabLayout">
-        <item name="app:tabIndicatorColor">@color/tabIndicatorColor</item>
+        <item name="tabIndicatorColor">@color/tabIndicatorColor</item>
     </style>
 
     <style name="tabLayoutStyle2" parent="Widget.Design.TabLayout">
-        <item name="app:tabIndicatorColor">#607d8b</item>
+        <item name="tabIndicatorColor">#607d8b</item>
     </style>
 
     <style name="otpHeaderStyle">
