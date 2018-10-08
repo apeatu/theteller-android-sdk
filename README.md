@@ -60,8 +60,6 @@ Set the api key and other required parameters. The `thetellerManager` accepts a 
                         .acceptGHMobileMoneyPayments(boolean)
                         .onStagingEnv(boolean)
                         .allowSaveCardFeature(boolean)
-                        .setMeta(List<Meta>)
-                        .withTheme(styleId)
                         .initialize();
 
 | function        | parameter           | type | required  |
@@ -85,6 +83,43 @@ Set the api key and other required parameters. The `thetellerManager` accepts a 
 
 > **SECURITY ALERT**
 > You should never store your **API KEY** on the user's device
+
+###  1.5 Saving Cards feature
+Use the GhMobileMoneyPresenter and  CardPresenter to check for saved mobile money numbers or saved cards
+
+            GhMobileMoneyPresenter ghMobileMoneyPresenter;
+            CardPresenter cardPresenter;
+
+            ghMobileMoneyPresenter = new GhMobileMoneyPresenter(this, new GhMobileMoneyFragment());
+            cardPresenter = new CardPresenter(this, new CardFragment());
+            List<SavedPhone> checkForSavedMobileMoney = ghMobileMoneyPresenter.checkForSavedGHMobileMoney(email);
+            List<SavedCard> checkForSavedCards = cardPresenter.checkForSavedCards(email);
+
+            if (checkForSavedCards.isEmpty() && checkForSavedMobileMoney.isEmpty()){
+                new thetellerManager(this).setAmount(Double.parseDouble(amount))
+                    .setEmail(email)
+                    .setfName(fName)
+                    .setlName(lName)
+                    .setNarration(narration)
+                    .setApiKey(apiKey)
+                    .setTxRef(txRef)
+                    .acceptCardPayments(cardSwitch.isChecked())
+                    .acceptGHMobileMoneyPayments(ghMobileMoneySwitch.isChecked())
+                    .onStagingEnv(!isLiveSwitch.isChecked())
+                    .initialize();
+            }else {
+                new thetellerManager(this).setAmount(Double.parseDouble(amount))
+                    .setEmail(email)
+                    .setfName(fName)
+                    .setlName(lName)
+                    .setNarration(narration)
+                    .setApiKey(apiKey)
+                    .setTxRef(txRef)
+                    .acceptCardPayments(boolean)
+                    .acceptGHMobileMoneyPayments(boolean)
+                    .onStagingEnv(boolean)
+                    .chooseCardOrNumber();
+            }
 
 ###  2. Handle the response
 In the calling activity, override the `onActivityResult` method to receive the payment response as shown below

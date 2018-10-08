@@ -4,7 +4,7 @@
     <string name="accept_account_payments">Accept account payments</string>
     <string name="email">Email</string>
     <string name="amount_to_charge_required">Amount to charge (required)</string>
-    <string name="api_key">Public key</string>
+    <string name="api_key">Api key</string>
     <string name="txref_required">txRef (required)</string>
     <string name="narration">Narration</string>
     <string name="currency_code_e_g_ghs">Currency code e.g. GHS</string>
