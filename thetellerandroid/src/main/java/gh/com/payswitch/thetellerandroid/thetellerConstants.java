@@ -1,12 +1,11 @@
 package gh.com.payswitch.thetellerandroid;
 
-
 public class thetellerConstants {
     public static int PERMISSIONS_REQUEST_READ_PHONE_STATE = 419;
 
 //    public static String API_KEY = "";
 //    public static String PRIVATE_KEY = "";
-    public static String API_KEY = "ODY3MzQ2NDkxN2Vuc2hpa2FUdWUtSnVuIDEzLTIwMTc="; //test
+    public static String API_KEY = ""; //test
     public static String STAGING_URL = "https://test.theteller.net";
     public static String LIVE_URL = "https://prod.theteller.net/";
     public static String VBV = "VBVSECURECODE";
