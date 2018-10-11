@@ -142,6 +142,22 @@ public class GhMobileMoneyFragment extends Fragment implements GhMobileMoneyCont
         }
 
         String network = networkSpinner.getSelectedItem().toString();
+        String shortNetwork = null;
+        switch (network){
+            case "MTN":
+                shortNetwork = "MTN";
+                break;
+            case "TIGO":
+                shortNetwork = "TGO";
+                break;
+            case "AIRTEL":
+                shortNetwork = "ATL";
+                break;
+            case "VODAFONE":
+                shortNetwork = "VDF";
+            default:
+                break;
+        }
 
         if (networkSpinner.getSelectedItemPosition() == 0) {
             valid = false;
@@ -166,7 +182,7 @@ public class GhMobileMoneyFragment extends Fragment implements GhMobileMoneyCont
                     .setIP(Utils.getDeviceImei(getActivity()))
                     .setTxRef(thetellerInitializer.getTxRef())
                     .setMeta(thetellerInitializer.getMeta())
-                    .setNetwork(network)
+                    .setNetwork(shortNetwork)
                     .setPhonenumber(phone)
                     .setApiKey(thetellerInitializer.getApiKey())
                     .setDevice_fingerprint(Utils.getDeviceImei(getActivity()));

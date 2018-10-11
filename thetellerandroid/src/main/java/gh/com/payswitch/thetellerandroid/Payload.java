@@ -511,6 +511,8 @@ public class Payload
         this.network = network;
     }
 
+    public String getNetwork() { return network; }
+
     public String network;
 
 

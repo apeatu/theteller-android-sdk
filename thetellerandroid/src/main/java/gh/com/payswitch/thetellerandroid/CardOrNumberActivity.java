@@ -108,11 +108,29 @@ public class CardOrNumberActivity extends FragmentActivity {
                     if (thetellerInitializer.getPayment_plan() != null) {
                         builder.setPaymentPlan(thetellerInitializer.getPayment_plan());
                     }
+                    String network = savedPhone.getNetwork();
+                    String shortNetwork = null;
+                    switch (network){
+                        case "MTN":
+                            shortNetwork = "MTN";
+                            break;
+                        case "TIGO":
+                            shortNetwork = "TGO";
+                            break;
+                        case "AIRTEL":
+                            shortNetwork = "ATL";
+                            break;
+                        case "VODAFONE":
+                            shortNetwork = "VDF";
+                        default:
+                            break;
+                    }
+
                     builder.setPhonenumber(savedPhone.getPhoneNumber());
-                    builder.setNetwork(savedPhone.getNetwork());
+                    builder.setNetwork(shortNetwork);
                     final Payload body = builder.createGhMobileMoneyPayload();
                     ghMobileMoneyPresenter.chargeGhMobileMoney(body, thetellerConstants.API_KEY, CardOrNumberActivity.this);
-                    Log.wtf("phone number on click", body.getPhonenumber());
+                    Log.wtf("phone network on click", body.getNetwork());
                 }
             });
 

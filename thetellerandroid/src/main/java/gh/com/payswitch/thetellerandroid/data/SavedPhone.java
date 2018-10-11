@@ -13,6 +13,8 @@ public class SavedPhone implements ItemModel{
     }
     public String getNetwork() { return network; }
 
+    public void setNetwork(String network) { this.network = network; }
+
     public int getNetworkImage() {
         return networkImage;
     }

@@ -117,6 +117,7 @@ public class GhMobileMoneyPresenter implements GhMobileMoneyContract.UserActions
         try {
             SavedPhone phone = new SavedPhone();
             phone.setPhoneNumber(phoneNumber);
+            phone.setNetwork(network);
             switch (network){
                 case "MTN":
                     phone.setNetworkImage(R.drawable.mtn_momo);
