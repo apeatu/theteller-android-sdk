@@ -4,7 +4,7 @@
         <item>Select network</item>
         <item>MTN</item>
         <item>TIGO</item>
-        <!--<item>VODAFONE</item>-->
+        
         <item>AIRTEL</item>
     </string-array>
     <attr format="reference" name="OTPButtonStyle"/>
@@ -212,5 +212,11 @@
     <style name="svdCardsBtnStyle2" parent="@android:style/Widget.Button">
         <item name="android:background">@drawable/blue_btn_curved</item>
         <item name="android:textColor">#039be5</item>
+    </style>
+    <style name="tabLayoutStyle" parent="Widget.Design.TabLayout">
+        <item name="tabIndicatorColor">@color/tabIndicatorColor</item>
+    </style>
+    <style name="tabLayoutStyle2" parent="Widget.Design.TabLayout">
+        <item name="tabIndicatorColor">#607d8b</item>
     </style>
 </resources>
