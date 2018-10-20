@@ -1576,8 +1576,6 @@ int style pinHeaderStyle 0x7f150187
 int style pinHeaderStyle2 0x7f150188
 int style svdCardsBtnStyle 0x7f150189
 int style svdCardsBtnStyle2 0x7f15018a
-int style tabLayoutStyle 0x7f15018b
-int style tabLayoutStyle2 0x7f15018c
 int[] styleable ActionBar { 0x7f040033, 0x7f040034, 0x7f040035, 0x7f040066, 0x7f040067, 0x7f040068, 0x7f040069, 0x7f04006a, 0x7f04006b, 0x7f040072, 0x7f040076, 0x7f040077, 0x7f040082, 0x7f040094, 0x7f040095, 0x7f040099, 0x7f04009a, 0x7f04009b, 0x7f04009e, 0x7f0400a4, 0x7f0400f1, 0x7f0400fa, 0x7f040109, 0x7f04010d, 0x7f04010e, 0x7f040132, 0x7f040135, 0x7f040161, 0x7f04016b }
 int styleable ActionBar_background 0
 int styleable ActionBar_backgroundSplit 1

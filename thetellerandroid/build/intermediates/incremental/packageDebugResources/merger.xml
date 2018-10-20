@@ -98,10 +98,6 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-    </style><style name="tabLayoutStyle" parent="Widget.Design.TabLayout">
-        <item name="tabIndicatorColor">@color/tabIndicatorColor</item>
-    </style><style name="tabLayoutStyle2" parent="Widget.Design.TabLayout">
-        <item name="tabIndicatorColor">#607d8b</item>
     </style><style name="otpHeaderStyle">
         <item name="android:background">@color/otpColorTheme</item>
     </style><style name="pinHeaderStyle">

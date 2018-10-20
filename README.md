@@ -28,6 +28,7 @@ The minimum supported SDK version is 15
 **Step 2.** Add the dependency
 
     dependencies {
+        implementation 'com.android.support:design:25.4.0'
         implementation 'com.squareup.picasso:picasso:2.5.2'
         implementation 'com.squareup.retrofit2:retrofit:2.4.0'
         implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
