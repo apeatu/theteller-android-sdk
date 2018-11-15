@@ -99,7 +99,6 @@ public class CVVFragment extends DialogFragment {
 
                     final Payload body = builder.createPayload();
                     cardPresenter.chargeCard(body, thetellerConstants.API_KEY, getActivity(), v.getRootView());
-
                 }else {
                     Toast.makeText(getActivity(), "Invalid CVV", Toast.LENGTH_SHORT).show();
                 }

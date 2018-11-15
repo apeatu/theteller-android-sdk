@@ -54,13 +54,10 @@ public class SharedPrefsRequestImpl implements DataRequest.SharedPrefsRequest {
         for (SavedCard savedCard: savedCards) {
             checkedSavedPCards.add(savedCard.getPan());
         }
-        Log.wtf("checked list", checkedSavedPCards.toString());
 
         if (!checkedSavedPCards.contains(card.getPan())) {
             savedCards.add(card);
         }
-        Log.wtf("contains boolean", !checkedSavedPCards.contains(card.getPan())+"");
-
 
         init();
         Gson gson = new Gson();
