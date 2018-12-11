@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
     EditText amountEt;
     EditText apiKeyEt;
     EditText txRefEt;
+    EditText redirectUrlEt;
     EditText narrationEt;
     EditText currencyEt;
     EditText fNameEt;
@@ -105,6 +106,7 @@ public class MainActivity extends AppCompatActivity {
         String amount = amountEt.getText().toString();
         String apiKey = apiKeyEt.getText().toString();
         String txRef = txRefEt.getText().toString();
+        String redirectUrl = redirectUrlEt.getText().toString();
         String narration = narrationEt.getText().toString();
         String currency = currencyEt.getText().toString();
         String fName = fNameEt.getText().toString();
@@ -147,13 +149,11 @@ public class MainActivity extends AppCompatActivity {
 
             if (checkForSavedCards.isEmpty() && checkForSavedMobileMoney.isEmpty()){
                 new thetellerManager(this).setAmount(Long.parseLong("1"))
-                    .setCurrency("GHS")
                     .setEmail("paasammy@yahoo.com")
                     .setfName("Samuel")
                     .setlName("Gyimah")
                     .setMerchant_id("TTM-00000001")
                     .setTerminal_id("00000011")
-                    .setVoucher_code("")
                     .setNarration("testing with Sam")
                     .setApiKey(apiKey)
                     .setTxRef(txRef)
@@ -164,17 +164,15 @@ public class MainActivity extends AppCompatActivity {
                     .initialize();
             }else {
                 new thetellerManager(this).setAmount(Long.parseLong("1"))
-                    .setCurrency("GHS")
                     .setEmail("paasammy@yahoo.com")
                     .setfName("Samuel")
                     .setlName("Gyimah")
                     .setMerchant_id("TTM-00000001")
                     .setTerminal_id("00000011")
-                    .setVoucher_code("")
                     .setNarration("testing with Sam")
                     .setApiKey(apiKey)
                     .setTxRef(txRef)
-                    .set3dUrl("https://23.239.22.186/loader.html")
+                    .set3dUrl(redirectUrl)
                     .acceptCardPayments(cardSwitch.isChecked())
                     .acceptGHMobileMoneyPayments(ghMobileMoneySwitch.isChecked())
                     .onStagingEnv(!isLiveSwitch.isChecked())

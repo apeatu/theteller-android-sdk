@@ -11,6 +11,7 @@
     <string name="country_code_e_g_gh">Country code e.g. GH</string>
     <string name="first_name">First name</string>
     <string name="last_name">Last name</string>
+    <string name="redirect_url">3d Redirect Url</string>
     <string name="start_payment">START PAYMENT</string>
     <string name="secret_key">Secret Key</string>
 </resources>

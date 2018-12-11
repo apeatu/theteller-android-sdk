@@ -21,7 +21,7 @@ public class thetellerManager {
     private String currency = "";
     private String merchant_id;
     private String terminal_id;
-    private String voucher_code;
+    private String voucher_code = "";
     private String d_response_url;
     private String fName = "";
     private String lName = "";
