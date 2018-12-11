@@ -58,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
         txRefEt = findViewById(R.id.txRefEt);
         narrationEt = findViewById(R.id.narrationTV);
         currencyEt = findViewById(R.id.currencyEt);
+        redirectUrlEt = findViewById(R.id.redirectUrlEt);
         fNameEt = findViewById(R.id.fNameEt);
         lNameEt = findViewById(R.id.lnameEt);
 //        voucherCode = findViewById(R.id.voucherCodeEt);
