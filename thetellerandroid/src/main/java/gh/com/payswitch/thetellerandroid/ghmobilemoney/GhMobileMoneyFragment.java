@@ -256,7 +256,9 @@ public class GhMobileMoneyFragment extends Fragment implements GhMobileMoneyCont
 
     @Override
     public void showToast(String message) {
-        Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
+        if (getActivity() != null) {
+            Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
+        }
     }
 
     @Override
