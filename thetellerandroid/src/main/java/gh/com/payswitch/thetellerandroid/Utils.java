@@ -19,12 +19,15 @@ import org.json.JSONObject;
 import java.lang.reflect.Type;
 import java.security.GeneralSecurityException;
 import java.security.MessageDigest;
+import java.text.DecimalFormat;
 import java.util.List;
 
 import javax.crypto.Cipher;
 import javax.crypto.spec.SecretKeySpec;
 
 import javax.crypto.spec.IvParameterSpec;
+
+import static java.lang.Double.parseDouble;
 
 public class Utils {
 
@@ -83,8 +86,8 @@ public class Utils {
     }
 
     private static Boolean areAmountsSame(String amount1, String amount2) {
-        Double number1 = Double.parseDouble(amount1);
-        Double number2 = Double.parseDouble(amount2);
+        Double number1 = parseDouble(amount1);
+        Double number2 = parseDouble(amount2);
 
         return Math.abs(number1 - number2) < 0.0001;
     }
@@ -97,6 +100,65 @@ public class Utils {
 
         return text;
 
+    }
+    public static String minorUnitAmount(String amount) {
+        Double amtValue = parseDouble(amount);
+        Double amtConverted = amtValue * 100;
+        int amountConverted = amtConverted.intValue();
+        String amountVal = String.valueOf(amountConverted);
+        Integer len = amountVal.length();
+        String finalAmt;
+
+        switch (len) {
+            case 1 :
+                finalAmt = "00000000000" + amountVal;
+                break;
+            case 2 :
+                finalAmt = "0000000000" + amountVal;
+                break;
+            case 3 :
+                finalAmt = "000000000" + amountVal;
+                break;
+            case 4 :
+                finalAmt = "00000000" + amountVal;
+                break;
+            case 5 :
+                finalAmt = "0000000" + amountVal;
+                break;
+            case 6 :
+                finalAmt = "000000" + amountVal;
+                break;
+            case 7 :
+                finalAmt = "00000" + amountVal;
+                break;
+            case 8 :
+                finalAmt = "0000" + amountVal;
+                break;
+            case 9 :
+                finalAmt = "000" + amountVal;
+                break;
+            case 10 :
+                finalAmt = "00" + amountVal;
+                break;
+            case 11 :
+                finalAmt = "0" + amountVal;
+                break;
+            default :
+                finalAmt = amountVal;
+
+        }
+
+        return finalAmt;
+    }
+
+    public static String koboToNaira(Double fen) {
+        return formatDouble2Str4Money(fen / 100.00);
+    }
+
+    private static DecimalFormat doubleDF = new DecimalFormat("#0.00");
+
+    public static String formatDouble2Str4Money(Double d) {
+        return doubleDF.format(d);
     }
 
     public static void hide_keyboard(Activity activity) {

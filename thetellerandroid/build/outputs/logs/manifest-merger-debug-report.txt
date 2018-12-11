@@ -1,57 +1,57 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\src\main\AndroidManifest.xml:2:1-16:12
-INJECTED from C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\src\main\AndroidManifest.xml:2:1-16:12
-INJECTED from C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\src\main\AndroidManifest.xml:2:1-16:12
-INJECTED from C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\src\main\AndroidManifest.xml:2:1-16:12
-INJECTED from C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\src\main\AndroidManifest.xml:2:1-16:12
-INJECTED from C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\src\main\AndroidManifest.xml:2:1-16:12
-INJECTED from C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\src\main\AndroidManifest.xml:2:1-16:12
+ADDED from C:\Users\sgyimah\Desktop\M_Apps\theteller-android-direct\thetellerandroid\src\main\AndroidManifest.xml:2:1-16:12
+INJECTED from C:\Users\sgyimah\Desktop\M_Apps\theteller-android-direct\thetellerandroid\src\main\AndroidManifest.xml:2:1-16:12
+INJECTED from C:\Users\sgyimah\Desktop\M_Apps\theteller-android-direct\thetellerandroid\src\main\AndroidManifest.xml:2:1-16:12
+INJECTED from C:\Users\sgyimah\Desktop\M_Apps\theteller-android-direct\thetellerandroid\src\main\AndroidManifest.xml:2:1-16:12
+INJECTED from C:\Users\sgyimah\Desktop\M_Apps\theteller-android-direct\thetellerandroid\src\main\AndroidManifest.xml:2:1-16:12
+INJECTED from C:\Users\sgyimah\Desktop\M_Apps\theteller-android-direct\thetellerandroid\src\main\AndroidManifest.xml:2:1-16:12
+INJECTED from C:\Users\sgyimah\Desktop\M_Apps\theteller-android-direct\thetellerandroid\src\main\AndroidManifest.xml:2:1-16:12
 	package
-		ADDED from C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\src\main\AndroidManifest.xml:3:5-48
-		INJECTED from C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\src\main\AndroidManifest.xml
+		ADDED from C:\Users\sgyimah\Desktop\M_Apps\theteller-android-direct\thetellerandroid\src\main\AndroidManifest.xml:3:5-48
+		INJECTED from C:\Users\sgyimah\Desktop\M_Apps\theteller-android-direct\thetellerandroid\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\sgyimah\Desktop\M_Apps\theteller-android-direct\thetellerandroid\src\main\AndroidManifest.xml
 	android:versionName
-		INJECTED from C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\src\main\AndroidManifest.xml
-		ADDED from C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\src\main\AndroidManifest.xml:2:1-16:12
-		INJECTED from C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\sgyimah\Desktop\M_Apps\theteller-android-direct\thetellerandroid\src\main\AndroidManifest.xml
+		ADDED from C:\Users\sgyimah\Desktop\M_Apps\theteller-android-direct\thetellerandroid\src\main\AndroidManifest.xml:2:1-16:12
+		INJECTED from C:\Users\sgyimah\Desktop\M_Apps\theteller-android-direct\thetellerandroid\src\main\AndroidManifest.xml
 	android:versionCode
-		INJECTED from C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\src\main\AndroidManifest.xml
-		ADDED from C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\src\main\AndroidManifest.xml:2:1-16:12
-		INJECTED from C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\sgyimah\Desktop\M_Apps\theteller-android-direct\thetellerandroid\src\main\AndroidManifest.xml
+		ADDED from C:\Users\sgyimah\Desktop\M_Apps\theteller-android-direct\thetellerandroid\src\main\AndroidManifest.xml:2:1-16:12
+		INJECTED from C:\Users\sgyimah\Desktop\M_Apps\theteller-android-direct\thetellerandroid\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\src\main\AndroidManifest.xml:2:11-69
+		ADDED from C:\Users\sgyimah\Desktop\M_Apps\theteller-android-direct\thetellerandroid\src\main\AndroidManifest.xml:2:11-69
 application
-ADDED from C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\src\main\AndroidManifest.xml:5:5-14:19
+ADDED from C:\Users\sgyimah\Desktop\M_Apps\theteller-android-direct\thetellerandroid\src\main\AndroidManifest.xml:5:5-14:19
 	android:supportsRtl
-		ADDED from C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\src\main\AndroidManifest.xml:8:9-35
+		ADDED from C:\Users\sgyimah\Desktop\M_Apps\theteller-android-direct\thetellerandroid\src\main\AndroidManifest.xml:8:9-35
 	android:label
-		ADDED from C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\src\main\AndroidManifest.xml:7:9-41
+		ADDED from C:\Users\sgyimah\Desktop\M_Apps\theteller-android-direct\thetellerandroid\src\main\AndroidManifest.xml:7:9-41
 	android:allowBackup
-		ADDED from C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\src\main\AndroidManifest.xml:6:9-35
+		ADDED from C:\Users\sgyimah\Desktop\M_Apps\theteller-android-direct\thetellerandroid\src\main\AndroidManifest.xml:6:9-35
 activity#gh.com.payswitch.thetellerandroid.thetellerActivity
-ADDED from C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\src\main\AndroidManifest.xml:9:9-12:52
+ADDED from C:\Users\sgyimah\Desktop\M_Apps\theteller-android-direct\thetellerandroid\src\main\AndroidManifest.xml:9:9-12:52
 	android:screenOrientation
-		ADDED from C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\src\main\AndroidManifest.xml:12:13-49
+		ADDED from C:\Users\sgyimah\Desktop\M_Apps\theteller-android-direct\thetellerandroid\src\main\AndroidManifest.xml:12:13-49
 	android:label
-		ADDED from C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\src\main\AndroidManifest.xml:11:13-45
+		ADDED from C:\Users\sgyimah\Desktop\M_Apps\theteller-android-direct\thetellerandroid\src\main\AndroidManifest.xml:11:13-45
 	android:name
-		ADDED from C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\src\main\AndroidManifest.xml:10:13-46
+		ADDED from C:\Users\sgyimah\Desktop\M_Apps\theteller-android-direct\thetellerandroid\src\main\AndroidManifest.xml:10:13-46
 activity#gh.com.payswitch.thetellerandroid.CardOrNumberActivity
-ADDED from C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\src\main\AndroidManifest.xml:13:9-67
+ADDED from C:\Users\sgyimah\Desktop\M_Apps\theteller-android-direct\thetellerandroid\src\main\AndroidManifest.xml:13:9-67
 	android:name
-		ADDED from C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\src\main\AndroidManifest.xml:13:19-55
+		ADDED from C:\Users\sgyimah\Desktop\M_Apps\theteller-android-direct\thetellerandroid\src\main\AndroidManifest.xml:13:19-55
 uses-sdk
-INJECTED from C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\src\main\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\src\main\AndroidManifest.xml
-INJECTED from C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\src\main\AndroidManifest.xml
-INJECTED from C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\src\main\AndroidManifest.xml
-INJECTED from C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\src\main\AndroidManifest.xml
+INJECTED from C:\Users\sgyimah\Desktop\M_Apps\theteller-android-direct\thetellerandroid\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\sgyimah\Desktop\M_Apps\theteller-android-direct\thetellerandroid\src\main\AndroidManifest.xml
+INJECTED from C:\Users\sgyimah\Desktop\M_Apps\theteller-android-direct\thetellerandroid\src\main\AndroidManifest.xml
+INJECTED from C:\Users\sgyimah\Desktop\M_Apps\theteller-android-direct\thetellerandroid\src\main\AndroidManifest.xml
+INJECTED from C:\Users\sgyimah\Desktop\M_Apps\theteller-android-direct\thetellerandroid\src\main\AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\src\main\AndroidManifest.xml
-		ADDED from C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\sgyimah\Desktop\M_Apps\theteller-android-direct\thetellerandroid\src\main\AndroidManifest.xml
+		ADDED from C:\Users\sgyimah\Desktop\M_Apps\theteller-android-direct\thetellerandroid\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\sgyimah\Desktop\M_Apps\theteller-android-direct\thetellerandroid\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\src\main\AndroidManifest.xml
-		ADDED from C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\sgyimah\Desktop\M_Apps\theteller-android\thetellerandroid\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\sgyimah\Desktop\M_Apps\theteller-android-direct\thetellerandroid\src\main\AndroidManifest.xml
+		ADDED from C:\Users\sgyimah\Desktop\M_Apps\theteller-android-direct\thetellerandroid\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\sgyimah\Desktop\M_Apps\theteller-android-direct\thetellerandroid\src\main\AndroidManifest.xml

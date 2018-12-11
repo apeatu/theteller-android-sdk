@@ -4,7 +4,7 @@
         <item>Select network</item>
         <item>MTN</item>
         <item>TIGO</item>
-        
+        <!--<item>VODAFONE</item>-->
         <item>AIRTEL</item>
     </string-array>
     <attr format="reference" name="OTPButtonStyle"/>

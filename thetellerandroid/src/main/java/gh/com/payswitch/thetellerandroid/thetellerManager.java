@@ -19,6 +19,10 @@ public class thetellerManager {
     private String txRef;
     private String narration = "";
     private String currency = "";
+    private String merchant_id;
+    private String terminal_id;
+    private String voucher_code;
+    private String d_response_url;
     private String fName = "";
     private String lName = "";
     private String meta = "";
@@ -98,6 +102,21 @@ public class thetellerManager {
         return this;
     }
 
+    public thetellerManager setMerchant_id(String merchant_id) {
+        this.merchant_id = merchant_id;
+        return this;
+    }
+
+    public thetellerManager setTerminal_id(String terminal_id) {
+        this.terminal_id = terminal_id;
+        return this;
+    }
+
+    public thetellerManager setVoucher_code(String voucher_code) {
+        this.voucher_code = voucher_code;
+        return this;
+    }
+
     public thetellerManager setfName(String fName) {
         this.fName = fName;
         return this;
@@ -105,6 +124,11 @@ public class thetellerManager {
 
     public thetellerManager setlName(String lName) {
         this.lName = lName;
+        return this;
+    }
+
+    public thetellerManager set3dUrl(String d_response_url) {
+        this.d_response_url = d_response_url;
         return this;
     }
 
@@ -136,6 +160,6 @@ public class thetellerManager {
     }
 
     public thetellerInitializer createthetellerInitializer() {
-        return new thetellerInitializer(email, amount, apiKey, txRef, narration, currency, fName, lName, withCard, withGHMobileMoney, theme, staging, allowSaveCard, meta, payment_plan);
+        return new thetellerInitializer(email, amount, apiKey, txRef, narration, currency, merchant_id, terminal_id, voucher_code, fName, lName, withCard, withGHMobileMoney, d_response_url, theme, staging, allowSaveCard, meta, payment_plan);
     }
 }

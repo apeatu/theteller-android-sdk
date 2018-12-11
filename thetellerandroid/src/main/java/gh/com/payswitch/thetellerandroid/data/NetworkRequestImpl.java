@@ -1,28 +1,19 @@
 package gh.com.payswitch.thetellerandroid.data;
 
-import android.support.annotation.NonNull;
-import android.util.Log;
+import android.text.TextUtils;
 
-import gh.com.payswitch.thetellerandroid.FeeCheckRequestBody;
-import gh.com.payswitch.thetellerandroid.Payload;
 import gh.com.payswitch.thetellerandroid.thetellerActivity;
 import gh.com.payswitch.thetellerandroid.card.ChargeRequestBody;
 import gh.com.payswitch.thetellerandroid.responses.ChargeResponse;
-import gh.com.payswitch.thetellerandroid.responses.FeeCheckResponse;
-import gh.com.payswitch.thetellerandroid.responses.RequeryResponse;
-import gh.com.payswitch.thetellerandroid.responses.RequeryResponsev2;
+
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.io.IOException;
-import java.lang.annotation.Annotation;
 import java.lang.reflect.Type;
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import okhttp3.Credentials;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Call;
@@ -57,10 +48,10 @@ public class NetworkRequestImpl implements DataRequest.NetworkRequest {
     @Override
     public void chargeCard(ChargeRequestBody body, final Callbacks.OnChargeRequestComplete callback) {
 
-        createService();
+        service = createService(ApiService.class, "testuser", "MTk1NjQyMTQ4N3Rlc3R1c2VyVGh1LUZlYiAxNi0yMDE5");
 
 //        Call<ChargeResponse> call = service.charge(body);
-        Call<String> call = service.charge(body);
+        Call<String> call = service.chargeCard(body);
 
         call.enqueue(new Callback<String>() {
             @Override
@@ -91,213 +82,19 @@ public class NetworkRequestImpl implements DataRequest.NetworkRequest {
         });
 
     }
-//
-//    @Override
-//    public void validateChargeCard(ValidateChargeBody body, final Callbacks.OnValidateChargeCardRequestComplete callback) {
-//
-//        createService();
-//
-//        Call<String> call = service.validateCardCharge(body);
-//
-//        call.enqueue(new Callback<String>() {
-//            @Override
-//            public void onResponse(Call<String> call, Response<String> response) {
-//                if (response.isSuccessful()) {
-//                    Gson gson = new Gson();
-//                    Type type = new TypeToken<ChargeResponse>() {}.getType();
-//                    ChargeResponse chargeResponse = gson.fromJson(response.body(), type);
-//                    callback.onSuccess(chargeResponse, response.body());
-//                }
-//                else {
-//                    try {
-//                        String errorBody = response.errorBody().string();
-//                        ErrorBody error = parseErrorJson(errorBody);
-//                        callback.onError(error.getReason(), errorBody);
-//                    } catch (IOException | NullPointerException e) {
-//                        e.printStackTrace();
-//                        callback.onError("error", errorParsingError);
-//                    }
-//                }
-//            }
-//
-//            @Override
-//            public void onFailure(Call<String> call, Throwable t) {
-//                callback.onError(t.getReason(), "");
-//            }
-//        });
-//
-//    }
-//
-//    @Override
-//    public void validateAccountCard(ValidateChargeBody body, final Callbacks.OnValidateChargeCardRequestComplete callback) {
-//
-//        createService();
-//
-//        Call<String> call = service.validateAccountCharge(body);
-//
-//        call.enqueue(new Callback<String>() {
-//            @Override
-//            public void onResponse(Call<String> call, Response<String> response) {
-//                if (response.isSuccessful()) {
-//                    Gson gson = new Gson();
-//                    Type type = new TypeToken<ChargeResponse>() {}.getType();
-//                    ChargeResponse chargeResponse = gson.fromJson(response.body(), type);
-//                    callback.onSuccess(chargeResponse, response.body());                }
-//                else {
-//                    try {
-//                        String errorBody = response.errorBody().string();
-//                        ErrorBody error = parseErrorJson(errorBody);
-//                        callback.onError(error.getReason(), errorBody);
-//                    } catch (IOException | NullPointerException e) {
-//                        e.printStackTrace();
-//                        callback.onError("error", errorParsingError);
-//                    }
-//                }
-//            }
-//
-//            @Override
-//            public void onFailure(Call<String> call, Throwable t) {
-//                callback.onError(t.getReason(), "");
-//            }
-//        });
-//    }
-
-//    @Override
-//    public void requeryTxv2(RequeryRequestBodyv2 requeryRequestBody, final Callbacks.OnRequeryRequestv2Complete callback) {
-//
-//        createService();
-//
-//        Call<String> call = service.requeryTx_v2(requeryRequestBody);
-//
-//        call.enqueue(new Callback<String>() {
-//            @Override
-//            public void onResponse(Call<String> call, Response<String> response) {
-//                String jsonResponse = response.body();
-//                if (response.isSuccessful()) {
-//                    try {
-//                        JSONObject jsonObject = new JSONObject(response.body());
-//                        if (jsonObject.has("status")) {
-//                            jsonObject.put("status", "Transaction successfully fetched");
-//                            jsonResponse = jsonObject.toString();
-//                        }
-//
-//                    } catch (JSONException e) {
-//                        e.printStackTrace();
-//                    }
-//                    Gson gson = new Gson();
-//                    Type type = new TypeToken<RequeryResponsev2>() {}.getType();
-//                    RequeryResponsev2 requeryResponse = gson.fromJson(jsonResponse, type);
-//                    callback.onSuccess(requeryResponse, jsonResponse);
-//                }
-//                else {
-//                    try {
-//                        String errorBody = response.errorBody().string();
-//                        ErrorBody error = parseErrorJson(errorBody);
-//                        callback.onError(error.getReason(), errorBody);
-//                    } catch (IOException | NullPointerException e) {
-//                        e.printStackTrace();
-//                        callback.onError("error", errorParsingError);
-//                    }
-//                }
-//            }
-//
-//            @Override
-//            public void onFailure(Call<String> call, Throwable t) {
-//                callback.onError(t.getReason(), "");
-//            }
-//        });
-//    }
-
-//    @Override
-//    public void requeryTx(RequeryRequestBody requeryRequestBody, final Callbacks.OnRequeryRequestComplete callback) {
-//
-//        createService();
-//
-//        Call<String> call = service.requeryTx(requeryRequestBody);
-//
-//        call.enqueue(new Callback<String>() {
-//            @Override
-//            public void onResponse(Call<String> call, Response<String> response) {
-//                String jsonResponse = response.body();
-//                if (response.isSuccessful()) {
-//                    try {
-//                        JSONObject jsonObject = new JSONObject(response.body());
-//                        if (jsonObject.has("status")) {
-//                            jsonObject.put("status", "Transaction successfully fetched");
-//                            jsonResponse = jsonObject.toString();
-//                        }
-//
-//                    } catch (JSONException e) {
-//                        e.printStackTrace();
-//                    }
-//                    Gson gson = new Gson();
-//                    Type type = new TypeToken<RequeryResponse>() {}.getType();
-//                    RequeryResponse requeryResponse = gson.fromJson(jsonResponse, type);
-//                    callback.onSuccess(requeryResponse, jsonResponse);
-//                }
-//                else {
-//                    try {
-//                        String errorBody = response.errorBody().string();
-//                        ErrorBody error = parseErrorJson(errorBody);
-//                        callback.onError(error.getReason(), errorBody);
-//                    } catch (IOException | NullPointerException e) {
-//                        e.printStackTrace();
-//                        callback.onError("error", errorParsingError);
-//                    }
-//                }
-//            }
-//
-//            @Override
-//            public void onFailure(Call<String> call, Throwable t) {
-//                callback.onError(t.getReason(), "");
-//            }
-//        });
-//    }
-
-//    @Override
-//    public void getBanks(final Callbacks.OnGetBanksRequestComplete callback) {
-//
-//        createService();
-//
-//        Call<List<Bank>> call = service.getBanks();
-//
-//        call.enqueue(new Callback<List<Bank>>() {
-//            @Override
-//            public void onResponse(@NonNull Call<List<Bank>> call, @NonNull Response<List<Bank>> response) {
-//                if (response.isSuccessful()) {
-//                    callback.onSuccess(response.body());
-//                }
-//                else {
-//                    try {
-//                        ErrorBody error = (ErrorBody) retrofit.
-//                                responseBodyConverter(ErrorBody.class, new Annotation[0])
-//                                .convert(response.errorBody());
-//                        callback.onError(error.getReason());
-//                    }
-//                    catch (Exception e) {
-//                        e.printStackTrace();
-//                        callback.onError("An error occurred while retrieving banks");
-//                    }
-//                }
-//            }
-//
-//            @Override
-//            public void onFailure(Call<List<Bank>> call, Throwable t) {
-//                callback.onError(t.getReason());
-//            }
-//        });
-//    }
 
     @Override
-    public void chargeAccount(ChargeRequestBody body, final Callbacks.OnChargeRequestComplete callback) {
+    public void chargeMomo(gh.com.payswitch.thetellerandroid.ghmobilemoney.ChargeRequestBody body, final Callbacks.OnChargeRequestComplete callback) {
 
-        createService();
+        service = createService(ApiService.class, "testuser", "MTk1NjQyMTQ4N3Rlc3R1c2VyVGh1LUZlYiAxNi0yMDE5");
 
-        Call<String> call = service.charge(body);
+//        Call<ChargeResponse> call = service.charge(body);
+        Call<String> call = service.chargeMomo(body);
 
         call.enqueue(new Callback<String>() {
             @Override
             public void onResponse(Call<String> call, Response<String> response) {
+
                 if (response.isSuccessful()) {
                     Gson gson = new Gson();
                     Type type = new TypeToken<ChargeResponse>() {}.getType();
@@ -323,87 +120,6 @@ public class NetworkRequestImpl implements DataRequest.NetworkRequest {
         });
 
     }
-
-//    @Override
-//    public void chargeToken(Payload payload, final Callbacks.OnChargeRequestComplete callback) {
-//
-//        createService();
-//
-//        Call<String> call = service.chargeToken(payload);
-//
-//        call.enqueue(new Callback<String>() {
-//            @Override
-//            public void onResponse(Call<String> call, Response<String> response) {
-//
-//                if (response.isSuccessful()) {
-//                    Gson gson = new Gson();
-//                    Type type = new TypeToken<ChargeResponse>() {}.getType();
-//                    ChargeResponse chargeResponse = gson.fromJson(response.body(), type);
-//                    callback.onSuccess(chargeResponse, response.body());
-//                }
-//                else {
-//                    try {
-//                        String errorBody = response.errorBody().string();
-//                        ErrorBody error = parseErrorJson(errorBody);
-//
-//                        if (error.getReason().equalsIgnoreCase("ERR") &&
-//                                error.getData() != null &&
-//                                error.getData().getCode().contains("expired")) {
-//                            callback.onError("expired", errorBody);
-//                        }
-//                        else {
-//                            callback.onError(error.getReason(), errorBody);
-//                        }
-//                    } catch (IOException | NullPointerException e) {
-//                        e.printStackTrace();
-//                        callback.onError("error", errorParsingError);
-//                    }
-//                }
-//            }
-//
-//            @Override
-//            public void onFailure(Call<String> call, Throwable t) {
-//                callback.onError(t.getReason(), "");
-//            }
-//        });
-//
-//    }
-
-//    @Override
-//    public void getFee(FeeCheckRequestBody body, final Callbacks.OnGetFeeRequestComplete callback) {
-//
-//        createService();
-//
-//        Call<FeeCheckResponse> call = service.checkFee(body);
-//
-//        call.enqueue(new Callback<FeeCheckResponse>() {
-//            @Override
-//            public void onResponse(Call<FeeCheckResponse> call, Response<FeeCheckResponse> response) {
-//
-//                if (response.isSuccessful()) {
-//                    callback.onSuccess(response.body());
-//                }
-//                else {
-//                    try {
-//                        ErrorBody error = (ErrorBody) retrofit.
-//                                responseBodyConverter(ErrorBody.class, new Annotation[0])
-//                                .convert(response.errorBody());
-//                        callback.onError(error.getReason());
-//                    }
-//                    catch (Exception e) {
-//                        e.printStackTrace();
-//                        callback.onError("An error occurred while retrieving transaction charge");
-//                    }
-//                }
-//            }
-//
-//            @Override
-//            public void onFailure(Call<FeeCheckResponse> call, Throwable t) {
-//                callback.onError(t.getReason());
-//            }
-//        });
-//    }
-
 
     public void setBaseUrl(String baseUrl) {
         this.baseUrl = baseUrl;
@@ -413,26 +129,44 @@ public class NetworkRequestImpl implements DataRequest.NetworkRequest {
         return this.baseUrl;
     }
 
-    private void createService() {
-
-        HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
-        logging.setLevel(HttpLoggingInterceptor.Level.BODY);
-
-        OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
-        OkHttpClient okHttpClient = httpClient.addNetworkInterceptor(logging).connectTimeout(60, TimeUnit.SECONDS)
-                .readTimeout(60, TimeUnit.SECONDS)
-                .writeTimeout(60, TimeUnit.SECONDS).build();
-
-        if (retrofit == null) {
-            retrofit = new Retrofit.Builder()
-                    .baseUrl(getBaseUrl() == null ? thetellerActivity.BASE_URL : getBaseUrl())
-                    .client(okHttpClient)
-                    .addConverterFactory(ScalarsConverterFactory.create())
-                    .addConverterFactory(GsonConverterFactory.create())
-                    .build();
+    private ApiService createService(
+            Class<ApiService> serviceClass, String username, String password) {
+        if (!TextUtils.isEmpty(username) && !TextUtils.isEmpty(password)) {
+            String authToken = Credentials.basic(username, password);
+            return createService(serviceClass, authToken);
         }
 
-        service = retrofit.create(ApiService.class);
+        return createService(serviceClass, null, null);
+    }
+
+    private ApiService createService(Class<ApiService> serviceClass, String authToken) {
+
+        if (!TextUtils.isEmpty(authToken)) {
+            AuthenticationInterceptor interceptor = new AuthenticationInterceptor(authToken);
+            HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
+            logging.setLevel(HttpLoggingInterceptor.Level.BODY);
+
+            OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
+
+            if (!httpClient.interceptors().contains(interceptor)) {
+                OkHttpClient okHttpClient = httpClient.addInterceptor(interceptor)
+                        .addNetworkInterceptor(logging)
+                        .connectTimeout(60, TimeUnit.SECONDS)
+                        .readTimeout(60, TimeUnit.SECONDS)
+                        .writeTimeout(60, TimeUnit.SECONDS).build();
+
+                if (retrofit == null) {
+                    retrofit = new Retrofit.Builder()
+                            .baseUrl(getBaseUrl() == null ? thetellerActivity.BASE_URL : getBaseUrl())
+                            .client(okHttpClient)
+                            .addConverterFactory(ScalarsConverterFactory.create())
+                            .addConverterFactory(GsonConverterFactory.create())
+                            .build();
+                }
+            }
+        }
+
+        return retrofit.create(serviceClass);
     }
 
 }

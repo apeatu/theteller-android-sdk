@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
     EditText currencyEt;
     EditText fNameEt;
     EditText lNameEt;
+    EditText voucherCode;
     Button startPayBtn;
     SwitchCompat cardSwitch;
     SwitchCompat ghMobileMoneySwitch;
@@ -58,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
         currencyEt = findViewById(R.id.currencyEt);
         fNameEt = findViewById(R.id.fNameEt);
         lNameEt = findViewById(R.id.lnameEt);
+//        voucherCode = findViewById(R.id.voucherCodeEt);
         startPayBtn = findViewById(R.id.startPaymentBtn);
         cardSwitch = findViewById(R.id.cardPaymentSwitch);
         ghMobileMoneySwitch = findViewById(R.id.accountGHMobileMoneySwitch);
@@ -112,30 +114,30 @@ public class MainActivity extends AppCompatActivity {
 
         boolean valid = true;
 
-        if (amount.length() == 0) {
-            amount = "0";
-        }
-
-        //check for compulsory fields
-        if (!Utils.isEmailValid(email)) {
-            valid = false;
-            emailEt.setError("A valid email is required");
-        }
-
-        if (apiKey.length() < 1){
-            valid = false;
-            apiKeyEt.setError("A valid public key is required");
-        }
-
-        if (txRef.length() < 1){
-            valid = false;
-            txRefEt.setError("A valid txRef key is required");
-        }
-
-        if (currency.length() < 1){
-            valid = false;
-            currencyEt.setError("A valid currency code is required");
-        }
+//        if (amount.length() == 0) {
+//            amount = "0";
+//        }
+//
+//        //check for compulsory fields
+//        if (!Utils.isEmailValid(email)) {
+//            valid = false;
+//            emailEt.setError("A valid email is required");
+//        }
+//
+//        if (apiKey.length() < 1){
+//            valid = false;
+//            apiKeyEt.setError("A valid public key is required");
+//        }
+//
+//        if (txRef.length() < 1){
+//            valid = false;
+//            txRefEt.setError("A valid txRef key is required");
+//        }
+//
+//        if (currency.length() < 1){
+//            valid = false;
+//            currencyEt.setError("A valid currency code is required");
+//        }
 
         if (valid) {
             ghMobileMoneyPresenter = new GhMobileMoneyPresenter(this, new GhMobileMoneyFragment());
@@ -144,37 +146,40 @@ public class MainActivity extends AppCompatActivity {
             List<SavedCard> checkForSavedCards = cardPresenter.checkForSavedCards(email);
 
             if (checkForSavedCards.isEmpty() && checkForSavedMobileMoney.isEmpty()){
-                new thetellerManager(this).setAmount(Double.parseDouble(amount))
-                    .setCurrency(currency)
-                    .setEmail(email)
-                    .setfName(fName)
-                    .setlName(lName)
-                    .setNarration(narration)
+                new thetellerManager(this).setAmount(Long.parseLong("1"))
+                    .setCurrency("GHS")
+                    .setEmail("paasammy@yahoo.com")
+                    .setfName("Samuel")
+                    .setlName("Gyimah")
+                    .setMerchant_id("TTM-00000001")
+                    .setTerminal_id("00000011")
+                    .setVoucher_code("")
+                    .setNarration("testing with Sam")
                     .setApiKey(apiKey)
                     .setTxRef(txRef)
+                    .set3dUrl("https://23.239.22.186/loader.html")
                     .acceptCardPayments(cardSwitch.isChecked())
                     .acceptGHMobileMoneyPayments(ghMobileMoneySwitch.isChecked())
                     .onStagingEnv(!isLiveSwitch.isChecked())
-//                    .setMeta(meta)
-//                    .withTheme(R.style.TestNewTheme)
                     .initialize();
             }else {
-                new thetellerManager(this).setAmount(Double.parseDouble(amount))
-                    .setCurrency(currency)
-                    .setEmail(email)
-                    .setfName(fName)
-                    .setlName(lName)
-                    .setNarration(narration)
+                new thetellerManager(this).setAmount(Long.parseLong("1"))
+                    .setCurrency("GHS")
+                    .setEmail("paasammy@yahoo.com")
+                    .setfName("Samuel")
+                    .setlName("Gyimah")
+                    .setMerchant_id("TTM-00000001")
+                    .setTerminal_id("00000011")
+                    .setVoucher_code("")
+                    .setNarration("testing with Sam")
                     .setApiKey(apiKey)
                     .setTxRef(txRef)
+                    .set3dUrl("https://23.239.22.186/loader.html")
                     .acceptCardPayments(cardSwitch.isChecked())
                     .acceptGHMobileMoneyPayments(ghMobileMoneySwitch.isChecked())
                     .onStagingEnv(!isLiveSwitch.isChecked())
-//                    .setMeta(meta)
-//                    .withTheme(R.style.TestNewTheme)
                     .chooseCardOrNumber();
             }
-
         }
     }
 

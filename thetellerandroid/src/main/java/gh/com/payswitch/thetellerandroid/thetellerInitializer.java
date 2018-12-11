@@ -10,9 +10,13 @@ public class thetellerInitializer {
     String txRef;
     String narration;
     String currency;
+    String merchant_id;
+    String terminal_id;
+    String voucher_code;
     String fName;
     String lName;
     String meta;
+    String d_response_url;
     String payment_plan;
     boolean withCard = true;
     boolean withGHMobileMoney = true;
@@ -21,9 +25,9 @@ public class thetellerInitializer {
     boolean staging = true;
 
     public thetellerInitializer(String email, double amount, String apiKey, String txRef, String narration,
-                                String currency, String fName,
+                                String currency, String merchant_id, String terminal_id, String voucher_code, String fName,
                                 String lName, boolean withCard,
-                                boolean withGHMobileMoney, int theme,
+                                boolean withGHMobileMoney, String d_response_url,  int theme,
                                 boolean staging, boolean allowSaveCard, String meta, String payment_plan) {
         this.email = email;
         this.amount = amount;
@@ -31,10 +35,14 @@ public class thetellerInitializer {
         this.txRef = txRef;
         this.narration = narration;
         this.currency = currency;
+        this.merchant_id = merchant_id;
+        this.terminal_id = terminal_id;
+        this.voucher_code = voucher_code;
         this.fName = fName;
         this.lName = lName;
         this.withGHMobileMoney = withGHMobileMoney;
         this.withCard = withCard;
+        this.d_response_url = d_response_url;
         this.theme = theme;
         this.staging = staging;
         this.allowSaveCard = allowSaveCard;
@@ -83,6 +91,10 @@ public class thetellerInitializer {
 
     public void setWithGHMobileMoney(boolean withGHMobileMoney) {
         this.withGHMobileMoney = withGHMobileMoney;
+    }
+
+    public String get3dUrl() {
+        return d_response_url;
     }
 
     public boolean isWithCard() {
@@ -139,6 +151,26 @@ public class thetellerInitializer {
 
     public void setCurrency(String currency) {
         this.currency = currency;
+    }
+
+    public String getMerchant_id() {
+        return merchant_id;
+    }
+
+    public void setMerchant_id(String merchant_id) {
+        this.merchant_id = merchant_id;
+    }
+
+    public String getTerminal_id() {
+        return terminal_id;
+    }
+
+    public void setTerminal_id(String terminal_id) {
+        this.terminal_id = terminal_id;
+    }
+
+    public String getVoucher_code() {
+        return voucher_code;
     }
 
     public String getfName() {

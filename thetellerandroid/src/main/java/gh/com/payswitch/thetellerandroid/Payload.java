@@ -15,6 +15,14 @@ public class Payload
 
     private String payment_plan;
 
+    private String merchant_id;
+
+    private String terminal_id;
+
+    private String voucher_code;
+
+    private String d_response_url;
+
     public String getIs_mpesa() {
         return is_mpesa;
     }
@@ -37,8 +45,8 @@ public class Payload
 
     public Payload(List<Meta> meta, String narration,
                    String expirymonth, String PBFPubKey, String IP, String lastname,
-                   String firstname, String currency, String amount,
-                   String email, String expiryyear, String cvv, String device_fingerprint,
+                   String firstname, String currency, String merchant_id, String terminal_id,
+                   String voucher_code, String d_response_url, String amount, String email, String expiryyear, String cvv, String device_fingerprint,
                    String cardno, String txRef, String cardType) {
         this.narration = narration;
         this.expirymonth = expirymonth;
@@ -47,8 +55,12 @@ public class Payload
         this.lastname = lastname;
         this.firstname = firstname;
         this.currency = currency;
+        this.merchant_id = merchant_id;
+        this.terminal_id = terminal_id;
+        this.voucher_code = voucher_code;
         this.amount = amount;
         this.email = email;
+        this.d_response_url = d_response_url;
         this.expiryyear = expiryyear;
         this.cvv = cvv;
         this.device_fingerprint = device_fingerprint;
@@ -65,6 +77,29 @@ public class Payload
 
     }
 
+    public String getMerchant_id() {
+        return merchant_id;
+    }
+
+    public void setMerchant_id(String merchant_id) {
+        this.merchant_id = merchant_id;
+    }
+
+    public String getTerminal_id() {
+        return terminal_id;
+    }
+
+    public void setTerminal_id(String terminal_id) {
+        this.terminal_id = terminal_id;
+    }
+
+    public String getVoucherCode() {
+        return voucher_code;
+    }
+
+    public void setVoucherCode(String voucher_code) {
+        this.voucher_code = voucher_code;
+    }
 
     public String getBillingcity() {
         return billingcity;
@@ -104,8 +139,8 @@ public class Payload
     private String billingcountry;
 
     public Payload(List<Meta> meta, String narration, String IP, String accountnumber, String accountbank,
-                   String lastname, String firstname, String currency, String amount,
-                   String email, String device_fingerprint, String txRef, String PBFPubKey,
+                   String lastname, String firstname, String currency, String merchant_id, String terminal_id,
+                   String voucher_code, String amount, String email, String device_fingerprint, String txRef, String PBFPubKey,
                    String billingaddress, String billingcity, String billingstate, String billingzip, String billingcountry) {
         this.narration = narration;
         this.IP = IP;
@@ -114,8 +149,12 @@ public class Payload
         this.lastname = lastname;
         this.firstname = firstname;
         this.currency = currency;
+        this.merchant_id = merchant_id;
+        this.terminal_id = terminal_id;
+        this.voucher_code = voucher_code;
         this.amount = amount;
         this.email = email;
+        this.d_response_url = d_response_url;
         this.device_fingerprint = device_fingerprint;
         this.txRef = txRef;
         this.apiKey = PBFPubKey;
@@ -141,6 +180,9 @@ public class Payload
                    String lastname,
                    String firstname,
                    String currency,
+                   String merchant_id,
+                   String terminal_id,
+                   String voucher_code,
                    String amount,
                    String email,
                    String device_fingerprint,
@@ -153,6 +195,9 @@ public class Payload
         this.lastname = lastname;
         this.firstname = firstname;
         this.currency = currency;
+        this.merchant_id = merchant_id;
+        this.terminal_id = terminal_id;
+        this.voucher_code = voucher_code;
         this.amount = amount;
         this.email = email;
         this.device_fingerprint = device_fingerprint;
@@ -169,7 +214,8 @@ public class Payload
     }
 
     public Payload(List<Meta> meta, String narration, String IP, String accountnumber, String accountbank,
-                   String lastname, String firstname, String currency, String amount,
+                   String lastname, String firstname, String currency, String merchant_id, String terminal_id,
+                   String voucher_code, String amount, String d_response_url,
                    String email, String device_fingerprint, String txRef, String PBFPubKey) {
         this.meta = meta;
         this.narration = narration;
@@ -179,7 +225,11 @@ public class Payload
         this.lastname = lastname;
         this.firstname = firstname;
         this.currency = currency;
+        this.merchant_id = merchant_id;
+        this.terminal_id = terminal_id;
+        this.voucher_code = voucher_code;
         this.amount = amount;
+        this.d_response_url = d_response_url;
         this.email = email;
         this.device_fingerprint = device_fingerprint;
         this.txRef = txRef;
@@ -426,6 +476,14 @@ public class Payload
         return amount;
     }
 
+    public void set3dUrl(String d_response_url) {
+        this.d_response_url = d_response_url;
+    }
+
+    public String get3dUrl() {
+        return d_response_url;
+    }
+
     public void setAmount (String amount)
     {
         this.amount = amount;
@@ -498,7 +556,7 @@ public class Payload
     @Override
     public String toString()
     {
-        return "ClassPojo [expirymonth = "+expirymonth+", apiKey = "+ apiKey +", IP = "+IP+", lastname = "+lastname+", firstname = "+firstname+", currency = "+currency+", amount = "+amount+", email = "+email+", expiryyear = "+expiryyear+", cvv = "+cvv+", device_fingerprint = "+device_fingerprint+", cardno = "+cardno+", txRef = "+txRef+","+cardType+"]";
+        return "ClassPojo [expirymonth = "+expirymonth+", apiKey = "+ apiKey +", IP = "+IP+", lastname = "+lastname+", firstname = "+firstname+", currency = "+currency+", narration"+narration+", merchant_id"+merchant_id+", terminal_id"+terminal_id+", voucher_code"+voucher_code+", amount = "+amount+", email = "+email+", expiryyear = "+expiryyear+", cvv = "+cvv+", device_fingerprint = "+device_fingerprint+", d_response_url"+d_response_url+", cardno = "+cardno+", txRef = "+txRef+","+cardType+"]";
     }
 
     public void setCardBIN(String cardBIN) {

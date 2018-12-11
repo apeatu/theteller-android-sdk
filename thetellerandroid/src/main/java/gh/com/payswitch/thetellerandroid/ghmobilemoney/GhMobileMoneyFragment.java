@@ -175,7 +175,10 @@ public class GhMobileMoneyFragment extends Fragment implements GhMobileMoneyCont
 
             PayloadBuilder builder = new PayloadBuilder();
             builder.setAmount(thetellerInitializer.getAmount() + "")
+                    .setNarration(thetellerInitializer.getNarration())
                     .setCurrency(thetellerInitializer.getCurrency())
+                    .setMerchant_id(thetellerInitializer.getMerchant_id())
+                    .setVoucher_code(thetellerInitializer.getVoucher_code())
                     .setEmail(thetellerInitializer.getEmail())
                     .setFirstname(thetellerInitializer.getfName())
                     .setLastname(thetellerInitializer.getlName())
@@ -354,7 +357,11 @@ public class GhMobileMoneyFragment extends Fragment implements GhMobileMoneyCont
                     bottomSheetDialog.dismiss();
                     final PayloadBuilder builder = new PayloadBuilder();
                     builder.setAmount(thetellerInitializer.getAmount() + "")
+                            .setNarration(thetellerInitializer.getNarration())
                             .setCurrency(thetellerInitializer.getCurrency())
+                            .setMerchant_id(thetellerInitializer.getMerchant_id())
+                            .setTerminal_id(thetellerInitializer.getTerminal_id())
+                            .setVoucher_code(thetellerInitializer.getVoucher_code())
                             .setEmail(thetellerInitializer.getEmail())
                             .setFirstname(thetellerInitializer.getfName())
                             .setLastname(thetellerInitializer.getlName())

@@ -359,9 +359,12 @@ public class CardFragment extends Fragment implements View.OnClickListener, Card
             //make request
             PayloadBuilder builder = new PayloadBuilder();
             builder.setAmount(thetellerInitializer.getAmount() + "")
+                .setNarration(thetellerInitializer.getNarration())
                 .setCardno(cardNoStripped)
+                .set3dUrl(thetellerInitializer.get3dUrl())
                 .setEmail(thetellerInitializer.getEmail())
                 .setCurrency(thetellerInitializer.getCurrency())
+                .setMerchant_id(thetellerInitializer.getMerchant_id())
                 .setCvv(cvv).setFirstname(thetellerInitializer.getfName())
                 .setLastname(thetellerInitializer.getlName())
                 .setIP(Utils.getDeviceImei(getActivity()))

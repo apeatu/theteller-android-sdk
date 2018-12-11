@@ -1,31 +1,21 @@
 package gh.com.payswitch.thetellerandroid.ghmobilemoney;
 
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.util.Log;
 
 import java.util.Collections;
 import java.util.List;
 
-import gh.com.payswitch.thetellerandroid.FeeCheckRequestBody;
 import gh.com.payswitch.thetellerandroid.Payload;
 import gh.com.payswitch.thetellerandroid.R;
 import gh.com.payswitch.thetellerandroid.data.SavedPhone;
 import gh.com.payswitch.thetellerandroid.data.SharedPrefsRequestImpl;
-import gh.com.payswitch.thetellerandroid.thetellerConstants;
 import gh.com.payswitch.thetellerandroid.Utils;
-import gh.com.payswitch.thetellerandroid.card.ChargeRequestBody;
 import gh.com.payswitch.thetellerandroid.data.Callbacks;
 import gh.com.payswitch.thetellerandroid.data.NetworkRequestImpl;
-import gh.com.payswitch.thetellerandroid.data.RequeryRequestBody;
-import gh.com.payswitch.thetellerandroid.data.RequeryRequestBodyv2;
 import gh.com.payswitch.thetellerandroid.responses.ChargeResponse;
-import gh.com.payswitch.thetellerandroid.responses.FeeCheckResponse;
-import gh.com.payswitch.thetellerandroid.responses.RequeryResponse;
-import gh.com.payswitch.thetellerandroid.responses.RequeryResponsev2;
-import gh.com.payswitch.thetellerandroid.thetellerInitializer;
 
-import static gh.com.payswitch.thetellerandroid.thetellerConstants.theteller;
+import static java.lang.Long.parseLong;
 
 public class GhMobileMoneyPresenter implements GhMobileMoneyContract.UserActionsListener {
     private Context context;
@@ -38,18 +28,18 @@ public class GhMobileMoneyPresenter implements GhMobileMoneyContract.UserActions
 
     @Override
     public void chargeGhMobileMoney(final Payload payload, final String apiKey) {
-        String cardRequestBodyAsString = Utils.convertChargeRequestPayloadToJson(payload);
-        String encryptedCardRequestBody = Utils.getEncryptedData(cardRequestBodyAsString, apiKey).trim().replaceAll("\\n", "");
+//        String cardRequestBodyAsString = Utils.convertChargeRequestPayloadToJson(payload);
+        String cardRequestBodyAsString = Utils.convertChargeRequestPayloadToJson(payload).trim().replaceAll("\\n", "");
+//        String encryptedCardRequestBody = Utils.getEncryptedData(cardRequestBodyAsString, apiKey).trim().replaceAll("\\n", "");
 
-        Log.d("encrypted", encryptedCardRequestBody);
+        Log.d("encrypted", cardRequestBodyAsString);
 
         ChargeRequestBody body = new ChargeRequestBody();
-        body.setApiKey(payload.getApiKey());
-        body.setClient(encryptedCardRequestBody);
+        body.setClient(Utils.minorUnitAmount(payload.getAmount()), "000200", payload.getTxRef(), payload.getNarration(), payload.getMerchant_id(), payload.getPhonenumber(), payload.getNetwork(), payload.getVoucherCode());
 
         mView.showProgressIndicator(true);
 
-        new NetworkRequestImpl().chargeCard(body, new Callbacks.OnChargeRequestComplete() {
+        new NetworkRequestImpl().chargeMomo(body, new Callbacks.OnChargeRequestComplete() {
             @Override
             public void onSuccess(ChargeResponse response, String responseAsJSONString) {
 

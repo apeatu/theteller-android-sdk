@@ -95,6 +95,7 @@ public class CardOrNumberActivity extends FragmentActivity {
                 public void onPhoneSelected(SavedPhone savedPhone) {
                     final PayloadBuilder builder = new PayloadBuilder();
                     builder.setAmount(thetellerInitializer.getAmount() + "")
+                            .setNarration(thetellerInitializer.getNarration())
                             .setCurrency(thetellerInitializer.getCurrency())
                             .setEmail(thetellerInitializer.getEmail())
                             .setFirstname(thetellerInitializer.getfName())

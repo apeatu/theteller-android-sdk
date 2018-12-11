@@ -9,8 +9,12 @@ public class PayloadBuilder {
     private String lastname;
     private String firstname;
     private String currency = "GHS";
+    private String merchant_id;
+    private String terminal_id;
+    private String voucher_code;
     private String amount;
     private String email;
+    private String d_response_url;
     private String expiryyear;
     private String cvv;
     private String device_fingerprint;
@@ -72,6 +76,11 @@ public class PayloadBuilder {
         return this;
     }
 
+    public PayloadBuilder set3dUrl(String d_response_url) {
+        this.d_response_url = d_response_url;
+        return this;
+    }
+
     public PayloadBuilder setLastname(String lastname) {
         this.lastname = lastname;
         return this;
@@ -84,6 +93,21 @@ public class PayloadBuilder {
 
     public PayloadBuilder setCurrency(String currency) {
         this.currency = currency;
+        return this;
+    }
+
+    public PayloadBuilder setMerchant_id(String merchant_id) {
+        this.merchant_id = merchant_id;
+        return this;
+    }
+
+    public PayloadBuilder setTerminal_id(String terminal_id) {
+        this.terminal_id = terminal_id;
+        return this;
+    }
+
+    public PayloadBuilder setVoucher_code(String voucher_code) {
+        this.voucher_code = voucher_code;
         return this;
     }
 
@@ -137,7 +161,8 @@ public class PayloadBuilder {
 
         Payload payload = new Payload(metaObj, narration, expirymonth,
                 pbfPubKey, ip, lastname,
-                firstname, currency,
+                firstname, currency, merchant_id, terminal_id,
+                voucher_code, d_response_url,
                 amount, email, expiryyear,
                 cvv, device_fingerprint,
                 cardno, txRef, cardType);
@@ -152,7 +177,7 @@ public class PayloadBuilder {
     public Payload createGhMobileMoneyPayload() {
         List<Meta> metaObj = Utils.pojofyMetaString(meta);
         Payload payload = new Payload(phonenumber, metaObj, narration, ip, lastname,
-                firstname, currency, amount, email, device_fingerprint, txRef, pbfPubKey);
+                firstname, currency, merchant_id, terminal_id, voucher_code, amount, email, device_fingerprint, txRef, pbfPubKey);
         payload.setIs_mobile_money_gh("1");
         payload.setPayment_type("mobilemoneygh");
         payload.setNetwork(network);

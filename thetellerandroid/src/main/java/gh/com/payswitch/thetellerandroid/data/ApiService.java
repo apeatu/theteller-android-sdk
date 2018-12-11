@@ -1,22 +1,23 @@
 package gh.com.payswitch.thetellerandroid.data;
 
-import gh.com.payswitch.thetellerandroid.FeeCheckRequestBody;
-import gh.com.payswitch.thetellerandroid.Payload;
 import gh.com.payswitch.thetellerandroid.card.ChargeRequestBody;
-import gh.com.payswitch.thetellerandroid.responses.FeeCheckResponse;
-
-import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
-import retrofit2.http.GET;
+import retrofit2.http.Headers;
 import retrofit2.http.POST;
 
 public interface ApiService {
 
-    @POST("/mobile/sdk/process.do")
+    @Headers("Content-Type: application/json")
+    @POST("/v1.1/transaction/process")
 //    Call<ChargeResponse> charge(@Body ChargeRequestBody body);
-    Call<String> charge(@Body ChargeRequestBody body);
+    Call<String> chargeCard(@Body gh.com.payswitch.thetellerandroid.card.ChargeRequestBody body);
+
+    @Headers("Content-Type: application/json")
+    @POST("/v1.1/transaction/process")
+//    Call<ChargeResponse> charge(@Body ChargeRequestBody body);
+    Call<String> chargeMomo(@Body gh.com.payswitch.thetellerandroid.ghmobilemoney.ChargeRequestBody body);
 
 //    @POST("/flwv3-pug/getpaidx/api/validatecharge")
 //    Call<String> validateCardCharge(@Body ValidateChargeBody body);

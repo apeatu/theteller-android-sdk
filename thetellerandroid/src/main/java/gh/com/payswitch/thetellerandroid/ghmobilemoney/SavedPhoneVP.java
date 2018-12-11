@@ -10,7 +10,6 @@ import android.widget.Toast;
 import gh.com.payswitch.thetellerandroid.CardOrNumberActivity;
 import gh.com.payswitch.thetellerandroid.Payload;
 import gh.com.payswitch.thetellerandroid.Utils;
-import gh.com.payswitch.thetellerandroid.card.ChargeRequestBody;
 import gh.com.payswitch.thetellerandroid.data.Callbacks;
 import gh.com.payswitch.thetellerandroid.data.NetworkRequestImpl;
 import gh.com.payswitch.thetellerandroid.responses.ChargeResponse;
@@ -96,15 +95,13 @@ public class SavedPhoneVP {
         Log.d("encrypted", encryptedCardRequestBody);
 
         ChargeRequestBody body = new ChargeRequestBody();
-//        body.setAlg("3DES-24");
-        body.setApiKey(payload.getApiKey());
-        body.setClient(encryptedCardRequestBody);
+        body.setClient(Utils.minorUnitAmount(payload.getAmount()), "000200", payload.getTxRef(), payload.getNarration(), payload.getMerchant_id(), payload.getPhonenumber(), payload.getNetwork(), payload.getVoucherCode());
 
         showProgressIndicator(true, activity);
 
         NetworkRequestImpl networkRequestImpl = new NetworkRequestImpl();
         networkRequestImpl.setBaseUrl(CardOrNumberActivity.BASE_URL);
-        networkRequestImpl.chargeCard(body, new Callbacks.OnChargeRequestComplete() {
+        networkRequestImpl.chargeMomo(body, new Callbacks.OnChargeRequestComplete() {
             @Override
             public void onSuccess(ChargeResponse response, String responseAsJSONString) {
 

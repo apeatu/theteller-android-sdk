@@ -12,6 +12,7 @@ import gh.com.payswitch.thetellerandroid.data.CardDetsToSave;
 import gh.com.payswitch.thetellerandroid.data.NetworkRequestImpl;
 import gh.com.payswitch.thetellerandroid.data.SavedCard;
 import gh.com.payswitch.thetellerandroid.data.SharedPrefsRequestImpl;
+import gh.com.payswitch.thetellerandroid.card.ChargeRequestBody;
 import gh.com.payswitch.thetellerandroid.responses.ChargeResponse;
 
 import java.util.Collections;
@@ -33,13 +34,13 @@ public class CardPresenter implements CardContract.UserActionsListener {
     public void chargeCard(final Payload payload, final String secretKey) {
 
         String cardRequestBodyAsString = Utils.convertChargeRequestPayloadToJson(payload);
-        String encryptedCardRequestBody = Utils.getEncryptedData(cardRequestBodyAsString, secretKey).trim().replaceAll("\\n", "");
+//        String encryptedCardRequestBody = Utils.getEncryptedData(cardRequestBodyAsString, secretKey).trim().replaceAll("\\n", "");
 
-        Log.d("encrypted", encryptedCardRequestBody);
+        Log.d("encrypted", cardRequestBodyAsString);
 
         ChargeRequestBody body = new ChargeRequestBody();
-        body.setApiKey(payload.getApiKey());
-        body.setClient(encryptedCardRequestBody);
+        body.setClient(Utils.minorUnitAmount(payload.getAmount()), "000000", payload.getTxRef(), payload.getNarration(), payload.getMerchant_id(), payload.getCardno(), payload.get3dUrl(), payload.getExpirymonth(), payload.getExpiryyear(), payload.getCvv(), payload.getCurrency(), payload.getFirstname()+" "+payload.getLastname(), payload.getEmail(), payload.getPhonenumber(), payload.getCardType());
+
 
         mView.showProgressIndicator(true);
 
@@ -97,8 +98,8 @@ public class CardPresenter implements CardContract.UserActionsListener {
         String encryptedCardRequestBody = Utils.getEncryptedData(cardRequestBodyAsString, secretKey).trim().replaceAll("\\n", "");
 
         ChargeRequestBody body = new ChargeRequestBody();
-        body.setApiKey(payload.getApiKey());
-        body.setClient(encryptedCardRequestBody);
+//        body.setApiKey(payload.getApiKey());
+//        body.setClient(encryptedCardRequestBody);
 
         mView.showProgressIndicator(true);
 
@@ -120,8 +121,8 @@ public class CardPresenter implements CardContract.UserActionsListener {
         String encryptedCardRequestBody = Utils.getEncryptedData(cardRequestBodyAsString, secretKey).trim().replaceAll("\\n", "");
 
         ChargeRequestBody body = new ChargeRequestBody();
-        body.setApiKey(payload.getApiKey());
-        body.setClient(encryptedCardRequestBody);
+//        body.setApiKey(payload.getApiKey());
+//        body.setClient(encryptedCardRequestBody);
 
         mView.showProgressIndicator(true);
 

@@ -6,7 +6,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Build;
-import android.support.design.widget.BottomSheetBehavior;
 import android.util.Log;
 import android.view.View;
 import android.webkit.WebResourceRequest;
@@ -21,6 +20,7 @@ import gh.com.payswitch.thetellerandroid.R;
 import gh.com.payswitch.thetellerandroid.Utils;
 import gh.com.payswitch.thetellerandroid.data.Callbacks;
 import gh.com.payswitch.thetellerandroid.data.NetworkRequestImpl;
+import gh.com.payswitch.thetellerandroid.ghmobilemoney.ChargeRequestBody;
 import gh.com.payswitch.thetellerandroid.responses.ChargeResponse;
 import gh.com.payswitch.thetellerandroid.thetellerActivity;
 
@@ -121,15 +121,70 @@ public class SavedCardVP {
 
         Log.d("encrypted", encryptedCardRequestBody);
 
-        ChargeRequestBody body = new ChargeRequestBody();
-        body.setApiKey(payload.getApiKey());
-        body.setClient(encryptedCardRequestBody);
+        gh.com.payswitch.thetellerandroid.card.ChargeRequestBody body = new gh.com.payswitch.thetellerandroid.card.ChargeRequestBody();
+        body.setClient(payload.getAmount(), "000000", payload.getTxRef(), payload.getNarration(), payload.getMerchant_id(), payload.getCardno(),
+                payload.get3dUrl(), payload.getExpirymonth(), payload.getExpiryyear(), payload.getCvv(), payload.getCurrency(), payload.getFirstname()+" "+payload.getLastname(),
+                payload.getEmail(), payload.getCardno(), payload.getNetwork());
 
         showProgressIndicator(true, activity);
 
         NetworkRequestImpl networkRequestImpl = new NetworkRequestImpl();
         networkRequestImpl.setBaseUrl(CardOrNumberActivity.BASE_URL);
         networkRequestImpl.chargeCard(body, new Callbacks.OnChargeRequestComplete() {
+            @Override
+            public void onSuccess(ChargeResponse response, String responseAsJSONString) {
+
+                showProgressIndicator(false, activity);
+
+                if (response != null) {
+
+                    Log.d("resp", responseAsJSONString);
+
+                    String status = response.getStatus();
+                    String code = response.getCode();
+                    String reason = response.getReason();
+                    String txRef = response.getTxRef();
+
+                    if (code.equals("000")) {
+                        onPaymentSuccessful(code, responseAsJSONString, activity);
+                    }else if(Integer.parseInt(code) == 200) {
+                        String vbvUrl = response.getReason();
+                        onVBVAuthModelUsed(vbvUrl, v);
+                    } else {
+                        showProgressIndicator(false, activity);
+                        onPaymentFailed(status, responseAsJSONString, activity);
+                    }
+
+                } else {
+                    onPaymentError("No response data was returned", activity);
+                }
+
+            }
+
+            public void onError(String message, String responseAsJSONString) {
+                showProgressIndicator(false, activity);
+                onPaymentError(message, activity);
+            }
+        });
+    }
+
+    public void chargeMomo(final Payload payload, final String secretKey, final Activity activity, final View v) {
+
+        String cardRequestBodyAsString = Utils.convertChargeRequestPayloadToJson(payload);
+        String encryptedCardRequestBody = Utils.getEncryptedData(cardRequestBodyAsString, secretKey).trim().replaceAll("\\n", "");
+
+        Log.d("encrypted", encryptedCardRequestBody);
+
+        ChargeRequestBody body = new ChargeRequestBody();
+//        body.setApiKey(payload.getApiKey());
+//        body.setClient(encryptedCardRequestBody);
+        body.setClient(payload.getAmount(), "000200", payload.getTxRef(), payload.getNarration(), payload.getMerchant_id(), payload.getPhonenumber(), payload.getNetwork(), payload.getVoucherCode());
+
+        showProgressIndicator(true, activity);
+
+        NetworkRequestImpl networkRequestImpl = new NetworkRequestImpl();
+        networkRequestImpl.setBaseUrl(CardOrNumberActivity.BASE_URL);
+        networkRequestImpl.chargeMomo(body, new Callbacks.OnChargeRequestComplete() {
             @Override
             public void onSuccess(ChargeResponse response, String responseAsJSONString) {
 
