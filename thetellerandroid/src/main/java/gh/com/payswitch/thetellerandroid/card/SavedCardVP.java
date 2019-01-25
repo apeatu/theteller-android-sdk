@@ -90,7 +90,11 @@ public class SavedCardVP {
     }
 
     public void onVBVAuthModelUsed(String authUrlCrude, View v) {
-        webView = (WebView) v.findViewById(R.id.theteller_webview2);
+        if (v.findViewById(R.id.theteller_webview) == null) {
+            webView = (WebView) v.findViewById(R.id.theteller_webview2);
+        }else {
+            webView = (WebView) v.findViewById(R.id.theteller_webview);
+        }
 
         if (webView != null){
             webView.getSettings().setLoadsImagesAutomatically(true);
@@ -122,9 +126,10 @@ public class SavedCardVP {
         Log.d("encrypted", encryptedCardRequestBody);
 
         gh.com.payswitch.thetellerandroid.card.ChargeRequestBody body = new gh.com.payswitch.thetellerandroid.card.ChargeRequestBody();
-        body.setClient(payload.getAmount(), "000000", payload.getTxRef(), payload.getNarration(), payload.getMerchant_id(), payload.getCardno(),
+
+        body.setClient(Utils.minorUnitAmount(payload.getAmount()), "000000", payload.getTxRef(), payload.getNarration(), payload.getMerchant_id(), payload.getCardno(),
                 payload.get3dUrl(), payload.getExpirymonth(), payload.getExpiryyear(), payload.getCvv(), payload.getCurrency(), payload.getFirstname()+" "+payload.getLastname(),
-                payload.getEmail(), payload.getCardno(), payload.getNetwork());
+                payload.getEmail(), payload.getPhonenumber(), payload.getCardType());
 
         showProgressIndicator(true, activity);
 

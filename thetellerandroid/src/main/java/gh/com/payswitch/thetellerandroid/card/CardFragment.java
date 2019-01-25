@@ -31,10 +31,14 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
 import gh.com.payswitch.thetellerandroid.CVVFragment;
 import gh.com.payswitch.thetellerandroid.Payload;
 import gh.com.payswitch.thetellerandroid.PayloadBuilder;
 import gh.com.payswitch.thetellerandroid.R;
+import gh.com.payswitch.thetellerandroid.responses.ChargeResponse;
 import gh.com.payswitch.thetellerandroid.thetellerConstants;
 import gh.com.payswitch.thetellerandroid.thetellerActivity;
 import gh.com.payswitch.thetellerandroid.thetellerInitializer;
@@ -42,6 +46,7 @@ import gh.com.payswitch.thetellerandroid.Utils;
 import gh.com.payswitch.thetellerandroid.data.Callbacks;
 import gh.com.payswitch.thetellerandroid.data.SavedCard;
 
+import java.lang.reflect.Type;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -515,7 +520,7 @@ public class CardFragment extends Fragment implements View.OnClickListener, Card
      * @param authUrlCrude = URL to display in webview
      */
     @Override
-    public void onVBVAuthModelUsed(String authUrlCrude) {
+    public void onVBVAuthModelUsed(String authUrlCrude, String responseAsJSONString) {
 
         webView.getSettings().setLoadsImagesAutomatically(true);
         webView.getSettings().setJavaScriptEnabled(true);
@@ -759,6 +764,7 @@ public class CardFragment extends Fragment implements View.OnClickListener, Card
     // Manages the behavior when URLs are loaded
     public class MyBrowser extends WebViewClient {
         FrameLayout progressContainer;
+        String responseAsJString;
 
         @SuppressWarnings("deprecation")
         @Override
@@ -793,8 +799,49 @@ public class CardFragment extends Fragment implements View.OnClickListener, Card
             }
             else {
                 if (url.contains("code=000")) {
+                    ChargeResponse chargeResponse = new ChargeResponse();
+                    chargeResponse.setCode("000");
+                    chargeResponse.setStatus("approved");
+                    chargeResponse.setReason("Transaction successful!");
+                    chargeResponse.setTxRef(thetellerInitializer.getTxRef());
                     getActivity().finish();
-//                    Save VBV Cards Here
+                    presenter.saveThisCard(
+                            thetellerInitializer.getEmail(),
+                            thetellerActivity.getApiKey(),
+                            cardNoTv.getText().toString(),
+                            cardExpiryTv.getText().toString().substring(0,2),
+                            cardExpiryTv.getText().toString().substring(3,5),
+                            cardType);
+                    Gson gson = new Gson();
+                    responseAsJString = gson.toJson(chargeResponse);
+                    Intent intent = new Intent();
+                    intent.putExtra("response", responseAsJString);
+                    Log.wtf("response", responseAsJString);
+
+                    if (getActivity() != null) {
+                        getActivity().setResult(thetellerActivity.RESULT_SUCCESS, intent);
+                        getActivity().finish();
+                    }
+
+                }
+                if (url.contains("code=100&status=Declined")){
+                    ChargeResponse chargeResponse = new ChargeResponse();
+                    chargeResponse.setCode("100");
+                    chargeResponse.setStatus("Declined");
+                    chargeResponse.setReason("Transaction failed!");
+                    chargeResponse.setTxRef(thetellerInitializer.getTxRef());
+                    getActivity().finish();
+                    Gson gson = new Gson();
+                    responseAsJString = gson.toJson(chargeResponse);
+                    Intent intent = new Intent();
+                    intent.putExtra("response", responseAsJString);
+                    Log.wtf("response", responseAsJString);
+
+                    if (getActivity() != null) {
+                        getActivity().setResult(thetellerActivity.RESULT_SUCCESS, intent);
+                        getActivity().finish();
+                    }
+
                 }
             }
             Log.d("URLS", url);

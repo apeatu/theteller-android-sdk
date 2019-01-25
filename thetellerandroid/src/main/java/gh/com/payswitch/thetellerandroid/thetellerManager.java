@@ -16,6 +16,7 @@ public class thetellerManager {
     private String email;
     private double amount = -1;
     private String apiKey;
+    private String apiUser;
     private String txRef;
     private String narration = "";
     private String currency = "GHS";
@@ -84,6 +85,10 @@ public class thetellerManager {
 
     public thetellerManager setApiKey(String publicKey) {
         this.apiKey = publicKey;
+        return this;
+    }
+    public thetellerManager setApiUser(String username) {
+        this.apiUser = username;
         return this;
     }
 
@@ -160,6 +165,6 @@ public class thetellerManager {
     }
 
     public thetellerInitializer createthetellerInitializer() {
-        return new thetellerInitializer(email, amount, apiKey, txRef, narration, currency, merchant_id, terminal_id, voucher_code, fName, lName, withCard, withGHMobileMoney, d_response_url, theme, staging, allowSaveCard, meta, payment_plan);
+        return new thetellerInitializer(email, amount, apiKey, apiUser, txRef, narration, currency, merchant_id, terminal_id, voucher_code, fName, lName, withCard, withGHMobileMoney, d_response_url, theme, staging, allowSaveCard, meta, payment_plan);
     }
 }

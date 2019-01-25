@@ -149,13 +149,14 @@ public class MainActivity extends AppCompatActivity {
             List<SavedCard> checkForSavedCards = cardPresenter.checkForSavedCards(email);
 
             if (checkForSavedCards.isEmpty() && checkForSavedMobileMoney.isEmpty()){
-                new thetellerManager(this).setAmount(Long.parseLong("1"))
+                new thetellerManager(this).setAmount(Long.parseLong("100"))
                     .setEmail("paasammy@yahoo.com")
                     .setfName("Samuel")
                     .setlName("Gyimah")
                     .setMerchant_id("TTM-00000001")
                     .setTerminal_id("00000011")
                     .setNarration("testing with Sam")
+                    .setApiUser("testuser")
                     .setApiKey(apiKey)
                     .setTxRef(txRef)
                     .set3dUrl("https://23.239.22.186/loader.html")
@@ -164,7 +165,7 @@ public class MainActivity extends AppCompatActivity {
                     .onStagingEnv(!isLiveSwitch.isChecked())
                     .initialize();
             }else {
-                new thetellerManager(this).setAmount(Long.parseLong("1"))
+                new thetellerManager(this).setAmount(Long.parseLong("100"))
                     .setEmail("paasammy@yahoo.com")
                     .setfName("Samuel")
                     .setlName("Gyimah")
@@ -172,6 +173,7 @@ public class MainActivity extends AppCompatActivity {
                     .setTerminal_id("00000011")
                     .setNarration("testing with Sam")
                     .setApiKey(apiKey)
+                    .setApiUser("testuser")
                     .setTxRef(txRef)
                     .set3dUrl(redirectUrl)
                     .acceptCardPayments(cardSwitch.isChecked())

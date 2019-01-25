@@ -39,6 +39,7 @@ public class thetellerActivity extends AppCompatActivity {
     thetellerInitializer thetellerInitializer;
     MainPagerAdapter mainPagerAdapter;
     static String apiKey;
+    static String apiUser;
     public static String BASE_URL;
     public static int RESULT_SUCCESS = 111;
     public static int RESULT_ERROR = 222;
@@ -77,6 +78,7 @@ public class thetellerActivity extends AppCompatActivity {
         }
 
         apiKey = thetellerInitializer.getApiKey();
+        apiUser = thetellerInitializer.getApiUser();
         tabLayout = (TabLayout) findViewById(R.id.sliding_tabs);
         pager = (ViewPager) findViewById(R.id.pager);
         permissionsRequiredLayout = (RelativeLayout) findViewById(R.id.theteller_permission_required_layout);
@@ -136,6 +138,7 @@ public class thetellerActivity extends AppCompatActivity {
     public static String getApiKey() {
         return apiKey;
     }
+    public static String getApiUser() {return apiUser;}
 
     public thetellerInitializer getThetellerInitializer() {
         return thetellerInitializer;

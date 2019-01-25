@@ -7,6 +7,7 @@ public class thetellerInitializer {
     String email;
     double amount;
     String apiKey;
+    String apiUser;
     String txRef;
     String narration;
     String currency;
@@ -24,7 +25,7 @@ public class thetellerInitializer {
     boolean allowSaveCard;
     boolean staging = true;
 
-    public thetellerInitializer(String email, double amount, String apiKey, String txRef, String narration,
+    public thetellerInitializer(String email, double amount, String apiKey, String apiUser, String txRef, String narration,
                                 String currency, String merchant_id, String terminal_id, String voucher_code, String fName,
                                 String lName, boolean withCard,
                                 boolean withGHMobileMoney, String d_response_url,  int theme,
@@ -32,6 +33,7 @@ public class thetellerInitializer {
         this.email = email;
         this.amount = amount;
         this.apiKey = apiKey;
+        this.apiUser = apiUser;
         this.txRef = txRef;
         this.narration = narration;
         this.currency = currency;
@@ -124,9 +126,14 @@ public class thetellerInitializer {
     public String getApiKey() {
         return apiKey;
     }
-
+    public String getApiUser() {
+        return apiUser;
+    }
     public void setApiKey(String apiKey) {
         this.apiKey = apiKey;
+    }
+    public void setApiUser(String apiUser) {
+        this.apiUser = apiUser;
     }
 
     public String getTxRef() {

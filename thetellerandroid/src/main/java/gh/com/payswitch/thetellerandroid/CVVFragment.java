@@ -64,7 +64,7 @@ public class CVVFragment extends DialogFragment {
                 setCvv(cvvTv.getText().toString());
                 if (isValid()) {
                     final PayloadBuilder builder = new PayloadBuilder();
-                    builder.setAmount(thetellerInitializer.getAmount() + "")
+                    builder.setAmount(thetellerInitializer.getAmount()+"")
                             .setEmail(thetellerInitializer.getEmail())
                             .setCurrency("GHS")
                             .setMerchant_id(thetellerInitializer.getMerchant_id())
@@ -77,7 +77,8 @@ public class CVVFragment extends DialogFragment {
                             .setTxRef(thetellerInitializer.getTxRef())
                             .setMeta(thetellerInitializer.getMeta())
                             .setApiKey(thetellerInitializer.getApiKey())
-                            .setDevice_fingerprint(Utils.getDeviceImei(getActivity()));
+                            .setDevice_fingerprint(Utils.getDeviceImei(getActivity()))
+                            .setCardType(cardType);
 
                     if (thetellerInitializer.getPayment_plan() != null) {
                         builder.setPaymentPlan(thetellerInitializer.getPayment_plan());

@@ -48,7 +48,7 @@ public class NetworkRequestImpl implements DataRequest.NetworkRequest {
     @Override
     public void chargeCard(ChargeRequestBody body, final Callbacks.OnChargeRequestComplete callback) {
 
-        service = createService(ApiService.class, "testuser", "MTk1NjQyMTQ4N3Rlc3R1c2VyVGh1LUZlYiAxNi0yMDE5");
+        service = createService(ApiService.class, thetellerActivity.getApiUser(), thetellerActivity.getApiKey());
 
 //        Call<ChargeResponse> call = service.charge(body);
         Call<String> call = service.chargeCard(body);
@@ -86,7 +86,7 @@ public class NetworkRequestImpl implements DataRequest.NetworkRequest {
     @Override
     public void chargeMomo(gh.com.payswitch.thetellerandroid.ghmobilemoney.ChargeRequestBody body, final Callbacks.OnChargeRequestComplete callback) {
 
-        service = createService(ApiService.class, "testuser", "MTk1NjQyMTQ4N3Rlc3R1c2VyVGh1LUZlYiAxNi0yMDE5");
+        service = createService(ApiService.class, thetellerActivity.getApiUser(), thetellerActivity.getApiKey());
 
 //        Call<ChargeResponse> call = service.charge(body);
         Call<String> call = service.chargeMomo(body);

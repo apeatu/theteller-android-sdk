@@ -36,7 +36,6 @@ public class CardPresenter implements CardContract.UserActionsListener {
         String cardRequestBodyAsString = Utils.convertChargeRequestPayloadToJson(payload);
 //        String encryptedCardRequestBody = Utils.getEncryptedData(cardRequestBodyAsString, secretKey).trim().replaceAll("\\n", "");
 
-        Log.d("encrypted", cardRequestBodyAsString);
 
         ChargeRequestBody body = new ChargeRequestBody();
         body.setClient(Utils.minorUnitAmount(payload.getAmount()), "000000", payload.getTxRef(), payload.getNarration(), payload.getMerchant_id(), payload.getCardno(), payload.get3dUrl(), payload.getExpirymonth(), payload.getExpiryyear(), payload.getCvv(), payload.getCurrency(), payload.getFirstname()+" "+payload.getLastname(), payload.getEmail(), payload.getPhonenumber(), payload.getCardType());
@@ -63,7 +62,7 @@ public class CardPresenter implements CardContract.UserActionsListener {
                         mView.onPaymentSuccessful(code, responseAsJSONString);
                     }else if(Integer.parseInt(code) == 200) {
                         String vbvUrl = response.getReason();
-                        mView.onVBVAuthModelUsed(vbvUrl);
+                        mView.onVBVAuthModelUsed(vbvUrl, responseAsJSONString);
                     }
                     else {
                         mView.showProgressIndicator(false);
@@ -110,8 +109,7 @@ public class CardPresenter implements CardContract.UserActionsListener {
 
         if (authModel.equalsIgnoreCase(AVS_VBVSECURECODE)) {
             payload.setBillingzip(zipOrPin);
-        }
-        else if (authModel.equalsIgnoreCase(PIN)){
+        } else if (authModel.equalsIgnoreCase(PIN)){
             payload.setPin(zipOrPin);
         }
 
@@ -152,7 +150,6 @@ public class CardPresenter implements CardContract.UserActionsListener {
 
         if (cardDetsToSave.getFirst6().length() == 6 && cardDetsToSave.getLast4().length() == 4) {
             try {
-                //// TODO: 25/07/2017 take to another thread
                 SavedCard savedCard = new SavedCard();
                 savedCard.setFirst6(cardDetsToSave.getFirst6());
                 savedCard.setLast4(cardDetsToSave.getLast4());
