@@ -39,7 +39,7 @@ public class GhMobileMoneyPresenter implements GhMobileMoneyContract.UserActions
 
         mView.showProgressIndicator(true);
 
-        new NetworkRequestImpl().chargeMomo(body, new Callbacks.OnChargeRequestComplete() {
+        new NetworkRequestImpl().chargeMomo(payload, body, new Callbacks.OnChargeRequestComplete() {
             @Override
             public void onSuccess(ChargeResponse response, String responseAsJSONString) {
 

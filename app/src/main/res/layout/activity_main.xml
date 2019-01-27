@@ -110,6 +110,33 @@
                     android:layout_height="wrap_content"
                     android:textSize="14sp"
                     android:layout_marginBottom="10dp"
+                    android:hint="merchant Id"
+                    android:id="@+id/merchant_idEt"
+                    />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:layout_marginBottom="10dp"
+                    android:hint="Api Username"
+                    android:id="@+id/api_userEt"
+                    />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:layout_marginBottom="10dp"
+                    android:hint="@string/redirect_url"
+                    android:id="@+id/d_urlEt"
+                    />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:layout_marginBottom="10dp"
                     android:hint="@string/narration"
                     android:id="@+id/narrationTV"
                     />
@@ -139,15 +166,6 @@
                     android:layout_marginBottom="10dp"
                     android:hint="@string/last_name"
                     android:id="@+id/lnameEt"
-                    />
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="14sp"
-                    android:layout_marginBottom="10dp"
-                    android:hint="@string/redirect_url"
-                    android:id="@+id/redirectUrlEt"
                     />
 
                 <Button

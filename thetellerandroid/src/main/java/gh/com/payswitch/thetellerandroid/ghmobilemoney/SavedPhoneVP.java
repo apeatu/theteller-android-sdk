@@ -25,6 +25,7 @@ public class SavedPhoneVP {
         if (activity.isFinishing()) { return; }
         if(progressDialog == null) {
             progressDialog = new ProgressDialog(activity);
+            progressDialog.setCancelable(false);
             progressDialog.setMessage("Please wait...");
         }
 
@@ -101,7 +102,7 @@ public class SavedPhoneVP {
 
         NetworkRequestImpl networkRequestImpl = new NetworkRequestImpl();
         networkRequestImpl.setBaseUrl(CardOrNumberActivity.BASE_URL);
-        networkRequestImpl.chargeMomo(body, new Callbacks.OnChargeRequestComplete() {
+        networkRequestImpl.chargeMomo(payload, body, new Callbacks.OnChargeRequestComplete() {
             @Override
             public void onSuccess(ChargeResponse response, String responseAsJSONString) {
 

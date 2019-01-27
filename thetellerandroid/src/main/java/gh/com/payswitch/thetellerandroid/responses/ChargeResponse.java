@@ -4,7 +4,7 @@ public class ChargeResponse {
     String status;
     String code;
     String reason;
-    String txRef;
+    String transaction_id;
 
     public String getStatus() {
         return status;
@@ -26,7 +26,7 @@ public class ChargeResponse {
         this.reason = reason;
     }
 
-    public String getTxRef() { return txRef; }
+    public String getTxRef() { return transaction_id; }
 
-    public void setTxRef(String txRef) { this.txRef = txRef; }
+    public void setTxRef(String txRef) { this.transaction_id = txRef; }
 }

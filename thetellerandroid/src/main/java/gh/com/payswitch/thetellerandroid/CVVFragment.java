@@ -10,9 +10,11 @@ import android.support.design.widget.TextInputEditText;
 import android.support.design.widget.TextInputLayout;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import gh.com.payswitch.thetellerandroid.card.CardFragment;
@@ -76,6 +78,7 @@ public class CVVFragment extends DialogFragment {
                             .setIP(Utils.getDeviceImei(getActivity()))
                             .setTxRef(thetellerInitializer.getTxRef())
                             .setMeta(thetellerInitializer.getMeta())
+                            .setApiUser(thetellerInitializer.getApiUser())
                             .setApiKey(thetellerInitializer.getApiKey())
                             .setDevice_fingerprint(Utils.getDeviceImei(getActivity()))
                             .setCardType(cardType);
@@ -102,7 +105,8 @@ public class CVVFragment extends DialogFragment {
                     }
 
                     final Payload body = builder.createPayload();
-                    cardPresenter.chargeCard(body, thetellerConstants.API_KEY, getActivity(), v.getRootView());
+                    Log.wtf("current", thetellerInitializer.get3dUrl()+"surprised");
+                    cardPresenter.chargeCard(body, thetellerConstants.API_KEY, getActivity());
                 }else {
                     Toast.makeText(getActivity(), "Invalid CVV", Toast.LENGTH_SHORT).show();
                 }

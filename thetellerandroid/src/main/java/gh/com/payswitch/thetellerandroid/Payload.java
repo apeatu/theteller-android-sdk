@@ -44,12 +44,13 @@ public class Payload
     private String is_mpesa_lipa;
 
     public Payload(List<Meta> meta, String narration,
-                   String expirymonth, String PBFPubKey, String IP, String lastname,
+                   String expirymonth, String apiUser, String PBFPubKey, String IP, String lastname,
                    String firstname, String currency, String merchant_id, String terminal_id,
                    String voucher_code, String d_response_url, String amount, String email, String expiryyear, String cvv, String device_fingerprint,
                    String cardno, String txRef, String cardType) {
         this.narration = narration;
         this.expirymonth = expirymonth;
+        this.apiUser = apiUser;
         this.apiKey = PBFPubKey;
         this.IP = IP;
         this.lastname = lastname;
@@ -91,6 +92,14 @@ public class Payload
 
     public void setTerminal_id(String terminal_id) {
         this.terminal_id = terminal_id;
+    }
+
+    public String getD_response_url() {
+        return d_response_url;
+    }
+
+    public void setD_response_url() {
+        this.d_response_url = d_response_url;
     }
 
     public String getVoucherCode() {
@@ -140,7 +149,7 @@ public class Payload
 
     public Payload(List<Meta> meta, String narration, String IP, String accountnumber, String accountbank,
                    String lastname, String firstname, String currency, String merchant_id, String terminal_id,
-                   String voucher_code, String amount, String email, String device_fingerprint, String txRef, String PBFPubKey,
+                   String voucher_code, String amount, String email, String device_fingerprint, String txRef, String apiUser, String PBFPubKey,
                    String billingaddress, String billingcity, String billingstate, String billingzip, String billingcountry) {
         this.narration = narration;
         this.IP = IP;
@@ -157,6 +166,7 @@ public class Payload
         this.d_response_url = d_response_url;
         this.device_fingerprint = device_fingerprint;
         this.txRef = txRef;
+        this.apiUser = apiUser;
         this.apiKey = PBFPubKey;
         this.billingaddress = billingaddress;
         this.billingstate = billingstate;
@@ -187,6 +197,7 @@ public class Payload
                    String email,
                    String device_fingerprint,
                    String txRef,
+                   String apiUser,
                    String PBFPubKey) {
         this.meta = meta;
         this.narration = narration;
@@ -202,6 +213,7 @@ public class Payload
         this.email = email;
         this.device_fingerprint = device_fingerprint;
         this.txRef = txRef;
+        this.apiUser = apiUser;
         this.apiKey = PBFPubKey;
 
         if (meta == null) {
@@ -216,7 +228,7 @@ public class Payload
     public Payload(List<Meta> meta, String narration, String IP, String accountnumber, String accountbank,
                    String lastname, String firstname, String currency, String merchant_id, String terminal_id,
                    String voucher_code, String amount, String d_response_url,
-                   String email, String device_fingerprint, String txRef, String PBFPubKey) {
+                   String email, String device_fingerprint, String txRef, String apiUser, String PBFPubKey) {
         this.meta = meta;
         this.narration = narration;
         this.IP = IP;
@@ -233,6 +245,7 @@ public class Payload
         this.email = email;
         this.device_fingerprint = device_fingerprint;
         this.txRef = txRef;
+        this.apiUser = apiUser;
         this.apiKey = PBFPubKey;
 
         if (meta == null) {
@@ -357,6 +370,7 @@ public class Payload
 
     private String expirymonth;
 
+    private String apiUser;
     private String apiKey;
 
     private String IP;
@@ -419,6 +433,16 @@ public class Payload
     public void setExpirymonth (String expirymonth)
     {
         this.expirymonth = expirymonth;
+    }
+
+    public String getApiUser()
+    {
+        return apiUser;
+    }
+
+    public void setApiUser(String apiUser)
+    {
+        this.apiUser = apiUser;
     }
 
     public String getApiKey()
@@ -556,7 +580,7 @@ public class Payload
     @Override
     public String toString()
     {
-        return "ClassPojo [expirymonth = "+expirymonth+", apiKey = "+ apiKey +", IP = "+IP+", lastname = "+lastname+", firstname = "+firstname+", currency = "+currency+", narration"+narration+", merchant_id"+merchant_id+", terminal_id"+terminal_id+", voucher_code"+voucher_code+", amount = "+amount+", email = "+email+", expiryyear = "+expiryyear+", cvv = "+cvv+", device_fingerprint = "+device_fingerprint+", d_response_url"+d_response_url+", cardno = "+cardno+", txRef = "+txRef+","+cardType+"]";
+        return "ClassPojo [expirymonth = "+expirymonth+", apiUser = "+ apiUser +", apiKey = "+ apiKey +", IP = "+IP+", lastname = "+lastname+", firstname = "+firstname+", currency = "+currency+", narration"+narration+", merchant_id"+merchant_id+", terminal_id"+terminal_id+", voucher_code"+voucher_code+", amount = "+amount+", email = "+email+", expiryyear = "+expiryyear+", cvv = "+cvv+", device_fingerprint = "+device_fingerprint+", d_response_url"+d_response_url+", cardno = "+cardno+", txRef = "+txRef+","+cardType+"]";
     }
 
     public void setCardBIN(String cardBIN) {

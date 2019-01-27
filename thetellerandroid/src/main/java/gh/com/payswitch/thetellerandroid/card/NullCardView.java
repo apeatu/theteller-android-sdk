@@ -63,7 +63,7 @@ public class NullCardView extends Fragment implements View.OnClickListener, Card
 //    }
 
     @Override
-    public void onVBVAuthModelUsed(String authUrlCrude, String responseAsJSONString) {
+    public void onVBVAuthModelUsed(String authUrlCrude, String responseAsJSONString, String txRef) {
 
     }
 
@@ -128,7 +128,7 @@ public class NullCardView extends Fragment implements View.OnClickListener, Card
     }
 
     @Override
-    public void onAVSVBVSecureCodeModelUsed(String authurl, String flwRef) {
+    public void onAVSVBVSecureCodeModelUsed(String authurl, String flwRef, String txRef) {
 
     }
 

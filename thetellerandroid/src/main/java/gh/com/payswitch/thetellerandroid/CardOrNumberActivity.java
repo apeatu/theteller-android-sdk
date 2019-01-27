@@ -97,12 +97,17 @@ public class CardOrNumberActivity extends FragmentActivity {
                     builder.setAmount(thetellerInitializer.getAmount() + "")
                             .setNarration(thetellerInitializer.getNarration())
                             .setCurrency(thetellerInitializer.getCurrency())
+                            .setMerchant_id(thetellerInitializer.getMerchant_id())
+                            .setVoucher_code(thetellerInitializer.getVoucher_code())
                             .setEmail(thetellerInitializer.getEmail())
                             .setFirstname(thetellerInitializer.getfName())
                             .setLastname(thetellerInitializer.getlName())
                             .setIP(Utils.getDeviceImei(CardOrNumberActivity.this))
                             .setTxRef(thetellerInitializer.getTxRef())
                             .setMeta(thetellerInitializer.getMeta())
+                            .setNetwork(savedPhone.getNetwork())
+                            .setPhonenumber(savedPhone.getPhoneNumber())
+                            .setApiUser(thetellerInitializer.getApiUser())
                             .setApiKey(thetellerInitializer.getApiKey())
                             .setDevice_fingerprint(Utils.getDeviceImei(CardOrNumberActivity.this));
 
@@ -151,15 +156,21 @@ public class CardOrNumberActivity extends FragmentActivity {
     }
 
     private void pushToMainPage() {
+        String merchantId;
+        String terminalId;
         String email;
         Double amount;
+        String apiUser;
         String publicKey;
         String txRef;
         String narration;
         String currency;
         String fName;
         String lName;
+        String d_url_response;
 
+        merchantId = thetellerInitializer.getMerchant_id();
+        terminalId = thetellerInitializer.getTerminal_id();
         email = thetellerInitializer.getEmail();
         amount = thetellerInitializer.getAmount();
         publicKey = thetellerInitializer.getApiKey();
@@ -168,15 +179,22 @@ public class CardOrNumberActivity extends FragmentActivity {
         currency = thetellerInitializer.getCurrency();
         fName = thetellerInitializer.fName;
         lName = thetellerInitializer.lName;
+        d_url_response = thetellerInitializer.d_response_url;
+        apiUser = thetellerInitializer.apiUser;
+
 
         new thetellerManager(CardOrNumberActivity.this).setAmount(amount)
+            .setMerchant_id(merchantId)
+            .setTerminal_id(terminalId)
             .setCurrency(currency)
             .setEmail(email)
             .setfName(fName)
             .setlName(lName)
             .setNarration(narration)
+            .setApiUser(apiUser)
             .setApiKey(publicKey)
             .setTxRef(txRef)
+            .set3dUrl(d_url_response)
             .acceptCardPayments(withCard)
             .acceptGHMobileMoneyPayments(withGHMobileMoney)
             .onStagingEnv(!isLive)

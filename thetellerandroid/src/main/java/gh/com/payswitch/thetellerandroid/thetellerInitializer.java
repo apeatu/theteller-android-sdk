@@ -95,6 +95,10 @@ public class thetellerInitializer {
         this.withGHMobileMoney = withGHMobileMoney;
     }
 
+    public void set3dUrl(String d_response_url) {
+        this.d_response_url = d_response_url;
+    }
+
     public String get3dUrl() {
         return d_response_url;
     }

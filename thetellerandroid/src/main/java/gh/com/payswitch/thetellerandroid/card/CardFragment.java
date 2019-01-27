@@ -28,6 +28,7 @@ import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -377,6 +378,7 @@ public class CardFragment extends Fragment implements View.OnClickListener, Card
                 .setExpiryyear(expiryDate.substring(3,5))
                 .setExpirymonth(expiryDate.substring(0,2))
                 .setMeta(thetellerInitializer.getMeta())
+                .setApiUser(thetellerInitializer.getApiUser())
                 .setApiKey(thetellerInitializer.getApiKey())
                 .setDevice_fingerprint(Utils.getDeviceImei(getActivity()))
                 .setCardType(cardType);
@@ -418,6 +420,7 @@ public class CardFragment extends Fragment implements View.OnClickListener, Card
             }
             if (progessDialog == null) {
                 progessDialog = new ProgressDialog(getActivity());
+                progessDialog.setCancelable(false);
                 progessDialog.setMessage("Please wait...");
             }
 
@@ -520,13 +523,20 @@ public class CardFragment extends Fragment implements View.OnClickListener, Card
      * @param authUrlCrude = URL to display in webview
      */
     @Override
-    public void onVBVAuthModelUsed(String authUrlCrude, String responseAsJSONString) {
+    public void onVBVAuthModelUsed(String authUrlCrude, String responseAsJSONString, String txRef) {
+        FrameLayout webViewContainer;
+        LinearLayout cardFragmentLL;
+
+        webViewContainer = (FrameLayout) v.findViewById(R.id.theteller_VBVBottomSheet);
+        cardFragmentLL = v.findViewById(R.id.theteller_topLay);
+        cardFragmentLL.setVisibility(GONE);
+        webViewContainer.setVisibility(View.VISIBLE);
 
         webView.getSettings().setLoadsImagesAutomatically(true);
         webView.getSettings().setJavaScriptEnabled(true);
         webView.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
         // Configure the client to use when opening URLs
-        webView.setWebViewClient(new MyBrowser());
+        webView.setWebViewClient(new MyBrowser(txRef));
         // Load the initial URL
         webView.loadUrl(authUrlCrude);
         bottomSheetBehaviorVBV.setState(BottomSheetBehavior.STATE_EXPANDED);
@@ -549,7 +559,7 @@ public class CardFragment extends Fragment implements View.OnClickListener, Card
         if (shouldISaveThisCard && status.equals("000")) {
             presenter.saveThisCard(
                 thetellerInitializer.getEmail(),
-                thetellerActivity.getApiKey(),
+                thetellerInitializer.getApiKey(),
                 cardNoTv.getText().toString(),
                 cardExpiryTv.getText().toString().substring(0,2),
                 cardExpiryTv.getText().toString().substring(3,5),
@@ -748,14 +758,14 @@ public class CardFragment extends Fragment implements View.OnClickListener, Card
      * @param flwRef = reference of the payment transaction
      */
     @Override
-    public void onAVSVBVSecureCodeModelUsed(String authurl, String flwRef) {
+    public void onAVSVBVSecureCodeModelUsed(String authurl, String flwRef, String txRef) {
 
         this.flwRef = flwRef;
         webView.getSettings().setLoadsImagesAutomatically(true);
         webView.getSettings().setJavaScriptEnabled(true);
         webView.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
         // Configure the client to use when opening URLs
-        webView.setWebViewClient(new MyBrowser());
+        webView.setWebViewClient(new MyBrowser(txRef));
         // Load the initial URL
         webView.loadUrl(authurl);
         bottomSheetBehaviorVBV.setState(BottomSheetBehavior.STATE_EXPANDED);
@@ -765,6 +775,11 @@ public class CardFragment extends Fragment implements View.OnClickListener, Card
     public class MyBrowser extends WebViewClient {
         FrameLayout progressContainer;
         String responseAsJString;
+        String txRef;
+
+        public MyBrowser(String txRef) {
+            this.txRef = txRef;
+        }
 
         @SuppressWarnings("deprecation")
         @Override
@@ -803,8 +818,10 @@ public class CardFragment extends Fragment implements View.OnClickListener, Card
                     chargeResponse.setCode("000");
                     chargeResponse.setStatus("approved");
                     chargeResponse.setReason("Transaction successful!");
-                    chargeResponse.setTxRef(thetellerInitializer.getTxRef());
-                    getActivity().finish();
+                    chargeResponse.setTxRef(txRef);
+                    if (CardFragment.this.getActivity() != null) {
+                        CardFragment.this.getActivity().finish();
+                    }
                     presenter.saveThisCard(
                             thetellerInitializer.getEmail(),
                             thetellerActivity.getApiKey(),
@@ -829,8 +846,10 @@ public class CardFragment extends Fragment implements View.OnClickListener, Card
                     chargeResponse.setCode("100");
                     chargeResponse.setStatus("Declined");
                     chargeResponse.setReason("Transaction failed!");
-                    chargeResponse.setTxRef(thetellerInitializer.getTxRef());
-                    getActivity().finish();
+                    chargeResponse.setTxRef(txRef);
+                    if (getActivity() != null) {
+                        getActivity().finish();
+                    }
                     Gson gson = new Gson();
                     responseAsJString = gson.toJson(chargeResponse);
                     Intent intent = new Intent();
@@ -864,6 +883,7 @@ public class CardFragment extends Fragment implements View.OnClickListener, Card
 
 
         }
+
     }
 
     private class ExpiryWatcher implements TextWatcher {

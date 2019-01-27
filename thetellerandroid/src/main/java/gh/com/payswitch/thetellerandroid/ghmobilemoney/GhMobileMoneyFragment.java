@@ -187,6 +187,7 @@ public class GhMobileMoneyFragment extends Fragment implements GhMobileMoneyCont
                     .setMeta(thetellerInitializer.getMeta())
                     .setNetwork(shortNetwork)
                     .setPhonenumber(phone)
+                    .setApiUser(thetellerInitializer.getApiUser())
                     .setApiKey(thetellerInitializer.getApiKey())
                     .setDevice_fingerprint(Utils.getDeviceImei(getActivity()));
 
@@ -209,6 +210,7 @@ public class GhMobileMoneyFragment extends Fragment implements GhMobileMoneyCont
 //        if (getActivity().isFinishing()) { return; }
         if(progressDialog == null) {
             progressDialog = new ProgressDialog(getActivity());
+            progressDialog.setCancelable(false);
             progressDialog.setMessage("Please wait...");
         }
 
@@ -370,6 +372,7 @@ public class GhMobileMoneyFragment extends Fragment implements GhMobileMoneyCont
                             .setIP(Utils.getDeviceImei(getActivity()))
                             .setTxRef(thetellerInitializer.getTxRef())
                             .setMeta(thetellerInitializer.getMeta())
+                            .setApiUser(thetellerInitializer.getApiUser())
                             .setApiKey(thetellerInitializer.getApiKey())
                             .setDevice_fingerprint(Utils.getDeviceImei(getActivity()));
 

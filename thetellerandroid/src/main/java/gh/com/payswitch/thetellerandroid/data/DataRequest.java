@@ -1,5 +1,8 @@
 package gh.com.payswitch.thetellerandroid.data;
 
+import android.app.Activity;
+
+import gh.com.payswitch.thetellerandroid.Payload;
 import gh.com.payswitch.thetellerandroid.ghmobilemoney.ChargeRequestBody;
 
 import java.util.List;
@@ -7,8 +10,8 @@ import java.util.List;
 public interface DataRequest {
 
     interface NetworkRequest {
-        void chargeCard(gh.com.payswitch.thetellerandroid.card.ChargeRequestBody chargeRequestBody, Callbacks.OnChargeRequestComplete callback);
-        void chargeMomo(ChargeRequestBody chargeRequestBody, Callbacks.OnChargeRequestComplete callback);
+        void chargeCard(Payload payload, gh.com.payswitch.thetellerandroid.card.ChargeRequestBody chargeRequestBody, Callbacks.OnChargeRequestComplete callback);
+        void chargeMomo(Payload payload, ChargeRequestBody chargeRequestBody, Callbacks.OnChargeRequestComplete callback);
 //        void validateChargeCard(ValidateChargeBody cardRequestBody, Callbacks.OnValidateChargeCardRequestComplete callback);
 //        void validateAccountCard(ValidateChargeBody cardRequestBody, Callbacks.OnValidateChargeCardRequestComplete callback);
 //        void queryTx(ChargeRequestBody chargeRequestBody, Callbacks.OnRequeryRequestComplete callback);

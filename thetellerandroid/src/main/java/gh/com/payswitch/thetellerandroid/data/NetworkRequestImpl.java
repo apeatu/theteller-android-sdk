@@ -1,7 +1,9 @@
 package gh.com.payswitch.thetellerandroid.data;
 
+import android.app.Activity;
 import android.text.TextUtils;
 
+import gh.com.payswitch.thetellerandroid.Payload;
 import gh.com.payswitch.thetellerandroid.thetellerActivity;
 import gh.com.payswitch.thetellerandroid.card.ChargeRequestBody;
 import gh.com.payswitch.thetellerandroid.responses.ChargeResponse;
@@ -13,6 +15,7 @@ import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.concurrent.TimeUnit;
 
+import gh.com.payswitch.thetellerandroid.thetellerInitializer;
 import okhttp3.Credentials;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
@@ -29,6 +32,8 @@ public class NetworkRequestImpl implements DataRequest.NetworkRequest {
     private ApiService service;
     private String baseUrl;
     private String errorParsingError = "An error occurred parsing the error response";
+    thetellerInitializer thetellerInitializer;
+
 
     private ErrorBody parseErrorJson(String errorStr) {
 
@@ -46,9 +51,9 @@ public class NetworkRequestImpl implements DataRequest.NetworkRequest {
     }
 
     @Override
-    public void chargeCard(ChargeRequestBody body, final Callbacks.OnChargeRequestComplete callback) {
+    public void chargeCard(Payload payload, ChargeRequestBody body, final Callbacks.OnChargeRequestComplete callback) {
 
-        service = createService(ApiService.class, thetellerActivity.getApiUser(), thetellerActivity.getApiKey());
+        service = createService(ApiService.class, payload.getApiUser(), payload.getApiKey());
 
 //        Call<ChargeResponse> call = service.charge(body);
         Call<String> call = service.chargeCard(body);
@@ -84,9 +89,9 @@ public class NetworkRequestImpl implements DataRequest.NetworkRequest {
     }
 
     @Override
-    public void chargeMomo(gh.com.payswitch.thetellerandroid.ghmobilemoney.ChargeRequestBody body, final Callbacks.OnChargeRequestComplete callback) {
+    public void chargeMomo(Payload payload, gh.com.payswitch.thetellerandroid.ghmobilemoney.ChargeRequestBody body, final Callbacks.OnChargeRequestComplete callback) {
 
-        service = createService(ApiService.class, thetellerActivity.getApiUser(), thetellerActivity.getApiKey());
+        service = createService(ApiService.class, payload.getApiUser(), payload.getApiKey());
 
 //        Call<ChargeResponse> call = service.charge(body);
         Call<String> call = service.chargeMomo(body);

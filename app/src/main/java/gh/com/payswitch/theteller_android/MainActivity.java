@@ -38,6 +38,9 @@ public class MainActivity extends AppCompatActivity {
     EditText redirectUrlEt;
     EditText narrationEt;
     EditText currencyEt;
+    EditText merchantIdEt;
+    EditText apiUserEt;
+    EditText dUrlEt;
     EditText fNameEt;
     EditText lNameEt;
     EditText voucherCode;
@@ -56,9 +59,11 @@ public class MainActivity extends AppCompatActivity {
         amountEt = findViewById(R.id.amountEt);
         apiKeyEt = findViewById(R.id.apiKeyEt);
         txRefEt = findViewById(R.id.txRefEt);
+        merchantIdEt = findViewById(R.id.merchant_idEt);
+        apiUserEt = findViewById(R.id.api_userEt);
+        dUrlEt = findViewById(R.id.d_urlEt);
         narrationEt = findViewById(R.id.narrationTV);
         currencyEt = findViewById(R.id.currencyEt);
-        redirectUrlEt = findViewById(R.id.redirectUrlEt);
         fNameEt = findViewById(R.id.fNameEt);
         lNameEt = findViewById(R.id.lnameEt);
 //        voucherCode = findViewById(R.id.voucherCodeEt);
@@ -107,7 +112,9 @@ public class MainActivity extends AppCompatActivity {
         String amount = amountEt.getText().toString();
         String apiKey = apiKeyEt.getText().toString();
         String txRef = txRefEt.getText().toString();
-        String redirectUrl = redirectUrlEt.getText().toString();
+        String merchantId = merchantIdEt.getText().toString();
+        String apiUser = apiUserEt.getText().toString();
+        String dUrl = dUrlEt.getText().toString();
         String narration = narrationEt.getText().toString();
         String currency = currencyEt.getText().toString();
         String fName = fNameEt.getText().toString();
@@ -117,30 +124,30 @@ public class MainActivity extends AppCompatActivity {
 
         boolean valid = true;
 
-//        if (amount.length() == 0) {
-//            amount = "0";
-//        }
-//
-//        //check for compulsory fields
-//        if (!Utils.isEmailValid(email)) {
-//            valid = false;
-//            emailEt.setError("A valid email is required");
-//        }
-//
-//        if (apiKey.length() < 1){
-//            valid = false;
-//            apiKeyEt.setError("A valid public key is required");
-//        }
-//
-//        if (txRef.length() < 1){
-//            valid = false;
-//            txRefEt.setError("A valid txRef key is required");
-//        }
-//
-//        if (currency.length() < 1){
-//            valid = false;
-//            currencyEt.setError("A valid currency code is required");
-//        }
+        if (amount.length() == 0) {
+            amount = "0";
+        }
+
+        //check for compulsory fields
+        if (!Utils.isEmailValid(email)) {
+            valid = false;
+            emailEt.setError("A valid email is required");
+        }
+
+        if (apiKey.length() < 1){
+            valid = false;
+            apiKeyEt.setError("A valid public key is required");
+        }
+
+        if (txRef.length() < 1){
+            valid = false;
+            txRefEt.setError("A valid txRef key is required");
+        }
+
+        if (currency.length() < 1){
+            valid = false;
+            currencyEt.setError("A valid currency code is required");
+        }
 
         if (valid) {
             ghMobileMoneyPresenter = new GhMobileMoneyPresenter(this, new GhMobileMoneyFragment());
@@ -149,33 +156,31 @@ public class MainActivity extends AppCompatActivity {
             List<SavedCard> checkForSavedCards = cardPresenter.checkForSavedCards(email);
 
             if (checkForSavedCards.isEmpty() && checkForSavedMobileMoney.isEmpty()){
-                new thetellerManager(this).setAmount(Long.parseLong("100"))
-                    .setEmail("paasammy@yahoo.com")
-                    .setfName("Samuel")
-                    .setlName("Gyimah")
-                    .setMerchant_id("TTM-00000001")
-                    .setTerminal_id("00000011")
-                    .setNarration("testing with Sam")
-                    .setApiUser("testuser")
+                new thetellerManager(this).setAmount(Long.parseLong(amount))
+                    .setEmail(email)
+                    .setfName(fName)
+                    .setlName(lName)
+                    .setMerchant_id(merchantId)
+                    .setNarration(narration)
+                    .setApiUser(apiUser)
                     .setApiKey(apiKey)
                     .setTxRef(txRef)
-                    .set3dUrl("https://23.239.22.186/loader.html")
+                    .set3dUrl(dUrl)
                     .acceptCardPayments(cardSwitch.isChecked())
                     .acceptGHMobileMoneyPayments(ghMobileMoneySwitch.isChecked())
                     .onStagingEnv(!isLiveSwitch.isChecked())
                     .initialize();
             }else {
-                new thetellerManager(this).setAmount(Long.parseLong("100"))
-                    .setEmail("paasammy@yahoo.com")
-                    .setfName("Samuel")
-                    .setlName("Gyimah")
-                    .setMerchant_id("TTM-00000001")
-                    .setTerminal_id("00000011")
-                    .setNarration("testing with Sam")
+                new thetellerManager(this).setAmount(Long.parseLong(amount))
+                    .setEmail(email)
+                    .setfName(fName)
+                    .setlName(lName)
+                    .setMerchant_id(merchantId)
+                    .setNarration(narration)
+                    .setApiUser(apiUser)
                     .setApiKey(apiKey)
-                    .setApiUser("testuser")
                     .setTxRef(txRef)
-                    .set3dUrl(redirectUrl)
+                    .set3dUrl(dUrl)
                     .acceptCardPayments(cardSwitch.isChecked())
                     .acceptGHMobileMoneyPayments(ghMobileMoneySwitch.isChecked())
                     .onStagingEnv(!isLiveSwitch.isChecked())

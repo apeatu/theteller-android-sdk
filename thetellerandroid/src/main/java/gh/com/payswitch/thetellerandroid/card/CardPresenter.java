@@ -1,5 +1,6 @@
 package gh.com.payswitch.thetellerandroid.card;
 
+import android.app.Activity;
 import android.content.Context;
 import android.util.Log;
 
@@ -43,7 +44,7 @@ public class CardPresenter implements CardContract.UserActionsListener {
 
         mView.showProgressIndicator(true);
 
-        new NetworkRequestImpl().chargeCard(body, new Callbacks.OnChargeRequestComplete() {
+        new NetworkRequestImpl().chargeCard(payload, body, new Callbacks.OnChargeRequestComplete() {
             @Override
             public void onSuccess(ChargeResponse response, String responseAsJSONString) {
 
@@ -62,7 +63,7 @@ public class CardPresenter implements CardContract.UserActionsListener {
                         mView.onPaymentSuccessful(code, responseAsJSONString);
                     }else if(Integer.parseInt(code) == 200) {
                         String vbvUrl = response.getReason();
-                        mView.onVBVAuthModelUsed(vbvUrl, responseAsJSONString);
+                        mView.onVBVAuthModelUsed(vbvUrl, responseAsJSONString, txRef);
                     }
                     else {
                         mView.showProgressIndicator(false);

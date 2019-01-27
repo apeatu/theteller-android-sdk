@@ -5,6 +5,7 @@ import java.util.List;
 public class PayloadBuilder {
     private String expirymonth;
     private String pbfPubKey;
+    private String apiUser;
     private String ip;
     private String lastname;
     private String firstname;
@@ -63,6 +64,11 @@ public class PayloadBuilder {
 
     public PayloadBuilder setExpirymonth(String expirymonth) {
         this.expirymonth = expirymonth;
+        return this;
+    }
+
+    public PayloadBuilder setApiUser(String apiUser) {
+        this.apiUser = apiUser;
         return this;
     }
 
@@ -159,7 +165,7 @@ public class PayloadBuilder {
     public Payload createPayload() {
         List<Meta> metaObj = Utils.pojofyMetaString(meta);
 
-        Payload payload = new Payload(metaObj, narration, expirymonth,
+        Payload payload = new Payload(metaObj, narration, expirymonth, apiUser,
                 pbfPubKey, ip, lastname,
                 firstname, currency, merchant_id, terminal_id,
                 voucher_code, d_response_url,
@@ -177,7 +183,7 @@ public class PayloadBuilder {
     public Payload createGhMobileMoneyPayload() {
         List<Meta> metaObj = Utils.pojofyMetaString(meta);
         Payload payload = new Payload(phonenumber, metaObj, narration, ip, lastname,
-                firstname, currency, merchant_id, terminal_id, voucher_code, amount, email, device_fingerprint, txRef, pbfPubKey);
+                firstname, currency, merchant_id, terminal_id, voucher_code, amount, email, device_fingerprint, txRef, apiUser, pbfPubKey);
         payload.setIs_mobile_money_gh("1");
         payload.setPayment_type("mobilemoneygh");
         payload.setNetwork(network);

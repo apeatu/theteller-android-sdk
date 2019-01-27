@@ -14,6 +14,8 @@ import android.webkit.WebViewClient;
 import android.widget.FrameLayout;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
+
 import gh.com.payswitch.thetellerandroid.CardOrNumberActivity;
 import gh.com.payswitch.thetellerandroid.Payload;
 import gh.com.payswitch.thetellerandroid.R;
@@ -25,18 +27,21 @@ import gh.com.payswitch.thetellerandroid.responses.ChargeResponse;
 import gh.com.payswitch.thetellerandroid.thetellerActivity;
 
 import static android.view.View.GONE;
+import static gh.com.payswitch.thetellerandroid.card.CreditCardView.cardType;
 
 public class SavedCardVP {
 
     private ProgressDialog progressDialog;
     private ProgressDialog pollingProgressDialog ;
     WebView webView;
+    String initialUrl = null;
 
     public void showProgressIndicator(boolean active, Activity activity) {
 
         if (activity.isFinishing()) { return; }
         if(progressDialog == null) {
             progressDialog = new ProgressDialog(activity);
+            progressDialog.setCancelable(false);
             progressDialog.setMessage("Please wait...");
         }
 
@@ -89,11 +94,17 @@ public class SavedCardVP {
         }
     }
 
-    public void onVBVAuthModelUsed(String authUrlCrude, View v) {
+    public void onVBVAuthModelUsed(String authUrlCrude, Activity v, String txRef) {
+        FrameLayout webViewContainer;
+
         if (v.findViewById(R.id.theteller_webview) == null) {
+            webViewContainer = (FrameLayout) v.findViewById(R.id.webView_container);
+            webViewContainer.setVisibility(View.VISIBLE);
             webView = (WebView) v.findViewById(R.id.theteller_webview2);
         }else {
-            webView = (WebView) v.findViewById(R.id.theteller_webview);
+            webViewContainer = (FrameLayout) v.findViewById(R.id.webView_container);
+            webViewContainer.setVisibility(View.VISIBLE);
+            webView = (WebView) v.findViewById(R.id.theteller_webview3);
         }
 
         if (webView != null){
@@ -101,11 +112,11 @@ public class SavedCardVP {
             webView.getSettings().setJavaScriptEnabled(true);
             webView.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
             // Configure the client to use when opening URLs
-            webView.setWebViewClient(new MyBrowser());
+            webView.setWebViewClient(new MyBrowser(v, txRef));
             // Load the initial URL
             webView.loadUrl(authUrlCrude);
         }else {
-            Log.wtf("webView","web view is still null");
+            Log.wtf("webView","web view is still "+webView);
         }
     }
 
@@ -118,7 +129,7 @@ public class SavedCardVP {
         }
     }
 
-    public void chargeCard(final Payload payload, final String secretKey, final Activity activity, final View v) {
+    public void chargeCard(final Payload payload, final String secretKey, final Activity activity) {
 
         String cardRequestBodyAsString = Utils.convertChargeRequestPayloadToJson(payload);
         String encryptedCardRequestBody = Utils.getEncryptedData(cardRequestBodyAsString, secretKey).trim().replaceAll("\\n", "");
@@ -135,7 +146,7 @@ public class SavedCardVP {
 
         NetworkRequestImpl networkRequestImpl = new NetworkRequestImpl();
         networkRequestImpl.setBaseUrl(CardOrNumberActivity.BASE_URL);
-        networkRequestImpl.chargeCard(body, new Callbacks.OnChargeRequestComplete() {
+        networkRequestImpl.chargeCard(payload, body, new Callbacks.OnChargeRequestComplete() {
             @Override
             public void onSuccess(ChargeResponse response, String responseAsJSONString) {
 
@@ -154,7 +165,7 @@ public class SavedCardVP {
                         onPaymentSuccessful(code, responseAsJSONString, activity);
                     }else if(Integer.parseInt(code) == 200) {
                         String vbvUrl = response.getReason();
-                        onVBVAuthModelUsed(vbvUrl, v);
+                        onVBVAuthModelUsed(vbvUrl, activity, txRef);
                     } else {
                         showProgressIndicator(false, activity);
                         onPaymentFailed(status, responseAsJSONString, activity);
@@ -181,15 +192,13 @@ public class SavedCardVP {
         Log.d("encrypted", encryptedCardRequestBody);
 
         ChargeRequestBody body = new ChargeRequestBody();
-//        body.setApiKey(payload.getApiKey());
-//        body.setClient(encryptedCardRequestBody);
-        body.setClient(payload.getAmount(), "000200", payload.getTxRef(), payload.getNarration(), payload.getMerchant_id(), payload.getPhonenumber(), payload.getNetwork(), payload.getVoucherCode());
+        body.setClient(Utils.minorUnitAmount(payload.getAmount()), "000200", payload.getTxRef(), payload.getNarration(), payload.getMerchant_id(), payload.getPhonenumber(), payload.getNetwork(), payload.getVoucherCode());
 
         showProgressIndicator(true, activity);
 
         NetworkRequestImpl networkRequestImpl = new NetworkRequestImpl();
         networkRequestImpl.setBaseUrl(CardOrNumberActivity.BASE_URL);
-        networkRequestImpl.chargeMomo(body, new Callbacks.OnChargeRequestComplete() {
+        networkRequestImpl.chargeMomo(payload, body, new Callbacks.OnChargeRequestComplete() {
             @Override
             public void onSuccess(ChargeResponse response, String responseAsJSONString) {
 
@@ -208,7 +217,7 @@ public class SavedCardVP {
                         onPaymentSuccessful(code, responseAsJSONString, activity);
                     }else if(Integer.parseInt(code) == 200) {
                         String vbvUrl = response.getReason();
-                        onVBVAuthModelUsed(vbvUrl, v);
+                        onVBVAuthModelUsed(vbvUrl, activity, txRef);
                     } else {
                         showProgressIndicator(false, activity);
                         onPaymentFailed(status, responseAsJSONString, activity);
@@ -226,9 +235,17 @@ public class SavedCardVP {
             }
         });
     }
+
     // Manages the behavior when URLs are loaded
     public class MyBrowser extends WebViewClient {
-        FrameLayout progressContainer;
+        String responseAsJString;
+        Activity activity;
+        String txRef;
+
+        MyBrowser(Activity activity, String txRef) {
+            this.activity = activity;
+            this.txRef = txRef;
+        }
 
         @SuppressWarnings("deprecation")
         @Override
@@ -248,26 +265,61 @@ public class SavedCardVP {
         @Override
         public void onPageStarted(WebView view, String url, Bitmap favicon) {
             super.onPageStarted(view, url, favicon);
-            showFullProgressIndicator(true, view.getRootView());
-
         }
 
-        public void showFullProgressIndicator(boolean active, View v) {
+        @Override
+        public void onPageFinished(WebView view, String url) {
+            super.onPageFinished(view, url);
 
-            progressContainer = (FrameLayout) v.findViewById(R.id.theteller_progressContainer);
+            if (initialUrl == null) {
+                initialUrl = url;
+            } else {
+                if (url.contains("code=000")) {
+                    ChargeResponse chargeResponse = new ChargeResponse();
+                    chargeResponse.setCode("000");
+                    chargeResponse.setStatus("approved");
+                    chargeResponse.setReason("Transaction successful!");
+                    chargeResponse.setTxRef(txRef);
+                    if (activity != null) {
+                        activity.finish();
+                    }
+                    Gson gson = new Gson();
+                    responseAsJString = gson.toJson(chargeResponse);
+                    Intent intent = new Intent();
+                    intent.putExtra("response", responseAsJString);
+                    Log.wtf("response", responseAsJString);
 
-            if (progressContainer == null) {
-                progressContainer = (FrameLayout) v.findViewById(R.id.theteller_progressContainer);
+                    if (activity != null) {
+                        activity.setResult(thetellerActivity.RESULT_SUCCESS, intent);
+                        activity.finish();
+                    }
+
+                }
+                if (url.contains("code=100&status=Declined")) {
+                    ChargeResponse chargeResponse = new ChargeResponse();
+                    chargeResponse.setCode("100");
+                    chargeResponse.setStatus("Declined");
+                    chargeResponse.setReason("Transaction failed!");
+                    chargeResponse.setTxRef(txRef);
+                    if (activity != null) {
+                        activity.finish();
+                    }
+                    Gson gson = new Gson();
+                    responseAsJString = gson.toJson(chargeResponse);
+                    Intent intent = new Intent();
+                    intent.putExtra("response", responseAsJString);
+                    Log.wtf("response", responseAsJString);
+
+                    if (activity != null) {
+                        activity.setResult(thetellerActivity.RESULT_SUCCESS, intent);
+                        activity.finish();
+                    }
+
+                }
             }
-
-            if (active) {
-                progressContainer.setVisibility(View.VISIBLE);
-            }
-            else {
-                progressContainer.setVisibility(GONE);
-            }
-
-
+            Log.d("URLS", url);
         }
+
     }
+
 }

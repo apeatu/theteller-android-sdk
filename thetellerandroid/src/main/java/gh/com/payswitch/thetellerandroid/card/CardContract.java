@@ -24,7 +24,7 @@ public interface CardContract {
 
 //        void onValidateError(String message);
 
-        void onVBVAuthModelUsed(String authUrlCrude, String responseAsJSONString);
+        void onVBVAuthModelUsed(String authUrlCrude, String responseAsJSONString, String txRef);
 
         void onPaymentSuccessful(String status, String responseAsString);
 
@@ -50,7 +50,7 @@ public interface CardContract {
 
         void onAVS_VBVSECURECODEModelSuggested(Payload payload);
 
-        void onAVSVBVSecureCodeModelUsed(String authurl, String flwRef);
+        void onAVSVBVSecureCodeModelUsed(String authurl, String flwRef, String txRef);
 
 //        void onValidateCardChargeFailed(String flwRef, String responseAsJSON);
 
