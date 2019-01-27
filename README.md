@@ -64,21 +64,20 @@ Add the `READ_PHONE_PERMISSION` and `INTERNET` permissions to your android manif
 ###  1. Create a `thetellerManager` instance
 Set the api key and other required parameters. The `thetellerManager` accepts a mandatory instance of  the calling `Activity`
 
-        new thetellerManager(activity).setAmount(amount)
-                        .setEmail(email)
-                        .setfName(firstname)
-                        .setlName(lastname)
-                        .setMerchant_id(merchantID)
-                        .setTerminal_id(terminalID)
-                        .setVoucher_code("")
-                        .setNarration(description)
-                        .setApiKey(apiKey)
-                        .setTxRef(txRef)
-                        .set3dUrl(3dRedirectUrl)
-                        .acceptCardPayments(cardSwitch.isChecked())
-                        .acceptGHMobileMoneyPayments(ghMobileMoneySwitch.isChecked())
-                        .onStagingEnv(!isLiveSwitch.isChecked())
-                        .initialize();
+                new thetellerManager(this).setAmount(Long.parseLong(amount))
+                    .setEmail(email)
+                    .setfName(fName)
+                    .setlName(lName)
+                    .setMerchant_id(merchantId)
+                    .setNarration(narration)
+                    .setApiUser(apiUser)
+                    .setApiKey(apiKey)
+                    .setTxRef(txRef)
+                    .set3dUrl(dUrl)
+                    .acceptCardPayments(cardSwitch.isChecked())
+                    .acceptGHMobileMoneyPayments(ghMobileMoneySwitch.isChecked())
+                    .onStagingEnv(!isLiveSwitch.isChecked())
+                    .initialize();
 
 | function        | parameter           | type | required  |
 | ------------- |:-------------:| -----:| -----:|
@@ -114,36 +113,34 @@ You can implore the `GhMobileMoneyPresenter` and  `CardPresenter` to list alread
             List<SavedCard> checkForSavedCards = cardPresenter.checkForSavedCards(email);
 
             if (checkForSavedCards.isEmpty() && checkForSavedMobileMoney.isEmpty()){
-                new thetellerManager(this).setAmount(Double.parseDouble(amount))
+                new thetellerManager(this).setAmount(Long.parseLong(amount))
                     .setEmail(email)
                     .setfName(fName)
                     .setlName(lName)
-                    .setMerchant_id(merchantID)
-                    .setTerminal_id(terminalID)
-                    .setVoucher_code("")
-                    .setNarration(description)
+                    .setMerchant_id(merchantId)
+                    .setNarration(narration)
+                    .setApiUser(apiUser)
                     .setApiKey(apiKey)
                     .setTxRef(txRef)
-                    .set3dUrl(3dRedirectUrl)
+                    .set3dUrl(dUrl)
                     .acceptCardPayments(cardSwitch.isChecked())
                     .acceptGHMobileMoneyPayments(ghMobileMoneySwitch.isChecked())
                     .onStagingEnv(!isLiveSwitch.isChecked())
                     .initialize();
             }else {
-                new thetellerManager(this).setAmount(Double.parseDouble(amount))
+                new thetellerManager(this).setAmount(Long.parseLong(amount))
                     .setEmail(email)
                     .setfName(fName)
                     .setlName(lName)
-                    .setMerchant_id(merchantID)
-                    .setTerminal_id(terminalID)
-                    .setVoucher_code("")
-                    .setNarration(description)
+                    .setMerchant_id(merchantId)
+                    .setNarration(narration)
+                    .setApiUser(apiUser)
                     .setApiKey(apiKey)
                     .setTxRef(txRef)
-                    .set3dUrl(3dRedirectUrl)
-                    .acceptCardPayments(boolean)
-                    .acceptGHMobileMoneyPayments(boolean)
-                    .onStagingEnv(boolean)
+                    .set3dUrl(dUrl)
+                    .acceptCardPayments(cardSwitch.isChecked())
+                    .acceptGHMobileMoneyPayments(ghMobileMoneySwitch.isChecked())
+                    .onStagingEnv(!isLiveSwitch.isChecked())
                     .chooseCardOrNumber();
             }
 
