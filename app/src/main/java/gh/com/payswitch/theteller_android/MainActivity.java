@@ -129,6 +129,12 @@ public class MainActivity extends AppCompatActivity {
         }
 
         //check for compulsory fields
+        if (amount.length() < 1){
+            valid = false;
+            amountEt.setError("A valid amount is required");
+        }
+
+
         if (!Utils.isEmailValid(email)) {
             valid = false;
             emailEt.setError("A valid email is required");
@@ -138,15 +144,44 @@ public class MainActivity extends AppCompatActivity {
             valid = false;
             apiKeyEt.setError("A valid public key is required");
         }
-
         if (txRef.length() < 1){
             valid = false;
-            txRefEt.setError("A valid txRef key is required");
+            txRefEt.setError("A valid transaction ID is required");
+        }
+
+        if (merchantId.length() < 1){
+            valid = false;
+            merchantIdEt.setError("A valid merchant ID is required");
+        }
+
+        if (apiUser.length() < 1){
+            valid = false;
+            apiUserEt.setError("A valid Api Username is required");
+        }
+        if (dUrl.length() < 1){
+            valid = false;
+            dUrlEt.setError("A valid url for 3D response is required");
+        }
+        if (apiKey.length() < 1){
+            valid = false;
+            apiKeyEt.setError("A valid public key is required");
+        }
+        if (narration.length() < 1){
+            valid = false;
+            narrationEt.setError("A valid description is required");
         }
 
         if (currency.length() < 1){
             valid = false;
             currencyEt.setError("A valid currency code is required");
+        }
+        if (fName.length() < 1){
+            valid = false;
+            fNameEt.setError("A valid first name is required");
+        }
+        if (lName.length() < 1){
+            valid = false;
+            lNameEt.setError("A valid last name is required");
         }
 
         if (valid) {
