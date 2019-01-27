@@ -220,6 +220,9 @@ public class MainActivity extends AppCompatActivity {
         amountEt.setError(null);
         apiKeyEt.setError(null);
         txRefEt.setError(null);
+        merchantIdEt.setError(null);
+        apiUserEt.setError(null);
+        dUrlEt.setError(null);
         narrationEt.setError(null);
         currencyEt.setError(null);
         fNameEt.setError(null);
