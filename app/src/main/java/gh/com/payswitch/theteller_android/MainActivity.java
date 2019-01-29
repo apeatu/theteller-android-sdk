@@ -35,7 +35,6 @@ public class MainActivity extends AppCompatActivity {
     EditText amountEt;
     EditText apiKeyEt;
     EditText txRefEt;
-    EditText redirectUrlEt;
     EditText narrationEt;
     EditText currencyEt;
     EditText merchantIdEt;
@@ -43,7 +42,6 @@ public class MainActivity extends AppCompatActivity {
     EditText dUrlEt;
     EditText fNameEt;
     EditText lNameEt;
-    EditText voucherCode;
     Button startPayBtn;
     SwitchCompat cardSwitch;
     SwitchCompat ghMobileMoneySwitch;
