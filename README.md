@@ -45,7 +45,7 @@ The minimum supported SDK version is 15
         implementation 'com.scottyab:aescrypt:0.0.1'
         testImplementation 'junit:junit:4.12'
         implementation 'com.android.support.constraint:constraint-layout:1.1.2'
-	    implementation 'com.github.apeatu:theteller-android-sdk:v1.0.1-alpha'
+	    implementation 'com.github.apeatu:theteller-android-sdk:1.0.1'
 	}
 
 **Step 3.** Add the required permission
