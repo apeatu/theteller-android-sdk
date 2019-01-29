@@ -1,7 +1,7 @@
 apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 group = 'com.github.apeatu'
-version = 'v1.0.0-alpha'
+version = 'v1.0.1-alpha'
 
 android {
     compileSdkVersion 28
