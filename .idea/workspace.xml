@@ -7,9 +7,27 @@
       <change beforePath="$PROJECT_DIR$/.gradle/4.9/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.9/taskHistory/taskHistory.lock" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
+      <change beforePath="$PROJECT_DIR$/thetellerandroid/build.gradle" afterPath="$PROJECT_DIR$/thetellerandroid/build.gradle" />
+      <change beforePath="$PROJECT_DIR$/thetellerandroid/build/generated/not_namespaced_r_class_sources/debug/generateDebugRFile/out/android/support/compat/R.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/thetellerandroid/build/generated/not_namespaced_r_class_sources/debug/generateDebugRFile/out/android/support/constraint/R.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/thetellerandroid/build/generated/not_namespaced_r_class_sources/debug/generateDebugRFile/out/android/support/coreui/R.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/thetellerandroid/build/generated/not_namespaced_r_class_sources/debug/generateDebugRFile/out/android/support/coreutils/R.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/thetellerandroid/build/generated/not_namespaced_r_class_sources/debug/generateDebugRFile/out/android/support/design/R.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/thetellerandroid/build/generated/not_namespaced_r_class_sources/debug/generateDebugRFile/out/android/support/fragment/R.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/thetellerandroid/build/generated/not_namespaced_r_class_sources/debug/generateDebugRFile/out/android/support/graphics/drawable/R.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/thetellerandroid/build/generated/not_namespaced_r_class_sources/debug/generateDebugRFile/out/android/support/graphics/drawable/animated/R.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/thetellerandroid/build/generated/not_namespaced_r_class_sources/debug/generateDebugRFile/out/android/support/mediacompat/R.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/thetellerandroid/build/generated/not_namespaced_r_class_sources/debug/generateDebugRFile/out/android/support/transition/R.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/thetellerandroid/build/generated/not_namespaced_r_class_sources/debug/generateDebugRFile/out/android/support/v4/R.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/thetellerandroid/build/generated/not_namespaced_r_class_sources/debug/generateDebugRFile/out/android/support/v7/appcompat/R.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/thetellerandroid/build/generated/not_namespaced_r_class_sources/debug/generateDebugRFile/out/android/support/v7/recyclerview/R.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/thetellerandroid/build/generated/not_namespaced_r_class_sources/debug/generateDebugRFile/out/com/scottyab/aescrypt/R.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/thetellerandroid/build/generated/not_namespaced_r_class_sources/debug/generateDebugRFile/out/gh/com/payswitch/thetellerandroid/R.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/thetellerandroid/build/generated/source/buildConfig/debug/gh/com/payswitch/thetellerandroid/BuildConfig.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/thetellerandroid/build/intermediates/incremental/packageDebugResources/compile-file-map.properties" afterPath="$PROJECT_DIR$/thetellerandroid/build/intermediates/incremental/packageDebugResources/compile-file-map.properties" />
+      <change beforePath="$PROJECT_DIR$/thetellerandroid/build/intermediates/res/symbol-table-with-package/debug/package-aware-r.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/thetellerandroid/build/intermediates/symbols/debug/R.txt" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -32,11 +50,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/gh/com/payswitch/theteller_android/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="34" column="22" lean-forward="true" selection-start-line="34" selection-start-column="22" selection-end-line="34" selection-end-column="22" />
+            <state relative-caret-position="126">
+              <caret line="30" column="50" lean-forward="false" selection-start-line="30" selection-start-column="50" selection-end-line="30" selection-end-column="50" />
               <folding />
             </state>
           </provider>
@@ -61,6 +79,16 @@
                 <folding />
               </first_editor>
               <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/thetellerandroid/build.gradle">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="189">
+              <caret line="9" column="19" lean-forward="false" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -126,10 +154,6 @@
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="validateSigningDebugAndroidTest" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
-                <option name="name" value="transformClassesAndResourcesWithProguardForRelease" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
@@ -1947,10 +1971,6 @@
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/thetellerandroid" />
-                <option name="name" value="transformClassesAndResourcesWithProguardForRelease" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/thetellerandroid" />
                 <option name="name" value="validateSigningDebugAndroidTest" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
@@ -3141,8 +3161,8 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/thetellerandroid/.gitignore" />
-        <option value="$PROJECT_DIR$/thetellerandroid/build.gradle" />
         <option value="$PROJECT_DIR$/build.gradle" />
+        <option value="$PROJECT_DIR$/thetellerandroid/build.gradle" />
       </list>
     </option>
   </component>
@@ -3422,7 +3442,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -3433,7 +3452,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32964602" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32964602" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32964602" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32964602" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Flutter Outline" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -3591,14 +3610,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/thetellerandroid/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="41" column="48" lean-forward="true" selection-start-line="41" selection-start-column="48" selection-end-line="41" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
@@ -3628,8 +3639,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/gh/com/payswitch/theteller_android/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="34" column="22" lean-forward="true" selection-start-line="34" selection-start-column="22" selection-end-line="34" selection-end-column="22" />
+        <state relative-caret-position="126">
+          <caret line="30" column="50" lean-forward="false" selection-start-line="30" selection-start-column="50" selection-end-line="30" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thetellerandroid/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" column="19" lean-forward="false" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
           <folding />
         </state>
       </provider>
