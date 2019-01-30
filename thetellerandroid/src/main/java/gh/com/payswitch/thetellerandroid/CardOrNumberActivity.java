@@ -181,7 +181,8 @@ public class CardOrNumberActivity extends FragmentActivity {
         lName = thetellerInitializer.lName;
         d_url_response = thetellerInitializer.d_response_url;
         apiUser = thetellerInitializer.apiUser;
-
+        withCard = thetellerInitializer.withCard;
+        withGHMobileMoney = thetellerInitializer.withGHMobileMoney;
 
         new thetellerManager(CardOrNumberActivity.this).setAmount(amount)
             .setMerchant_id(merchantId)
