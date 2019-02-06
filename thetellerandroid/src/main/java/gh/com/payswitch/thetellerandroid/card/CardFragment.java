@@ -832,7 +832,6 @@ public class CardFragment extends Fragment implements View.OnClickListener, Card
                     Log.wtf("response", responseAsJString);
 
                     if (getActivity() != null) {
-                        Log.wtf("response but: ", responseAsJString);
                         getActivity().setResult(thetellerActivity.RESULT_SUCCESS, intent);
                         getActivity().finish();
                     }

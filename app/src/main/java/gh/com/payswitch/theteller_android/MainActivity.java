@@ -245,11 +245,6 @@ public class MainActivity extends AppCompatActivity {
         }
         else {
             super.onActivityResult(requestCode, resultCode, data);
-            Log.d("response", requestCode+"results null");
-            if (data != null  ) {
-                Log.d("response", data.getStringExtra("response")+"results null");
-                Log.d("result code", String.valueOf(resultCode)+"null");
-            }
         }
     }
 
