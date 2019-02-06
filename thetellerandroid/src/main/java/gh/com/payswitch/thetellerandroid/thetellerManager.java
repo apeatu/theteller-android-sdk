@@ -153,6 +153,18 @@ public class thetellerManager {
         }
     }
 
+    public void initializeCardOrNumber() {
+        if (activity != null) {
+            Intent intent = new Intent(activity, thetellerActivity.class);
+            intent.putExtra(theteller_PARAMS, Parcels.wrap(createthetellerInitializer()));
+            intent.addFlags(Intent.FLAG_ACTIVITY_FORWARD_RESULT);
+            activity.startActivity(intent) ;
+        }
+        else {
+            Log.d(theteller, "Context is required!");
+        }
+    }
+
     public void chooseCardOrNumber() {
         if (activity != null) {
             Intent intent = new Intent(activity, CardOrNumberActivity.class).addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);

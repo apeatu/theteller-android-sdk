@@ -1,5 +1,6 @@
 package gh.com.payswitch.thetellerandroid;
 
+import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -7,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import org.parceler.Parcels;
 
@@ -201,7 +203,33 @@ public class CardOrNumberActivity extends FragmentActivity {
             .onStagingEnv(!isLive)
 //                    .setMeta(meta)
 //                    .withTheme(R.style.TestNewTheme)
-            .initialize();
+            .initializeCardOrNumber();
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        if (requestCode == thetellerConstants.theteller_REQUEST_CODE && data != null) {
+
+            String message = data.getStringExtra("response");
+
+            if (message != null) {
+                Log.d("theteller response", message);
+            }
+
+            if (resultCode == thetellerActivity.RESULT_SUCCESS) {
+                Toast.makeText(this, "SUCCESS " + message, Toast.LENGTH_SHORT).show();
+            }
+            else if (resultCode == thetellerActivity.RESULT_ERROR) {
+                Toast.makeText(this, "ERROR " + message, Toast.LENGTH_SHORT).show();
+            }
+            else if (resultCode == thetellerActivity.RESULT_CANCELLED) {
+                Toast.makeText(this, "CANCELLED " + message, Toast.LENGTH_SHORT).show();
+            }
+        }
+        else {
+            super.onActivityResult(requestCode, resultCode, data);
+        }
     }
 
 }

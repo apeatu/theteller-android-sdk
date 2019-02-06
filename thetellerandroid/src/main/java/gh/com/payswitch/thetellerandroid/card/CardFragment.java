@@ -799,10 +799,6 @@ public class CardFragment extends Fragment implements View.OnClickListener, Card
         @Override
         public void onPageStarted(WebView view, String url, Bitmap favicon) {
             super.onPageStarted(view, url, favicon);
-            showFullProgressIndicator(true, getView());
-            if (url != null) {
-                showFullProgressIndicator(false, getView());
-            }
         }
 
         @Override
@@ -836,6 +832,7 @@ public class CardFragment extends Fragment implements View.OnClickListener, Card
                     Log.wtf("response", responseAsJString);
 
                     if (getActivity() != null) {
+                        Log.wtf("response but: ", responseAsJString);
                         getActivity().setResult(thetellerActivity.RESULT_SUCCESS, intent);
                         getActivity().finish();
                     }
@@ -860,7 +857,6 @@ public class CardFragment extends Fragment implements View.OnClickListener, Card
                         getActivity().setResult(thetellerActivity.RESULT_SUCCESS, intent);
                         getActivity().finish();
                     }
-
                 }
             }
             Log.d("URLS", url);
