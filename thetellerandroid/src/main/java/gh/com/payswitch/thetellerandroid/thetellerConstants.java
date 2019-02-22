@@ -16,6 +16,7 @@ public class thetellerConstants {
     public static String NOAUTH_INTERNATIONAL = "NOAUTH_INTERNATIONAL";
     public static String theteller = "theteller";
     static String theteller_PARAMS = "thetellerparams";
+    public static String theteller_results = "";
     public static int theteller_REQUEST_CODE = 4199;
     public static int MANUAL_CARD_CHARGE = 403;
     public static int TOKEN_CHARGE = 24;

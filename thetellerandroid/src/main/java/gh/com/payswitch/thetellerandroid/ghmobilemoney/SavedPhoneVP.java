@@ -15,6 +15,8 @@ import gh.com.payswitch.thetellerandroid.data.NetworkRequestImpl;
 import gh.com.payswitch.thetellerandroid.responses.ChargeResponse;
 import gh.com.payswitch.thetellerandroid.thetellerActivity;
 
+import static gh.com.payswitch.thetellerandroid.thetellerConstants.theteller_results;
+
 public class SavedPhoneVP {
 
     private ProgressDialog progressDialog;
@@ -73,6 +75,7 @@ public class SavedPhoneVP {
 
         Intent intent = new Intent();
         intent.putExtra("response", responseAsString);
+        theteller_results = responseAsString;
 
         if (activity != null) {
             activity.setResult(thetellerActivity.RESULT_SUCCESS, intent);
@@ -83,6 +86,7 @@ public class SavedPhoneVP {
     public void onPaymentFailed(String message, String responseAsJSONString, Activity activity) {
         Intent intent = new Intent();
         intent.putExtra("response", responseAsJSONString);
+        theteller_results = responseAsJSONString;
         if (activity != null) {
             activity.setResult(thetellerActivity.RESULT_ERROR, intent);
             activity.finish();

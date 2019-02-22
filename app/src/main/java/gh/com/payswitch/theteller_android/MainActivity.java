@@ -26,6 +26,8 @@ import gh.com.payswitch.thetellerandroid.Utils;
 import java.util.ArrayList;
 import java.util.List;
 
+import static gh.com.payswitch.thetellerandroid.thetellerConstants.theteller_results;
+
 public class MainActivity extends AppCompatActivity {
 
     GhMobileMoneyPresenter ghMobileMoneyPresenter;
@@ -225,27 +227,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
-        if (requestCode == thetellerConstants.theteller_REQUEST_CODE && data != null) {
+        Log.wtf("response", theteller_results);
 
-            String message = data.getStringExtra("response");
-
-            if (message != null) {
-                Log.d("theteller response", message);
-            }
-
-            if (resultCode == thetellerActivity.RESULT_SUCCESS) {
-                Toast.makeText(this, "SUCCESS " + message, Toast.LENGTH_SHORT).show();
-            }
-            else if (resultCode == thetellerActivity.RESULT_ERROR) {
-                Toast.makeText(this, "ERROR " + message, Toast.LENGTH_SHORT).show();
-            }
-            else if (resultCode == thetellerActivity.RESULT_CANCELLED) {
-                Toast.makeText(this, "CANCELLED " + message, Toast.LENGTH_SHORT).show();
-            }
-        }
-        else {
-            super.onActivityResult(requestCode, resultCode, data);
-        }
     }
 
     private void clearErrors() {

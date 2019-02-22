@@ -28,6 +28,7 @@ import gh.com.payswitch.thetellerandroid.thetellerActivity;
 
 import static android.view.View.GONE;
 import static gh.com.payswitch.thetellerandroid.card.CreditCardView.cardType;
+import static gh.com.payswitch.thetellerandroid.thetellerConstants.theteller_results;
 
 public class SavedCardVP {
 
@@ -87,6 +88,7 @@ public class SavedCardVP {
 
         Intent intent = new Intent();
         intent.putExtra("response", responseAsString);
+        theteller_results = responseAsString;
 
         if (activity != null) {
             activity.setResult(thetellerActivity.RESULT_SUCCESS, intent);
@@ -123,6 +125,8 @@ public class SavedCardVP {
     public void onPaymentFailed(String message, String responseAsJSONString, Activity activity) {
         Intent intent = new Intent();
         intent.putExtra("response", responseAsJSONString);
+        theteller_results = responseAsJSONString;
+
         if (activity != null) {
             activity.setResult(thetellerActivity.RESULT_ERROR, intent);
             activity.finish();
@@ -287,6 +291,7 @@ public class SavedCardVP {
                     responseAsJString = gson.toJson(chargeResponse);
                     Intent intent = new Intent();
                     intent.putExtra("response", responseAsJString);
+                    theteller_results = responseAsJString;
                     Log.wtf("response", responseAsJString);
 
                     if (activity != null) {
@@ -308,6 +313,7 @@ public class SavedCardVP {
                     responseAsJString = gson.toJson(chargeResponse);
                     Intent intent = new Intent();
                     intent.putExtra("response", responseAsJString);
+                    theteller_results = responseAsJString;
                     Log.wtf("response", responseAsJString);
 
                     if (activity != null) {

@@ -34,6 +34,7 @@ import gh.com.payswitch.thetellerandroid.thetellerInitializer;
 import gh.com.payswitch.thetellerandroid.Utils;
 
 import static android.view.View.GONE;
+import static gh.com.payswitch.thetellerandroid.thetellerConstants.theteller_results;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -274,8 +275,10 @@ public class GhMobileMoneyFragment extends Fragment implements GhMobileMoneyCont
 
         Intent intent = new Intent();
         intent.putExtra("response", responseAsString);
+        theteller_results = responseAsString;
 
         if (getActivity() != null) {
+
             getActivity().setResult(thetellerActivity.RESULT_SUCCESS, intent);
             getActivity().finish();
         }

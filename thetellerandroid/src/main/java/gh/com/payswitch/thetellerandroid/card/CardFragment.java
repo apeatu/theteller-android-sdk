@@ -46,6 +46,7 @@ import gh.com.payswitch.thetellerandroid.thetellerInitializer;
 import gh.com.payswitch.thetellerandroid.Utils;
 import gh.com.payswitch.thetellerandroid.data.Callbacks;
 import gh.com.payswitch.thetellerandroid.data.SavedCard;
+import gh.com.payswitch.thetellerandroid.thetellerManager;
 
 import java.lang.reflect.Type;
 import java.text.ParseException;
@@ -58,6 +59,7 @@ import static android.view.View.GONE;
 import static gh.com.payswitch.thetellerandroid.card.CreditCardView.cardType;
 import static gh.com.payswitch.thetellerandroid.thetellerConstants.AVS_VBVSECURECODE;
 import static gh.com.payswitch.thetellerandroid.thetellerConstants.PIN;
+import static gh.com.payswitch.thetellerandroid.thetellerConstants.theteller_results;
 
 
 /**
@@ -829,9 +831,10 @@ public class CardFragment extends Fragment implements View.OnClickListener, Card
                     responseAsJString = gson.toJson(chargeResponse);
                     Intent intent = new Intent();
                     intent.putExtra("response", responseAsJString);
-                    Log.wtf("response", responseAsJString);
 
                     if (getActivity() != null) {
+                        theteller_results = responseAsJString;
+                        Log.wtf("response", theteller_results);
                         getActivity().setResult(thetellerActivity.RESULT_SUCCESS, intent);
                         getActivity().finish();
                     }
@@ -853,6 +856,7 @@ public class CardFragment extends Fragment implements View.OnClickListener, Card
                     Log.wtf("response", responseAsJString);
 
                     if (getActivity() != null) {
+                        theteller_results = responseAsJString;
                         getActivity().setResult(thetellerActivity.RESULT_SUCCESS, intent);
                         getActivity().finish();
                     }
