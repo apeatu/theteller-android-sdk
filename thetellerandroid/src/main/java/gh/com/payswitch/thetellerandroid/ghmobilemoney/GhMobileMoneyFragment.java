@@ -315,6 +315,7 @@ public class GhMobileMoneyFragment extends Fragment implements GhMobileMoneyCont
     public void onPaymentFailed(String message, String responseAsJSONString) {
         Intent intent = new Intent();
         intent.putExtra("response", responseAsJSONString);
+        theteller_results = responseAsJSONString;
         if (getActivity() != null) {
             getActivity().setResult(thetellerActivity.RESULT_ERROR, intent);
             getActivity().finish();

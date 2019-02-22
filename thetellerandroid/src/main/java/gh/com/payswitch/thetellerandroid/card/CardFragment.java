@@ -570,6 +570,7 @@ public class CardFragment extends Fragment implements View.OnClickListener, Card
 
         Intent intent = new Intent();
         intent.putExtra("response", responseAsJSONString);
+        theteller_results = responseAsJSONString;
 
         if (getActivity() != null) {
             getActivity().setResult(thetellerActivity.RESULT_SUCCESS, intent);
@@ -590,6 +591,8 @@ public class CardFragment extends Fragment implements View.OnClickListener, Card
 
         Intent intent = new Intent();
         intent.putExtra("response", responseAsJSONString);
+        theteller_results = responseAsJSONString;
+
         if (getActivity() != null) {
             getActivity().setResult(thetellerActivity.RESULT_ERROR, intent);
             getActivity().finish();
@@ -800,6 +803,9 @@ public class CardFragment extends Fragment implements View.OnClickListener, Card
 
         @Override
         public void onPageStarted(WebView view, String url, Bitmap favicon) {
+            if (getActivity() != null) {
+                Toast.makeText(getActivity(), "Please Wait", Toast.LENGTH_LONG).show();
+            }
             super.onPageStarted(view, url, favicon);
         }
 
@@ -831,9 +837,9 @@ public class CardFragment extends Fragment implements View.OnClickListener, Card
                     responseAsJString = gson.toJson(chargeResponse);
                     Intent intent = new Intent();
                     intent.putExtra("response", responseAsJString);
+                    theteller_results = responseAsJString;
 
                     if (getActivity() != null) {
-                        theteller_results = responseAsJString;
                         Log.wtf("response", theteller_results);
                         getActivity().setResult(thetellerActivity.RESULT_SUCCESS, intent);
                         getActivity().finish();
@@ -853,10 +859,10 @@ public class CardFragment extends Fragment implements View.OnClickListener, Card
                     responseAsJString = gson.toJson(chargeResponse);
                     Intent intent = new Intent();
                     intent.putExtra("response", responseAsJString);
+                    theteller_results = responseAsJString;
                     Log.wtf("response", responseAsJString);
 
                     if (getActivity() != null) {
-                        theteller_results = responseAsJString;
                         getActivity().setResult(thetellerActivity.RESULT_SUCCESS, intent);
                         getActivity().finish();
                     }

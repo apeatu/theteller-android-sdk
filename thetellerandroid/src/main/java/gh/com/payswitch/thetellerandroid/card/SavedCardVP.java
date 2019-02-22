@@ -268,6 +268,7 @@ public class SavedCardVP {
 
         @Override
         public void onPageStarted(WebView view, String url, Bitmap favicon) {
+            Toast.makeText(activity, "Please Wait", Toast.LENGTH_LONG).show();
             super.onPageStarted(view, url, favicon);
         }
 

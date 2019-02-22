@@ -45,7 +45,7 @@ The minimum supported SDK version is 15
         implementation 'com.scottyab:aescrypt:0.0.1'
         testImplementation 'junit:junit:4.12'
         implementation 'com.android.support.constraint:constraint-layout:1.1.2'
-	    implementation 'com.github.apeatu:theteller-android-sdk:1.0.4'
+	    implementation 'com.github.apeatu:theteller-android-sdk:1.0.5'
 	}
 
 **Step 3.** Add the required permission
@@ -150,22 +150,11 @@ In the calling activity, override the `onActivityResult` method to receive the p
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == thetellerConstants.theteller_REQUEST_CODE && data != null) {
-            String reason = data.getStringExtra("response");
-            if (resultCode == thetellerActivity.RESULT_SUCCESS) {
-                Toast.makeText(this, "SUCCESS " + reason, Toast.LENGTH_SHORT).show();
-            }
-            else if (resultCode == thetellerActivity.RESULT_ERROR) {
-                Toast.makeText(this, "ERROR " + reason, Toast.LENGTH_SHORT).show();
-            }
-            else if (resultCode == thetellerActivity.RESULT_CANCELLED) {
-                Toast.makeText(this, "CANCELLED " + reason, Toast.LENGTH_SHORT).show();
-            }
-        }
-        else {
-            super.onActivityResult(requestCode, resultCode, data);
-        }
+
+        Log.wtf("response", theteller_results);
+
     }
+
 The intent's `reason` object contains the raw JSON response from the theteller API. This can be parsed to retrieve any additional payment information needed.
 
 ##  Help
