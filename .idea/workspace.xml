@@ -7,24 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a41feee-feae-4a21-8115-5849e3c4e466" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/4.9/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.9/fileHashes/fileHashes.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.9/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.9/fileHashes/fileHashes.lock" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.9/fileHashes/resourceHashesCache.bin" afterPath="$PROJECT_DIR$/.gradle/4.9/fileHashes/resourceHashesCache.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.9/javaCompile/classAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/4.9/javaCompile/classAnalysis.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.9/javaCompile/jarAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/4.9/javaCompile/jarAnalysis.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.9/javaCompile/javaCompile.lock" afterPath="$PROJECT_DIR$/.gradle/4.9/javaCompile/javaCompile.lock" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.9/javaCompile/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.9/javaCompile/taskHistory.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.9/javaCompile/taskJars.bin" afterPath="$PROJECT_DIR$/.gradle/4.9/javaCompile/taskJars.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.9/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.9/taskHistory/taskHistory.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.9/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.9/taskHistory/taskHistory.lock" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/gh/com/payswitch/theteller_android/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/gh/com/payswitch/theteller_android/MainActivity.java" />
-      <change beforePath="$PROJECT_DIR$/thetellerandroid/src/main/java/gh/com/payswitch/thetellerandroid/card/CardFragment.java" afterPath="$PROJECT_DIR$/thetellerandroid/src/main/java/gh/com/payswitch/thetellerandroid/card/CardFragment.java" />
-      <change beforePath="$PROJECT_DIR$/thetellerandroid/src/main/java/gh/com/payswitch/thetellerandroid/card/SavedCardVP.java" afterPath="$PROJECT_DIR$/thetellerandroid/src/main/java/gh/com/payswitch/thetellerandroid/card/SavedCardVP.java" />
-      <change beforePath="$PROJECT_DIR$/thetellerandroid/src/main/java/gh/com/payswitch/thetellerandroid/ghmobilemoney/GhMobileMoneyFragment.java" afterPath="$PROJECT_DIR$/thetellerandroid/src/main/java/gh/com/payswitch/thetellerandroid/ghmobilemoney/GhMobileMoneyFragment.java" />
-      <change beforePath="$PROJECT_DIR$/thetellerandroid/src/main/java/gh/com/payswitch/thetellerandroid/ghmobilemoney/SavedPhoneVP.java" afterPath="$PROJECT_DIR$/thetellerandroid/src/main/java/gh/com/payswitch/thetellerandroid/ghmobilemoney/SavedPhoneVP.java" />
-      <change beforePath="$PROJECT_DIR$/thetellerandroid/src/main/java/gh/com/payswitch/thetellerandroid/thetellerConstants.java" afterPath="$PROJECT_DIR$/thetellerandroid/src/main/java/gh/com/payswitch/thetellerandroid/thetellerConstants.java" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -50,11 +33,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/gh/com/payswitch/theteller_android/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="159">
-              <caret line="229" column="22" lean-forward="false" selection-start-line="229" selection-start-column="22" selection-end-line="229" selection-end-column="22" />
+            <state relative-caret-position="331">
+              <caret line="229" column="36" lean-forward="false" selection-start-line="229" selection-start-column="36" selection-end-line="229" selection-end-column="36" />
               <folding>
                 <element signature="e#3002#3244#0" expanded="true" />
                 <element signature="e#3243#3244#0" expanded="true" />
@@ -63,11 +46,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="thetellerConstants.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="thetellerConstants.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/thetellerandroid/src/main/java/gh/com/payswitch/thetellerandroid/thetellerConstants.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="327">
-              <caret line="18" column="34" lean-forward="false" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
+            <state relative-caret-position="96">
+              <caret line="7" column="36" lean-forward="false" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -3238,13 +3221,13 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/thetellerandroid/src/main/java/gh/com/payswitch/thetellerandroid/thetellerInitializer.java" />
         <option value="$PROJECT_DIR$/thetellerandroid/src/main/java/gh/com/payswitch/thetellerandroid/ghmobilemoney/GhMobileMoneyPresenter.java" />
-        <option value="$PROJECT_DIR$/thetellerandroid/src/main/java/gh/com/payswitch/thetellerandroid/thetellerConstants.java" />
         <option value="$PROJECT_DIR$/thetellerandroid/src/main/java/gh/com/payswitch/thetellerandroid/card/CardFragment.java" />
         <option value="$PROJECT_DIR$/thetellerandroid/src/main/java/gh/com/payswitch/thetellerandroid/thetellerManager.java" />
         <option value="$PROJECT_DIR$/thetellerandroid/src/main/java/gh/com/payswitch/thetellerandroid/ghmobilemoney/GhMobileMoneyFragment.java" />
         <option value="$PROJECT_DIR$/thetellerandroid/src/main/java/gh/com/payswitch/thetellerandroid/card/SavedCardVP.java" />
         <option value="$PROJECT_DIR$/thetellerandroid/src/main/java/gh/com/payswitch/thetellerandroid/ghmobilemoney/SavedPhoneVP.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/gh/com/payswitch/theteller_android/MainActivity.java" />
+        <option value="$PROJECT_DIR$/thetellerandroid/src/main/java/gh/com/payswitch/thetellerandroid/thetellerConstants.java" />
       </list>
     </option>
   </component>
@@ -3553,9 +3536,9 @@
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32964602" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32964602" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32964602" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32964602" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32964602" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Flutter Outline" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -3777,14 +3760,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/thetellerandroid/src/main/java/gh/com/payswitch/thetellerandroid/thetellerConstants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="18" column="34" lean-forward="false" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/thetellerandroid/src/main/java/gh/com/payswitch/thetellerandroid/thetellerManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="63">
@@ -3839,12 +3814,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/gh/com/payswitch/theteller_android/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="229" column="22" lean-forward="false" selection-start-line="229" selection-start-column="22" selection-end-line="229" selection-end-column="22" />
+        <state relative-caret-position="331">
+          <caret line="229" column="36" lean-forward="false" selection-start-line="229" selection-start-column="36" selection-end-line="229" selection-end-column="36" />
           <folding>
             <element signature="e#3002#3244#0" expanded="true" />
             <element signature="e#3243#3244#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thetellerandroid/src/main/java/gh/com/payswitch/thetellerandroid/thetellerConstants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="7" column="36" lean-forward="false" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
+          <folding />
         </state>
       </provider>
     </entry>
