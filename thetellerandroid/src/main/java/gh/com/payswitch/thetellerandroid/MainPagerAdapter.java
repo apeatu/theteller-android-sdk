@@ -16,7 +16,6 @@ public class MainPagerAdapter extends FragmentPagerAdapter {
         super(fm);
     }
 
-    // Return a different fragment for position based on additional state tracked in a member variable
     @Override
     public Fragment getItem(int position) {
         return fragments.get(position).getFragment();

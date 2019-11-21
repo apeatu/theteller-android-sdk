@@ -59,7 +59,6 @@ public class GhMobileMoneyFragment extends Fragment implements GhMobileMoneyCont
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        // Inflate the layout for this fragment
         v = inflater.inflate(R.layout.fragment_gh_mobile_money, container, false);
 
         presenter = new GhMobileMoneyPresenter(getActivity(), this);
@@ -71,8 +70,6 @@ public class GhMobileMoneyFragment extends Fragment implements GhMobileMoneyCont
         saveNumberSwitch = (SwitchCompat) v.findViewById(R.id.theteller_saveNumberSwitch);
         Button payButton = (Button) v.findViewById(R.id.theteller_payButton);
         savedPhonesBtn = (Button) v.findViewById(R.id.theteller_savedPhonesButton);
-
-//        presenter.checkForSavedGHMobileMoney(thetellerInitializer.getEmail());
 
         savedPhonesBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -169,7 +166,6 @@ public class GhMobileMoneyFragment extends Fragment implements GhMobileMoneyCont
 
             if (saveNumberSwitch.isChecked()) {
                 shouldISaveThisPhoneNumber = true;
-//                presenter.requeryTx(flwRef, thetellerInitializer.getApiKey(), shouldISaveThisPhoneNumber);
             }
 
             thetellerInitializer.setAmount(Double.parseDouble(amount));
@@ -198,7 +194,6 @@ public class GhMobileMoneyFragment extends Fragment implements GhMobileMoneyCont
 
             Payload body = builder.createGhMobileMoneyPayload();
 
-//            presenter.fetchFee(body);
             presenter.chargeGhMobileMoney(body, thetellerConstants.API_KEY);
         }
 
@@ -208,7 +203,6 @@ public class GhMobileMoneyFragment extends Fragment implements GhMobileMoneyCont
     @Override
     public void showProgressIndicator(boolean active) {
 
-//        if (getActivity().isFinishing()) { return; }
         if(progressDialog == null) {
             progressDialog = new ProgressDialog(getActivity());
             progressDialog.setCancelable(false);
@@ -266,8 +260,6 @@ public class GhMobileMoneyFragment extends Fragment implements GhMobileMoneyCont
 
     @Override
     public void onPaymentSuccessful(String status, String responseAsString) {
-//        dismissDialog();
-//        closeBottomSheetsIfOpen();
 
         if (shouldISaveThisPhoneNumber && status.equals("000")) {
             presenter.saveThisPhone(thetellerInitializer.getEmail(), thetellerActivity.getApiKey(), phoneEt.getText().toString(), networkSpinner.getSelectedItem().toString());
@@ -285,33 +277,6 @@ public class GhMobileMoneyFragment extends Fragment implements GhMobileMoneyCont
     }
 
     @Override
-    public void displayFee(String charge_amount, final Payload payload) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        builder.setMessage("You will be charged a total of " + charge_amount + thetellerInitializer.getCurrency() + ". Do you want to continue?");
-        builder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-            dialog.dismiss();
-
-            presenter.chargeGhMobileMoney(payload, thetellerInitializer.getApiKey());
-
-            }
-        }).setNegativeButton("NO", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.dismiss();
-            }
-        });
-
-        builder.show();
-    }
-
-    @Override
-    public void showFetchFeeFailed(String s) {
-        showToast(s);
-    }
-
-    @Override
     public void onPaymentFailed(String message, String responseAsJSONString) {
         Intent intent = new Intent();
         intent.putExtra("response", responseAsJSONString);
@@ -322,30 +287,6 @@ public class GhMobileMoneyFragment extends Fragment implements GhMobileMoneyCont
         }
     }
 
-//    @Override
-//    public void showFullProgressIndicator(boolean active) {
-//
-//        if (progressContainer == null) {
-//            progressContainer = (FrameLayout) v.findViewById(R.id.theteller_progressContainer);
-//        }
-//
-//        if (active) {
-//            progressContainer.setVisibility(View.VISIBLE);
-//        }
-//        else {
-//            progressContainer.setVisibility(GONE);
-//        }
-//
-//
-//    }
-
-    /**
-     *
-     *  Displays a list of user saved cards and displays them in a bottom sheet
-     *  It also attaches a listener to the list of displayed cards to detect clicks
-     *  and sends the savedPhone details to the presenter for further processing of payment
-     * @param phoneList = List of saved phones
-     */
     @Override
     public void showSavedPhoneList(List<SavedPhone> phoneList) {
 

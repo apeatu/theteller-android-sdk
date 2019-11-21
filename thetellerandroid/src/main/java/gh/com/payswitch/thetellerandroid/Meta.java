@@ -1,9 +1,5 @@
 package gh.com.payswitch.thetellerandroid;
 
-/**
- * Created by hamzafetuga on 28/11/2017.
- */
-
 public class Meta {
 
     public Meta(String metaname, String metavalue) {

@@ -85,50 +85,6 @@ public class CardPresenter implements CardContract.UserActionsListener {
     }
 
     @Override
-    public void chargeCardWithAVSModel(Payload payload, String address, String city, String zipCode, String country, String state, String authModel, String secretKey) {
-
-        payload.setSuggestedAuth(authModel);
-        payload.setBillingaddress(address);
-        payload.setBillingcity(city);
-        payload.setBillingzip(zipCode);
-        payload.setBillingcountry(country);
-        payload.setBillingstate(state);
-
-        String cardRequestBodyAsString = Utils.convertChargeRequestPayloadToJson(payload);
-        String encryptedCardRequestBody = Utils.getEncryptedData(cardRequestBodyAsString, secretKey).trim().replaceAll("\\n", "");
-
-        ChargeRequestBody body = new ChargeRequestBody();
-//        body.setApiKey(payload.getApiKey());
-//        body.setClient(encryptedCardRequestBody);
-
-        mView.showProgressIndicator(true);
-
-    }
-
-    @Override
-    public void chargeCardWithSuggestedAuthModel(Payload payload, String zipOrPin, String authModel, String secretKey) {
-
-        if (authModel.equalsIgnoreCase(AVS_VBVSECURECODE)) {
-            payload.setBillingzip(zipOrPin);
-        } else if (authModel.equalsIgnoreCase(PIN)){
-            payload.setPin(zipOrPin);
-        }
-
-        payload.setSuggestedAuth(authModel);
-
-        String cardRequestBodyAsString = Utils.convertChargeRequestPayloadToJson(payload);
-        String encryptedCardRequestBody = Utils.getEncryptedData(cardRequestBodyAsString, secretKey).trim().replaceAll("\\n", "");
-
-        ChargeRequestBody body = new ChargeRequestBody();
-//        body.setApiKey(payload.getApiKey());
-//        body.setClient(encryptedCardRequestBody);
-
-        mView.showProgressIndicator(true);
-
-    }
-
-
-    @Override
     public void savePotentialCardDets(String cardFirst6, String cardLast4) {
         new SharedPrefsRequestImpl(context).saveCardDetsToSave(new CardDetsToSave(cardFirst6, cardLast4));
     }

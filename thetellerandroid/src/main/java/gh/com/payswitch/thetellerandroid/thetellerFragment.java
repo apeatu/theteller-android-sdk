@@ -5,8 +5,8 @@ import android.support.v4.app.Fragment;
 
 
 public class thetellerFragment {
-    Fragment fragment;
-    String title;
+    private Fragment fragment;
+    private String title;
 
     public Fragment getFragment() {
         return fragment;

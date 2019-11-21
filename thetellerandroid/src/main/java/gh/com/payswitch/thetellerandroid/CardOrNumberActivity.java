@@ -201,8 +201,6 @@ public class CardOrNumberActivity extends FragmentActivity {
             .acceptCardPayments(withCard)
             .acceptGHMobileMoneyPayments(withGHMobileMoney)
             .onStagingEnv(!isLive)
-//                    .setMeta(meta)
-//                    .withTheme(R.style.TestNewTheme)
             .initializeCardOrNumber();
     }
 

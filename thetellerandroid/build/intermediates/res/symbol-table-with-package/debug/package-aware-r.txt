@@ -880,8 +880,6 @@ id notification_main_column_container
 id otpButton
 id otpEv
 id otpTil
-id otp_instructions_tv
-id otp_instructions_tv_momo
 id packed
 id pager
 id parallax
@@ -953,8 +951,6 @@ id textView
 id text_input_password_toggle
 id textinput_counter
 id textinput_error
-id theteller_OTPButtomSheet
-id theteller_OTPButtomSheet_momo
 id theteller_VBVBottomSheet
 id theteller_amountTV
 id theteller_amountTil
@@ -978,11 +974,8 @@ id theteller_cvvTv2
 id theteller_emailTil
 id theteller_networkSpinner
 id theteller_otpButton
-id theteller_otpButton_momo
 id theteller_otpEv
-id theteller_otpEv_momo
 id theteller_otpTil
-id theteller_otpTil_momo
 id theteller_payButton
 id theteller_pcidss_compliant_tv
 id theteller_permission_required_layout

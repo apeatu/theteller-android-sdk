@@ -15,9 +15,9 @@ import java.util.List;
 
 public class SharedPrefsRequestImpl implements DataRequest.SharedPrefsRequest {
 
-    Context context;
-    SharedPreferences sharedPreferences;
-    SharedPreferences.Editor editor;
+    private Context context;
+    private SharedPreferences sharedPreferences;
+    private SharedPreferences.Editor editor;
 
     public SharedPrefsRequestImpl(Context context) {
         this.context = context;

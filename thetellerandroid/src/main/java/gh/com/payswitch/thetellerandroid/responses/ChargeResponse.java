@@ -1,10 +1,10 @@
 package gh.com.payswitch.thetellerandroid.responses;
 
 public class ChargeResponse {
-    String status;
-    String code;
-    String reason;
-    String transaction_id;
+    private String status;
+    private String code;
+    private String reason;
+    private String transaction_id;
 
     public String getStatus() {
         return status;

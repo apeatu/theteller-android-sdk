@@ -6,7 +6,7 @@ public class ErrorBody {
         this.message = message;
     }
 
-    String status;
+    private String status;
 
     public String getStatus() {
         return status;
@@ -24,7 +24,7 @@ public class ErrorBody {
         this.message = message;
     }
 
-    String message;
+    private String message;
 
     public Data getData() {
         return data;

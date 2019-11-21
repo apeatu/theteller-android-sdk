@@ -28,9 +28,7 @@ public class GhMobileMoneyPresenter implements GhMobileMoneyContract.UserActions
 
     @Override
     public void chargeGhMobileMoney(final Payload payload, final String apiKey) {
-//        String cardRequestBodyAsString = Utils.convertChargeRequestPayloadToJson(payload);
         String cardRequestBodyAsString = Utils.convertChargeRequestPayloadToJson(payload).trim().replaceAll("\\n", "");
-//        String encryptedCardRequestBody = Utils.getEncryptedData(cardRequestBodyAsString, apiKey).trim().replaceAll("\\n", "");
 
         Log.d("encrypted", cardRequestBodyAsString);
 

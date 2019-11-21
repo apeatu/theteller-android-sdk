@@ -1,7 +1,5 @@
 package gh.com.payswitch.thetellerandroid.data;
 
-import android.util.Log;
-
 import gh.com.payswitch.thetellerandroid.Utils;
 
 public class SavedCard implements ItemModel{

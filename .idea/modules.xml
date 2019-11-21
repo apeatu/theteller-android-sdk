@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/theteller-android-direct.iml" filepath="$PROJECT_DIR$/.idea/theteller-android-direct.iml" />
+      <module fileurl="file://$PROJECT_DIR$/theteller-android-direct.iml" filepath="$PROJECT_DIR$/theteller-android-direct.iml" />
       <module fileurl="file://$PROJECT_DIR$/thetellerandroid/thetellerandroid.iml" filepath="$PROJECT_DIR$/thetellerandroid/thetellerandroid.iml" />
     </modules>
   </component>

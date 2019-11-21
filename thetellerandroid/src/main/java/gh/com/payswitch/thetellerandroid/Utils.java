@@ -31,9 +31,6 @@ import static java.lang.Double.parseDouble;
 
 public class Utils {
 
-    private static final String ALGORITHM = "DESede";
-    private static final String TRANSFORMATION = "DESede/ECB/PKCS5Padding";
-//    private static final String TARGET = "FLWSECK-";
     private static final String MD5 = "MD5";
     private static final String CHARSET_NAME = "UTF-8";
     private static final String UTF_8 = "utf-8";
@@ -54,53 +51,6 @@ public class Utils {
         return ip;
     }
 
-    public static boolean wasTxSuccessful(thetellerInitializer thetellerInitializer, String responseAsJSONString){
-
-        String amount = thetellerInitializer.getAmount() + "";
-        String currency = thetellerInitializer.getCurrency();
-
-        try {
-            JSONObject jsonObject = new JSONObject(responseAsJSONString);
-            JSONObject jsonData = jsonObject.getJSONObject("data");
-            String status = jsonData.getString("status");
-            String txAmount = jsonData.getString("amount");
-            String txCurrency = jsonData.getString("transaction_currency");
-            JSONObject flwMetaJsonObject = jsonData.getJSONObject("flwMeta");
-            String chargeResponse = flwMetaJsonObject.getString("chargeResponse");
-
-            if (areAmountsSame(amount, txAmount) &&
-                    chargeResponse.equalsIgnoreCase("00") &&
-                    status.contains("success") &&
-                    currency.equalsIgnoreCase(txCurrency)) {
-                Log.d("theteller TX V", "true");
-                return true;
-            }
-        }
-        catch (JSONException e) {
-            e.printStackTrace();
-            Log.d("theteller TX V", "false");
-            return false;
-        }
-
-        return false;
-    }
-
-    private static Boolean areAmountsSame(String amount1, String amount2) {
-        Double number1 = parseDouble(amount1);
-        Double number2 = parseDouble(amount2);
-
-        return Math.abs(number1 - number2) < 0.0001;
-    }
-
-    public static String unNullify(String text) {
-
-        if (text == null) {
-            return "";
-        }
-
-        return text;
-
-    }
     public static String minorUnitAmount(String amount) {
         Double amtValue = parseDouble(amount);
         Double amtConverted = amtValue * 100;
@@ -151,21 +101,9 @@ public class Utils {
         return finalAmt;
     }
 
-    public static String koboToNaira(Double fen) {
-        return formatDouble2Str4Money(fen / 100.00);
-    }
-
-    private static DecimalFormat doubleDF = new DecimalFormat("#0.00");
-
-    public static String formatDouble2Str4Money(Double d) {
-        return doubleDF.format(d);
-    }
-
     public static void hide_keyboard(Activity activity) {
         InputMethodManager inputMethodManager = (InputMethodManager) activity.getSystemService(Context.INPUT_METHOD_SERVICE);
-        //Find the currently focused view, so we can grab the correct window token from it.
         View view = activity.getCurrentFocus();
-        //If no view currently has focus, create a new one, just so we can grab a window token from it
         if (view == null) {
             view = new View(activity);
         }

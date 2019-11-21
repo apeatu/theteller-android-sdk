@@ -1,7 +1,7 @@
 package gh.com.payswitch.thetellerandroid.data;
 
 public class CardDetsToSave {
-    String first6;
+    private String first6;
 
     public String getFirst6() {
         return first6;
@@ -11,7 +11,7 @@ public class CardDetsToSave {
         return last4;
     }
 
-    String last4;
+    private String last4;
 
     public CardDetsToSave(String first6, String last4) {
         this.first6 = first6;

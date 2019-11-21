@@ -1,6 +1,4 @@
 package gh.com.payswitch.thetellerandroid.data;
-
-import android.app.Activity;
 import android.text.TextUtils;
 
 import gh.com.payswitch.thetellerandroid.Payload;
@@ -15,7 +13,6 @@ import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.concurrent.TimeUnit;
 
-import gh.com.payswitch.thetellerandroid.thetellerInitializer;
 import okhttp3.Credentials;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
@@ -32,8 +29,6 @@ public class NetworkRequestImpl implements DataRequest.NetworkRequest {
     private ApiService service;
     private String baseUrl;
     private String errorParsingError = "An error occurred parsing the error response";
-    thetellerInitializer thetellerInitializer;
-
 
     private ErrorBody parseErrorJson(String errorStr) {
 

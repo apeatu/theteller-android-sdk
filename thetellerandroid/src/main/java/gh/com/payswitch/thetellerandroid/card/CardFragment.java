@@ -75,14 +75,10 @@ public class CardFragment extends Fragment implements View.OnClickListener, Card
     TextInputLayout cardNoTil;
     TextInputLayout cardExpiryTil;
     TextInputLayout cvvTil;
-    TextInputLayout otpTil;
-    TextInputEditText otpEt;
-    Button otpButton;
     SwitchCompat saveCardSwitch;
     Button payButton;
     private ProgressDialog progessDialog ;
     CardPresenter presenter;
-    LinearLayout otpLayout;
     BottomSheetBehavior bottomSheetBehaviorOTP;
     BottomSheetBehavior bottomSheetBehaviorVBV;
     private String flwRef;
@@ -111,9 +107,6 @@ public class CardFragment extends Fragment implements View.OnClickListener, Card
         presenter = new CardPresenter(getActivity(), this);
         // Inflate the layout for this fragment
         v = inflater.inflate(R.layout.fragment_card, container, false);
-        otpTil = (TextInputLayout) v.findViewById(R.id.theteller_otpTil);
-        otpEt = (TextInputEditText) v.findViewById(R.id.theteller_otpEv);
-        otpButton = (Button) v.findViewById(R.id.theteller_otpButton);
         savedCardBtn = (Button) v.findViewById(R.id.theteller_savedCardButton);
 //        amountEt = (TextInputEditText) v.findViewById(R.id.theteller_amountTV);
 //        emailEt = (TextInputEditText) v.findViewById(R.id.theteller_emailTv);
@@ -130,7 +123,6 @@ public class CardFragment extends Fragment implements View.OnClickListener, Card
         webView = (WebView) v.findViewById(R.id.theteller_webview);
 //        pcidss_tv = (TextView) v.findViewById(R.id.theteller_pcidss_compliant_tv);
         progressContainer = (FrameLayout) v.findViewById(R.id.theteller_progressContainer);
-        otpInstructionsTv = (TextView) v.findViewById(R.id.otp_instructions_tv);
 
         thetellerInitializer = ((thetellerActivity) getActivity()).getThetellerInitializer();
 
@@ -143,20 +135,6 @@ public class CardFragment extends Fragment implements View.OnClickListener, Card
 //        Pattern pattern = Pattern.compile("()PCI-DSS COMPLIANT");
 //        Linkify.addLinks(pcidss_tv, pattern, "https://www.pcisecuritystandards.org/pci_security/", null, filter);
 
-        otpButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String otp = otpEt.getText().toString();
-
-                otpTil.setError(null);
-                otpTil.setErrorEnabled(false);
-
-                if (otp.length() < 1) {
-                    otpTil.setError("Enter a valid one time password");
-                }
-                else { }
-            }
-        });
 
         savedCardBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -169,9 +147,7 @@ public class CardFragment extends Fragment implements View.OnClickListener, Card
 
         payButton.setOnClickListener(this);
 
-        otpLayout = (LinearLayout) v.findViewById(R.id.theteller_OTPButtomSheet);
         vbvLayout = (FrameLayout) v.findViewById(R.id.theteller_VBVBottomSheet);
-        bottomSheetBehaviorOTP = BottomSheetBehavior.from(otpLayout);
         bottomSheetBehaviorVBV = BottomSheetBehavior.from(vbvLayout);
 
 
@@ -189,10 +165,6 @@ public class CardFragment extends Fragment implements View.OnClickListener, Card
     public boolean closeBottomSheetsIfOpen() {
 
         boolean showing = false;
-        if (bottomSheetBehaviorOTP.getState() == BottomSheetBehavior.STATE_EXPANDED) {
-            showing = true;
-            bottomSheetBehaviorOTP.setState(BottomSheetBehavior.STATE_COLLAPSED);
-        }
 
         if (bottomSheetBehaviorVBV.getState() == BottomSheetBehavior.STATE_EXPANDED) {
             showing = true;
@@ -209,89 +181,6 @@ public class CardFragment extends Fragment implements View.OnClickListener, Card
         if (i == R.id.theteller_payButton) {
             validateDetails();
         }
-
-    }
-
-    @Override
-    public void onNoAuthUsed(String flwRef, String secretKey) {
-//        presenter.requeryTx(flwRef, secretKey, shouldISaveThisCard);
-    }
-
-    @Override
-    public void onNoAuthInternationalSuggested(final Payload payload) {
-
-        final BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(getActivity());
-        LayoutInflater inflater = LayoutInflater.from(getActivity());
-
-        View v = inflater.inflate( R.layout.avsvbv_layout, null, false);
-
-        final TextInputEditText addressEt = (TextInputEditText) v.findViewById(R.id.theteller_billAddressEt);
-        final TextInputEditText stateEt = (TextInputEditText) v.findViewById(R.id.theteller_billStateEt);
-        final TextInputEditText cityEt = (TextInputEditText) v.findViewById(R.id.theteller_billCityEt);
-        final TextInputEditText zipCodeEt = (TextInputEditText) v.findViewById(R.id.theteller_zipEt);
-        final TextInputEditText countryEt = (TextInputEditText) v.findViewById(R.id.theteller_countryEt);
-        final TextInputLayout addressTil = (TextInputLayout) v.findViewById(R.id.theteller_billAddressTil);
-        final TextInputLayout stateTil = (TextInputLayout) v.findViewById(R.id.theteller_billStateTil);
-        final TextInputLayout cityTil = (TextInputLayout) v.findViewById(R.id.theteller_billCityTil);
-        final TextInputLayout zipCodeTil = (TextInputLayout) v.findViewById(R.id.theteller_zipTil);
-        final TextInputLayout countryTil = (TextInputLayout) v.findViewById(R.id.theteller_countryTil);
-
-        Button zipBtn = (Button) v.findViewById(R.id.theteller_zipButton);
-
-        zipBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                boolean valid = true;
-
-                String address = addressEt.getText().toString();
-                String state = stateEt.getText().toString();
-                String city = cityEt.getText().toString();
-                String zipCode = zipCodeEt.getText().toString();
-                String country = countryEt.getText().toString();
-
-                addressTil.setError(null);
-                stateTil.setError(null);
-                cityTil.setError(null);
-                zipCodeTil.setError(null);
-                countryTil.setError(null);
-
-                if (address.length() == 0) {
-                    valid = false;
-                    addressTil.setError("Enter a valid address");
-                }
-
-                if (state.length() == 0) {
-                    valid = false;
-                    stateTil.setError("Enter a valid state");
-                }
-
-                if (city.length() == 0) {
-                    valid = false;
-                    cityTil.setError("Enter a valid city");
-                }
-
-                if (zipCode.length() == 0) {
-                    valid = false;
-                    zipCodeTil.setError("Enter a valid zip code");
-                }
-
-                if (country.length() == 0) {
-                    valid = false;
-                    countryTil.setError("Enter a valid country");
-                }
-
-                if (valid) {
-                    bottomSheetDialog.dismiss();
-                    presenter.chargeCardWithAVSModel(payload, address, city, zipCode, country, state,
-                            thetellerConstants.NOAUTH_INTERNATIONAL, thetellerInitializer.getApiKey());
-                }
-
-            }
-        });
-
-
-        bottomSheetDialog.setContentView(v);
-        bottomSheetDialog.show();
 
     }
 
@@ -437,66 +326,17 @@ public class CardFragment extends Fragment implements View.OnClickListener, Card
         }
     }
 
-    /**
-     * Called when there's a non fatal error in payment. Shows a toast with the error message
-     * @param message = response message to display
-     */
     @Override
     public void onPaymentError(String message) {
         dismissDialog();
         Toast.makeText(getActivity(), message, Toast.LENGTH_LONG).show();
     }
 
-    /**
-     *  Called when a pin suggested auth model is required.
-     *  It shows a dialog that receives the pin and sends the payment payload
-     * @param payload = Contains card payment details
-     */
-    @Override
-    public void onPinAuthModelSuggested(final Payload payload) {
-
-//        bottomSheetDialog = new BottomSheetDialog(getActivity());
-        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        LayoutInflater inflater = LayoutInflater.from(getActivity());
-        View v = inflater.inflate(R.layout.pin_layout, null, false);
-
-        Button pinBtn = (Button) v.findViewById(R.id.theteller_pinButton);
-        final TextInputEditText pinEv = (TextInputEditText) v.findViewById(R.id.theteller_pinEv);
-        final TextInputLayout pinTil = (TextInputLayout) v.findViewById(R.id.theteller_pinTil);
-
-        pinBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String pin = pinEv.getText().toString();
-
-                pinTil.setError(null);
-                pinTil.setErrorEnabled(false);
-
-                if (pin.length() != 4) {
-                    pinTil.setError("Enter a valid pin");
-                }
-                else {
-                    presenter.chargeCardWithSuggestedAuthModel(payload, pin, PIN, thetellerInitializer.getApiKey());
-                }
-            }
-        });
-
-        builder.setView(v);
-        dialog = builder.show();
-    }
-
-    /**
-     * Displays a toast with the message parameter
-     * @param message = text to display
-     */
     @Override
     public void showToast(String message) {
         Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
     }
 
-    /**
-     * Hide all dialog if available
-     */
     private void dismissDialog() {
 
         if (dialog != null) {
@@ -504,26 +344,6 @@ public class CardFragment extends Fragment implements View.OnClickListener, Card
         }
     }
 
-    /**
-     * If an OTP is required, this method shows the dialog that receives it
-     * @param flwRef
-     * @param chargeResponseMessage
-     */
-    @Override
-    public void showOTPLayout(String flwRef, String chargeResponseMessage) {
-        this.flwRef = flwRef;
-        dismissDialog();
-        otpInstructionsTv.setText(chargeResponseMessage);
-        bottomSheetBehaviorOTP.setState(BottomSheetBehavior.STATE_EXPANDED);
-    }
-
-
-    /**
-     * Called when the auth model suggested is VBV. It opens a webview
-     * that loads the authURL
-     *
-     * @param authUrlCrude = URL to display in webview
-     */
     @Override
     public void onVBVAuthModelUsed(String authUrlCrude, String responseAsJSONString, String txRef) {
         FrameLayout webViewContainer;
@@ -545,14 +365,6 @@ public class CardFragment extends Fragment implements View.OnClickListener, Card
 
     }
 
-    /**
-     *
-     * Called after a successful transaction occurs. It closes all open dialogs
-     * and bottomsheets if any and send back the result of payment to the calling activity
-     *
-     * @param status = status of the transaction
-     * @param responseAsJSONString = full json response from the payment transaction
-     */
     @Override
     public void onPaymentSuccessful(String status, String responseAsJSONString) {
         dismissDialog();
@@ -578,12 +390,6 @@ public class CardFragment extends Fragment implements View.OnClickListener, Card
         }
     }
 
-    /**
-     *  Called after a fatal failure in a transaction. It closes all open dialogs
-     * and bottomsheets if any and send back the result of payment to the calling activity
-     * @param status = status of the transaction
-     * @param responseAsJSONString = full json response from the payment transaction
-     */
     @Override
     public void onPaymentFailed(String status, String responseAsJSONString) {
         dismissDialog();
@@ -599,35 +405,6 @@ public class CardFragment extends Fragment implements View.OnClickListener, Card
         }
     }
 
-    /**
-     *  Hides/shows a progress indicator that covers the entire view. It is only used with
-     *  webview (in the bottomsheets)
-     * @param active = status of progress indicator
-     */
-    @Override
-    public void showFullProgressIndicator(boolean active) {
-
-        if (progressContainer == null) {
-            progressContainer = (FrameLayout) v.findViewById(R.id.theteller_progressContainer);
-        }
-
-        if (active) {
-            progressContainer.setVisibility(View.VISIBLE);
-        }
-        else {
-            progressContainer.setVisibility(GONE);
-        }
-
-
-    }
-
-    /**
-     *
-     *  Displays a list of user saved cards and displays them in a bottom sheet
-     *  It also attaches a listener to the list of displayed cards to detect clicks
-     *  and sends the card details to the presenter for further processing of payment
-      * @param cards = List of saved cards
-     */
     @Override
     public void showSavedCards(List<SavedCard> cards) {
 
@@ -662,121 +439,6 @@ public class CardFragment extends Fragment implements View.OnClickListener, Card
 
     }
 
-
-
-    /**
-     * Displays the error message from a failed fetch fee request
-     * @param s = error message
-     */
-    @Override
-    public void showFetchFeeFailed(String s) {
-        showToast(s);
-    }
-
-    @Override
-    public void hideSavedCardsButton() {
-        savedCardBtn.setVisibility(GONE);
-    }
-
-    @Override
-    public void onAVS_VBVSECURECODEModelSuggested(final Payload payload) {
-
-        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        LayoutInflater inflater = LayoutInflater.from(getActivity());
-        View v = inflater.inflate(R.layout.avsvbv_layout, null, false);
-
-
-        final TextInputEditText addressEt = (TextInputEditText) v.findViewById(R.id.theteller_billAddressEt);
-        final TextInputEditText stateEt = (TextInputEditText) v.findViewById(R.id.theteller_billStateEt);
-        final TextInputEditText cityEt = (TextInputEditText) v.findViewById(R.id.theteller_billCityEt);
-        final TextInputEditText zipCodeEt = (TextInputEditText) v.findViewById(R.id.theteller_zipEt);
-        final TextInputEditText countryEt = (TextInputEditText) v.findViewById(R.id.theteller_countryEt);
-        final TextInputEditText addressTil = (TextInputEditText) v.findViewById(R.id.theteller_billAddressTil);
-        final TextInputEditText stateTil = (TextInputEditText) v.findViewById(R.id.theteller_billStateTil);
-        final TextInputEditText cityTil = (TextInputEditText) v.findViewById(R.id.theteller_billCityTil);
-        final TextInputEditText zipCodeTil = (TextInputEditText) v.findViewById(R.id.theteller_zipTil);
-        final TextInputEditText countryTil = (TextInputEditText) v.findViewById(R.id.theteller_countryTil);
-
-        Button zipBtn = (Button) v.findViewById(R.id.theteller_zipButton);
-
-        zipBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                boolean valid = true;
-
-                String address = addressEt.getText().toString();
-                String state = stateEt.getText().toString();
-                String city = cityEt.getText().toString();
-                String zipCode = zipCodeEt.getText().toString();
-                String country = countryEt.getText().toString();
-
-                addressTil.setError(null);
-                stateTil.setError(null);
-                cityTil.setError(null);
-                zipCodeTil.setError(null);
-                countryTil.setError(null);
-
-                if (address.length() == 0) {
-                    valid = false;
-                    addressTil.setError("Enter a valid address");
-                }
-
-                if (state.length() == 0) {
-                    valid = false;
-                    stateTil.setError("Enter a valid state");
-                }
-
-                if (city.length() == 0) {
-                    valid = false;
-                    cityTil.setError("Enter a valid city");
-                }
-
-                if (zipCode.length() == 0) {
-                    valid = false;
-                    zipCodeTil.setError("Enter a valid zip code");
-                }
-
-                if (country.length() == 0) {
-                    valid = false;
-                    countryTil.setError("Enter a valid country");
-                }
-
-                if (valid) {
-                    dialog.dismiss();
-                    presenter.chargeCardWithAVSModel(payload, address, city, zipCode, country, state,
-                            AVS_VBVSECURECODE, thetellerInitializer.getApiKey());
-                }
-
-            }
-        });
-
-        builder.setView(v);
-        dialog = builder.show();
-
-    }
-
-    /**
-     * Called when the auth model suggested is AVS_VBVSecureCode. It opens a webview
-     * that loads the authURL
-     *
-     * @param authurl = URL to display in webview
-     * @param flwRef = reference of the payment transaction
-     */
-    @Override
-    public void onAVSVBVSecureCodeModelUsed(String authurl, String flwRef, String txRef) {
-
-        this.flwRef = flwRef;
-        webView.getSettings().setLoadsImagesAutomatically(true);
-        webView.getSettings().setJavaScriptEnabled(true);
-        webView.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
-        // Configure the client to use when opening URLs
-        webView.setWebViewClient(new MyBrowser(txRef));
-        // Load the initial URL
-        webView.loadUrl(authurl);
-        bottomSheetBehaviorVBV.setState(BottomSheetBehavior.STATE_EXPANDED);
-    }
-
-    // Manages the behavior when URLs are loaded
     public class MyBrowser extends WebViewClient {
         FrameLayout progressContainer;
         String responseAsJString;
@@ -869,24 +531,6 @@ public class CardFragment extends Fragment implements View.OnClickListener, Card
                 }
             }
             Log.d("URLS", url);
-        }
-
-        public void showFullProgressIndicator(boolean active, View v) {
-
-            progressContainer = (FrameLayout) v.findViewById(R.id.theteller_progressContainer);
-
-            if (progressContainer == null) {
-                progressContainer = (FrameLayout) v.findViewById(R.id.theteller_progressContainer);
-            }
-
-            if (active) {
-                progressContainer.setVisibility(View.VISIBLE);
-            }
-            else {
-                progressContainer.setVisibility(GONE);
-            }
-
-
         }
 
     }

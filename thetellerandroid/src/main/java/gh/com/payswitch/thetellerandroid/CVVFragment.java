@@ -23,15 +23,7 @@ import gh.com.payswitch.thetellerandroid.data.SavedCard;
 
 import static gh.com.payswitch.thetellerandroid.card.CreditCardView.cardType;
 
-
-/**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * to handle interaction events.
- */
 public class CVVFragment extends DialogFragment {
-
-//    private OnFragmentInteractionListener mListener;
 
     SavedCardVP cardPresenter;
     TextInputEditText cvvTv;
@@ -53,9 +45,6 @@ public class CVVFragment extends DialogFragment {
         final View v;
         v = inflater.inflate(R.layout.fragment_cvv, null);
         cardPresenter = new SavedCardVP();
-
-        // Inflate and set the layout for the dialog
-        // Pass null as the parent view because its going in the dialog layout
         cvvTv = (TextInputEditText) v.findViewById(R.id.theteller_cvvTv2);
         cvvTil = (TextInputLayout) v.findViewById(R.id.theteller_cvvTil2);
 
@@ -121,25 +110,12 @@ public class CVVFragment extends DialogFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_cvv, container, false);
     }
-
-//    public void onPayButtonPressed(DialogFragment dialogFragment) {
-//        if (mListener != null) {
-//            mListener.onDialogPositiveClick(dialogFragment);
-//        }
-//    }
 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-//        if (context instanceof OnFragmentInteractionListener) {
-//            mListener = (OnFragmentInteractionListener) context;
-//        } else {
-//            throw new RuntimeException(context.toString()
-//                    + " must implement OnFragmentInteractionListener");
-//        }
     }
 
     public boolean isValid() {
@@ -154,9 +130,6 @@ public class CVVFragment extends DialogFragment {
         return this.cvv;
     }
 
-    /**
-     * Remove all errors from the input fields
-     */
     private void clearErrors() {
         cvvTil.setError(null);
         cvvTil.setErrorEnabled(false);
@@ -167,18 +140,4 @@ public class CVVFragment extends DialogFragment {
         this.savedCard = savedCard;
     }
 
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     * <p>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
-     */
-//    public interface OnFragmentInteractionListener {
-//        // TODO: Update argument type and name
-//        void onDialogPositiveClick(DialogFragment dialogFragment);
-//    }
 }
