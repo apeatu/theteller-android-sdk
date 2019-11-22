@@ -96,68 +96,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a41feee-feae-4a21-8115-5849e3c4e466" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/androidTest/java/gh/com/payswitch/theteller_android/ExampleInstrumentedTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/androidTest/java/gh/com/payswitch/theteller_android/ExampleInstrumentedTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/gh/com/payswitch/theteller_android/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/gh/com/payswitch/theteller_android/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thetellerandroid/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/thetellerandroid/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thetellerandroid/build/intermediates/packaged_res/debug/layout/activity_card_or_number.xml" beforeDir="false" afterPath="$PROJECT_DIR$/thetellerandroid/build/intermediates/packaged_res/debug/layout/activity_card_or_number.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thetellerandroid/build/intermediates/packaged_res/debug/layout/activity_theteller.xml" beforeDir="false" afterPath="$PROJECT_DIR$/thetellerandroid/build/intermediates/packaged_res/debug/layout/activity_theteller.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thetellerandroid/build/intermediates/packaged_res/debug/layout/add_exisiting_bank.xml" beforeDir="false" afterPath="$PROJECT_DIR$/thetellerandroid/build/intermediates/packaged_res/debug/layout/add_exisiting_bank.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thetellerandroid/build/intermediates/packaged_res/debug/layout/avsvbv_layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/thetellerandroid/build/intermediates/packaged_res/debug/layout/avsvbv_layout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thetellerandroid/build/intermediates/packaged_res/debug/layout/content_theteller.xml" beforeDir="false" afterPath="$PROJECT_DIR$/thetellerandroid/build/intermediates/packaged_res/debug/layout/content_theteller.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thetellerandroid/build/intermediates/packaged_res/debug/layout/fragment_account.xml" beforeDir="false" afterPath="$PROJECT_DIR$/thetellerandroid/build/intermediates/packaged_res/debug/layout/fragment_account.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thetellerandroid/build/intermediates/packaged_res/debug/layout/fragment_card.xml" beforeDir="false" afterPath="$PROJECT_DIR$/thetellerandroid/build/intermediates/packaged_res/debug/layout/fragment_card.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thetellerandroid/build/intermediates/packaged_res/debug/layout/fragment_cvv.xml" beforeDir="false" afterPath="$PROJECT_DIR$/thetellerandroid/build/intermediates/packaged_res/debug/layout/fragment_cvv.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thetellerandroid/build/intermediates/packaged_res/debug/layout/fragment_gh_mobile_money.xml" beforeDir="false" afterPath="$PROJECT_DIR$/thetellerandroid/build/intermediates/packaged_res/debug/layout/fragment_gh_mobile_money.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thetellerandroid/build/intermediates/packaged_res/debug/layout/otp_layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/thetellerandroid/build/intermediates/packaged_res/debug/layout/otp_layout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thetellerandroid/build/intermediates/packaged_res/debug/layout/pick_saved_card_layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/thetellerandroid/build/intermediates/packaged_res/debug/layout/pick_saved_card_layout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thetellerandroid/build/intermediates/packaged_res/debug/layout/pick_saved_number_layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/thetellerandroid/build/intermediates/packaged_res/debug/layout/pick_saved_number_layout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thetellerandroid/build/intermediates/packaged_res/debug/layout/pin_layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/thetellerandroid/build/intermediates/packaged_res/debug/layout/pin_layout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thetellerandroid/src/androidTest/java/gh/com/payswitch/thetellerandroid/ExampleInstrumentedTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/thetellerandroid/src/androidTest/java/gh/com/payswitch/thetellerandroid/ExampleInstrumentedTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thetellerandroid/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/thetellerandroid/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thetellerandroid/src/main/java/gh/com/payswitch/thetellerandroid/CVVFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/thetellerandroid/src/main/java/gh/com/payswitch/thetellerandroid/CVVFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thetellerandroid/src/main/java/gh/com/payswitch/thetellerandroid/CardOrNumberActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/thetellerandroid/src/main/java/gh/com/payswitch/thetellerandroid/CardOrNumberActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thetellerandroid/src/main/java/gh/com/payswitch/thetellerandroid/MainPagerAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/thetellerandroid/src/main/java/gh/com/payswitch/thetellerandroid/MainPagerAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thetellerandroid/src/main/java/gh/com/payswitch/thetellerandroid/SavedCNRecyclerAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/thetellerandroid/src/main/java/gh/com/payswitch/thetellerandroid/SavedCNRecyclerAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thetellerandroid/src/main/java/gh/com/payswitch/thetellerandroid/SwipeToDeleteCallback.java" beforeDir="false" afterPath="$PROJECT_DIR$/thetellerandroid/src/main/java/gh/com/payswitch/thetellerandroid/SwipeToDeleteCallback.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thetellerandroid/src/main/java/gh/com/payswitch/thetellerandroid/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/thetellerandroid/src/main/java/gh/com/payswitch/thetellerandroid/Utils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thetellerandroid/src/main/java/gh/com/payswitch/thetellerandroid/ViewHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/thetellerandroid/src/main/java/gh/com/payswitch/thetellerandroid/ViewHolder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thetellerandroid/src/main/java/gh/com/payswitch/thetellerandroid/card/CardFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/thetellerandroid/src/main/java/gh/com/payswitch/thetellerandroid/card/CardFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thetellerandroid/src/main/java/gh/com/payswitch/thetellerandroid/card/CardViewHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/thetellerandroid/src/main/java/gh/com/payswitch/thetellerandroid/card/CardViewHolder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thetellerandroid/src/main/java/gh/com/payswitch/thetellerandroid/card/CreditCardView.java" beforeDir="false" afterPath="$PROJECT_DIR$/thetellerandroid/src/main/java/gh/com/payswitch/thetellerandroid/card/CreditCardView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thetellerandroid/src/main/java/gh/com/payswitch/thetellerandroid/card/NullCardView.java" beforeDir="false" afterPath="$PROJECT_DIR$/thetellerandroid/src/main/java/gh/com/payswitch/thetellerandroid/card/NullCardView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thetellerandroid/src/main/java/gh/com/payswitch/thetellerandroid/card/SavedCardRecyclerAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/thetellerandroid/src/main/java/gh/com/payswitch/thetellerandroid/card/SavedCardRecyclerAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thetellerandroid/src/main/java/gh/com/payswitch/thetellerandroid/ghmobilemoney/GhMobileMoneyFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/thetellerandroid/src/main/java/gh/com/payswitch/thetellerandroid/ghmobilemoney/GhMobileMoneyFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thetellerandroid/src/main/java/gh/com/payswitch/thetellerandroid/ghmobilemoney/SavedPhoneRecyclerAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/thetellerandroid/src/main/java/gh/com/payswitch/thetellerandroid/ghmobilemoney/SavedPhoneRecyclerAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thetellerandroid/src/main/java/gh/com/payswitch/thetellerandroid/thetellerActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/thetellerandroid/src/main/java/gh/com/payswitch/thetellerandroid/thetellerActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thetellerandroid/src/main/java/gh/com/payswitch/thetellerandroid/thetellerFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/thetellerandroid/src/main/java/gh/com/payswitch/thetellerandroid/thetellerFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thetellerandroid/src/main/res/layout/activity_card_or_number.xml" beforeDir="false" afterPath="$PROJECT_DIR$/thetellerandroid/src/main/res/layout/activity_card_or_number.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thetellerandroid/src/main/res/layout/activity_theteller.xml" beforeDir="false" afterPath="$PROJECT_DIR$/thetellerandroid/src/main/res/layout/activity_theteller.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thetellerandroid/src/main/res/layout/add_exisiting_bank.xml" beforeDir="false" afterPath="$PROJECT_DIR$/thetellerandroid/src/main/res/layout/add_exisiting_bank.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thetellerandroid/src/main/res/layout/avsvbv_layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/thetellerandroid/src/main/res/layout/avsvbv_layout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thetellerandroid/src/main/res/layout/content_theteller.xml" beforeDir="false" afterPath="$PROJECT_DIR$/thetellerandroid/src/main/res/layout/content_theteller.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thetellerandroid/src/main/res/layout/fragment_account.xml" beforeDir="false" afterPath="$PROJECT_DIR$/thetellerandroid/src/main/res/layout/fragment_account.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thetellerandroid/src/main/res/layout/fragment_card.xml" beforeDir="false" afterPath="$PROJECT_DIR$/thetellerandroid/src/main/res/layout/fragment_card.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thetellerandroid/src/main/res/layout/fragment_cvv.xml" beforeDir="false" afterPath="$PROJECT_DIR$/thetellerandroid/src/main/res/layout/fragment_cvv.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thetellerandroid/src/main/res/layout/fragment_gh_mobile_money.xml" beforeDir="false" afterPath="$PROJECT_DIR$/thetellerandroid/src/main/res/layout/fragment_gh_mobile_money.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thetellerandroid/src/main/res/layout/otp_layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/thetellerandroid/src/main/res/layout/otp_layout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thetellerandroid/src/main/res/layout/pick_saved_card_layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/thetellerandroid/src/main/res/layout/pick_saved_card_layout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thetellerandroid/src/main/res/layout/pick_saved_number_layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/thetellerandroid/src/main/res/layout/pick_saved_number_layout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thetellerandroid/src/main/res/layout/pin_layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/thetellerandroid/src/main/res/layout/pin_layout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thetellerandroid/thetellerandroid.iml" beforeDir="false" afterPath="$PROJECT_DIR$/thetellerandroid/thetellerandroid.iml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -200,7 +140,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
+            <state relative-caret-position="230">
               <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
             </state>
           </provider>
@@ -209,17 +149,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/thetellerandroid/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="11" column="21" lean-forward="true" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
+            <state relative-caret-position="120">
+              <caret line="26" column="60" lean-forward="true" selection-start-line="26" selection-start-column="60" selection-end-line="26" selection-end-column="60" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="33" selection-start-line="33" selection-end-line="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/gh/com/payswitch/theteller_android/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="184" column="12" selection-start-line="184" selection-start-column="12" selection-end-line="184" selection-end-column="12" />
+            <state relative-caret-position="119">
+              <caret line="190" column="41" selection-start-line="190" selection-start-column="41" selection-end-line="190" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -249,7 +198,7 @@
         <entry file="file://$PROJECT_DIR$/thetellerandroid/src/main/java/gh/com/payswitch/thetellerandroid/ghmobilemoney/GhMobileMoneyFragment.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="198">
-              <caret line="181" column="62" lean-forward="true" selection-start-line="181" selection-start-column="62" selection-end-line="181" selection-end-column="62" />
+              <caret line="181" column="62" selection-start-line="181" selection-start-column="62" selection-end-line="181" selection-end-column="62" />
             </state>
           </provider>
         </entry>
@@ -289,7 +238,6 @@
         <option value="$PROJECT_DIR$/thetellerandroid/src/main/java/gh/com/payswitch/thetellerandroid/thetellerManager.java" />
         <option value="$PROJECT_DIR$/thetellerandroid/src/main/java/gh/com/payswitch/thetellerandroid/ghmobilemoney/SavedPhoneVP.java" />
         <option value="$PROJECT_DIR$/thetellerandroid/src/main/java/gh/com/payswitch/thetellerandroid/thetellerConstants.java" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/thetellerandroid/src/main/java/gh/com/payswitch/thetellerandroid/MainPagerAdapter.java" />
         <option value="$PROJECT_DIR$/thetellerandroid/src/main/java/gh/com/payswitch/thetellerandroid/Meta.java" />
         <option value="$PROJECT_DIR$/thetellerandroid/src/main/res/layout/fragment_card.xml" />
@@ -326,6 +274,7 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
         <option value="$PROJECT_DIR$/thetellerandroid/src/main/java/gh/com/payswitch/thetellerandroid/Utils.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/gh/com/payswitch/theteller_android/MainActivity.java" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -337,7 +286,7 @@
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
-    <navigator proportions="" version="1">
+    <navigator currentView="ProjectPane" proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
@@ -346,109 +295,8 @@
         <subPane>
           <expand>
             <path>
-              <item name="theteller-android-direct" type="b2602c69:ProjectViewProjectNode" />
-              <item name="theteller-android-direct" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="theteller-android-direct" type="b2602c69:ProjectViewProjectNode" />
-              <item name="theteller-android-direct" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="theteller-android-direct" type="b2602c69:ProjectViewProjectNode" />
-              <item name="theteller-android-direct" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="thetellerandroid" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="theteller-android-direct" type="b2602c69:ProjectViewProjectNode" />
-              <item name="theteller-android-direct" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="thetellerandroid" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="theteller-android-direct" type="b2602c69:ProjectViewProjectNode" />
-              <item name="theteller-android-direct" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="thetellerandroid" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="androidTest" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="theteller-android-direct" type="b2602c69:ProjectViewProjectNode" />
-              <item name="theteller-android-direct" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="thetellerandroid" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="androidTest" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="theteller-android-direct" type="b2602c69:ProjectViewProjectNode" />
-              <item name="theteller-android-direct" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="thetellerandroid" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="androidTest" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="thetellerandroid" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="theteller-android-direct" type="b2602c69:ProjectViewProjectNode" />
-              <item name="theteller-android-direct" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="thetellerandroid" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="theteller-android-direct" type="b2602c69:ProjectViewProjectNode" />
-              <item name="theteller-android-direct" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="thetellerandroid" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="theteller-android-direct" type="b2602c69:ProjectViewProjectNode" />
-              <item name="theteller-android-direct" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="thetellerandroid" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="thetellerandroid" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="theteller-android-direct" type="b2602c69:ProjectViewProjectNode" />
-              <item name="theteller-android-direct" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="thetellerandroid" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="thetellerandroid" type="462c0819:PsiDirectoryNode" />
-              <item name="card" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="theteller-android-direct" type="b2602c69:ProjectViewProjectNode" />
-              <item name="theteller-android-direct" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="thetellerandroid" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="thetellerandroid" type="462c0819:PsiDirectoryNode" />
-              <item name="ghmobilemoney" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="theteller-android-direct" type="b2602c69:ProjectViewProjectNode" />
-              <item name="theteller-android-direct" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="thetellerandroid" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="res" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="theteller-android-direct" type="b2602c69:ProjectViewProjectNode" />
-              <item name="theteller-android-direct" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="thetellerandroid" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="res" type="462c0819:PsiDirectoryNode" />
-              <item name="values" type="462c0819:PsiDirectoryNode" />
+              <item name="theteller-android-sdk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="theteller-android-sdk" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -476,22 +324,6 @@
             <path>
               <item name="theteller-android-sdk" type="1abcf292:AndroidViewProjectNode" />
               <item name="thetellerandroid" type="feadf853:AndroidModuleNode" />
-            </path>
-            <path>
-              <item name="theteller-android-sdk" type="1abcf292:AndroidViewProjectNode" />
-              <item name="thetellerandroid" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-            </path>
-            <path>
-              <item name="theteller-android-sdk" type="1abcf292:AndroidViewProjectNode" />
-              <item name="thetellerandroid" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-            </path>
-            <path>
-              <item name="theteller-android-sdk" type="1abcf292:AndroidViewProjectNode" />
-              <item name="thetellerandroid" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-              <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
             </path>
             <path>
               <item name="theteller-android-sdk" type="1abcf292:AndroidViewProjectNode" />
@@ -651,7 +483,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49557522" visible="true" weight="0.17537314" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49557522" visible="true" weight="0.17537314" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Build Variants" order="3" side_tool="true" />
@@ -662,7 +494,7 @@
       <window_info id="Resources Explorer" order="8" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32827735" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32827735" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32827735" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -672,7 +504,7 @@
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50067115" side_tool="true" weight="0.3022599" />
       <window_info anchor="bottom" id="Logcat" order="10" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.32936078" />
-      <window_info anchor="bottom" id="Terminal" order="12" weight="0.32909605" />
+      <window_info anchor="bottom" id="Terminal" order="12" visible="true" weight="0.32827735" />
       <window_info anchor="bottom" id="Flutter Performance" order="13" side_tool="true" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -721,7 +553,6 @@
     </layout-to-restore>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/thetellerandroid/src/main/java/gh/com/payswitch/thetellerandroid/data/RequeryRequestBody.java" />
     <entry file="file://$PROJECT_DIR$/thetellerandroid/src/main/java/gh/com/payswitch/thetellerandroid/data/RequeryRequestBodyv2.java" />
     <entry file="file://$PROJECT_DIR$/thetellerandroid/src/main/java/gh/com/payswitch/thetellerandroid/data/SavedCN.java" />
     <entry file="file://$PROJECT_DIR$/thetellerandroid/src/main/java/gh/com/payswitch/thetellerandroid/data/ItemModel.java">
@@ -937,20 +768,6 @@
       </provider>
       <provider editor-type-id="android-designer2" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/thetellerandroid/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="11" column="21" lean-forward="true" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/thetellerandroid/src/main/res/layout/activity_card_or_number.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="629">
@@ -994,7 +811,7 @@
     <entry file="file://$PROJECT_DIR$/thetellerandroid/src/main/java/gh/com/payswitch/thetellerandroid/ghmobilemoney/GhMobileMoneyFragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
-          <caret line="181" column="62" lean-forward="true" selection-start-line="181" selection-start-column="62" selection-end-line="181" selection-end-column="62" />
+          <caret line="181" column="62" selection-start-line="181" selection-start-column="62" selection-end-line="181" selection-end-column="62" />
         </state>
       </provider>
     </entry>
@@ -1014,11 +831,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/gh/com/payswitch/theteller_android/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="184" column="12" selection-start-line="184" selection-start-column="12" selection-end-line="184" selection-end-column="12" />
+        <state relative-caret-position="119">
+          <caret line="190" column="41" selection-start-line="190" selection-start-column="41" selection-end-line="190" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thetellerandroid/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="26" column="60" lean-forward="true" selection-start-line="26" selection-start-column="60" selection-end-line="26" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
         </state>
       </provider>
     </entry>
