@@ -155,7 +155,12 @@ In the calling activity, override the `onActivityResult` method to receive the p
 
     }
 
-The intent's `reason` object contains the raw JSON response from the theteller API. This can be parsed to retrieve any additional payment information needed.
+The `theteller_results` string contains the raw JSON response from the theteller API. This can be parsed to retrieve any additional payment information needed.
+
+##  Configuring Proguard
+```
+-keep class com.github.apeatu:theteller-android-sdk:1.0.7
+-keepattributes Annotation,Signature
 
 ##  Help
 * Find a bug? [Open an issue](https://github.com/apeatu/theteller-android-sdk/issues)
@@ -172,7 +177,7 @@ Feel free to create issues and pull requests. The more concise the pull requests
 theteller's Android Dev Kit
 MIT License
 
-Copyright (c) 2017
+Copyright (c) 2018
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
