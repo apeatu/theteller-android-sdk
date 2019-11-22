@@ -6,15 +6,15 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.design.widget.BottomSheetBehavior;
-import android.support.design.widget.BottomSheetDialog;
-import android.support.design.widget.TextInputEditText;
-import android.support.design.widget.TextInputLayout;
-import android.support.v4.app.Fragment;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.SwitchCompat;
+import com.google.android.material.bottomsheet.BottomSheetBehavior;
+import com.google.android.material.bottomsheet.BottomSheetDialog;
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
+import androidx.fragment.app.Fragment;
+import androidx.appcompat.app.AlertDialog;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.appcompat.widget.SwitchCompat;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.text.util.Linkify.TransformFilter;
@@ -28,12 +28,10 @@ import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
-import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 
 import gh.com.payswitch.thetellerandroid.CVVFragment;
 import gh.com.payswitch.thetellerandroid.Payload;
@@ -46,9 +44,7 @@ import gh.com.payswitch.thetellerandroid.thetellerInitializer;
 import gh.com.payswitch.thetellerandroid.Utils;
 import gh.com.payswitch.thetellerandroid.data.Callbacks;
 import gh.com.payswitch.thetellerandroid.data.SavedCard;
-import gh.com.payswitch.thetellerandroid.thetellerManager;
 
-import java.lang.reflect.Type;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -57,8 +53,6 @@ import java.util.regex.Matcher;
 
 import static android.view.View.GONE;
 import static gh.com.payswitch.thetellerandroid.card.CreditCardView.cardType;
-import static gh.com.payswitch.thetellerandroid.thetellerConstants.AVS_VBVSECURECODE;
-import static gh.com.payswitch.thetellerandroid.thetellerConstants.PIN;
 import static gh.com.payswitch.thetellerandroid.thetellerConstants.theteller_results;
 
 

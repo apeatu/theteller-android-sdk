@@ -6,7 +6,9 @@
 
     <uses-sdk
         android:minSdkVersion="15"
-        android:targetSdkVersion="28" />
+        android:targetSdkVersion="29" />
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
     <application
         android:allowBackup="true"

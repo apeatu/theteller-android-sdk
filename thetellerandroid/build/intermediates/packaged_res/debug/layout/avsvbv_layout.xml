@@ -32,7 +32,7 @@
         android:layout_marginBottom="5dp"
         android:text="@string/enter_your_billing_address_details"/>
 
-    <android.support.design.widget.TextInputLayout
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:id="@+id/theteller_billAddressTil"
         android:layout_marginBottom="5dp"
@@ -40,7 +40,7 @@
         android:layout_marginRight="30dp"
         android:layout_height="wrap_content">
 
-        <android.support.design.widget.TextInputEditText
+        <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:imeOptions="actionNext"
             android:layout_height="wrap_content"
@@ -51,9 +51,9 @@
             android:id="@+id/theteller_billAddressEt"
             />
 
-    </android.support.design.widget.TextInputLayout>
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <android.support.design.widget.TextInputLayout
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:id="@+id/theteller_billCityTil"
         android:layout_marginBottom="5dp"
@@ -61,7 +61,7 @@
         android:layout_marginRight="30dp"
         android:layout_height="wrap_content">
 
-        <android.support.design.widget.TextInputEditText
+        <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:maxLines="1"
@@ -72,9 +72,9 @@
             android:id="@+id/theteller_billCityEt"
             />
 
-    </android.support.design.widget.TextInputLayout>
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <android.support.design.widget.TextInputLayout
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:id="@+id/theteller_billStateTil"
         android:layout_marginBottom="5dp"
@@ -82,7 +82,7 @@
         android:layout_marginRight="30dp"
         android:layout_height="wrap_content">
 
-        <android.support.design.widget.TextInputEditText
+        <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:maxLines="1"
@@ -93,9 +93,9 @@
             android:id="@+id/theteller_billStateEt"
             />
 
-    </android.support.design.widget.TextInputLayout>
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <android.support.design.widget.TextInputLayout
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:id="@+id/theteller_zipTil"
         android:layout_marginBottom="5dp"
@@ -103,7 +103,7 @@
         android:layout_marginRight="30dp"
         android:layout_height="wrap_content">
 
-        <android.support.design.widget.TextInputEditText
+        <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:imeOptions="actionNext"
             android:layout_height="wrap_content"
@@ -114,9 +114,9 @@
             android:id="@+id/theteller_zipEt"
             />
 
-    </android.support.design.widget.TextInputLayout>
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <android.support.design.widget.TextInputLayout
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:id="@+id/theteller_countryTil"
         android:layout_marginBottom="10dp"
@@ -124,7 +124,7 @@
         android:layout_marginRight="30dp"
         android:layout_height="wrap_content">
 
-        <android.support.design.widget.TextInputEditText
+        <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Country e.g. US"
@@ -135,7 +135,7 @@
             android:id="@+id/theteller_countryEt"
             />
 
-    </android.support.design.widget.TextInputLayout>
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/theteller_zipButton"

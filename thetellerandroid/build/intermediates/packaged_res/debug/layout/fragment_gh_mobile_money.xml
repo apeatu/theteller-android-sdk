@@ -1,4 +1,4 @@
-<android.support.design.widget.CoordinatorLayout
+<androidx.coordinatorlayout.widget.CoordinatorLayout
 xmlns:android="http://schemas.android.com/apk/res/android"
 xmlns:app="http://schemas.android.com/apk/res-auto"
 xmlns:tools="http://schemas.android.com/tools"
@@ -30,12 +30,12 @@ tools:context="gh.com.payswitch.thetellerandroid.ghmobilemoney.GhMobileMoneyFrag
                 android:id="@+id/theteller_networkSpinner"
                 />
 
-            <android.support.design.widget.TextInputLayout
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:id="@+id/theteller_amountTil"
                 android:layout_height="wrap_content">
 
-                <android.support.design.widget.TextInputEditText
+                <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/amount"
@@ -45,15 +45,15 @@ tools:context="gh.com.payswitch.thetellerandroid.ghmobilemoney.GhMobileMoneyFrag
                     android:layout_marginBottom="10dp"
                     />
 
-            </android.support.design.widget.TextInputLayout>
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <android.support.design.widget.TextInputLayout
+            <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/theteller_phoneTil"
                 android:layout_width="match_parent"
                 android:layout_marginBottom="20dp"
                 android:layout_height="wrap_content">
 
-                <android.support.design.widget.TextInputEditText
+                <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/theteller_phoneEt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -61,9 +61,9 @@ tools:context="gh.com.payswitch.thetellerandroid.ghmobilemoney.GhMobileMoneyFrag
                     android:hint="Phone no"
                     android:inputType="numberDecimal" />
 
-            </android.support.design.widget.TextInputLayout>
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <android.support.v7.widget.SwitchCompat
+            <androidx.appcompat.widget.SwitchCompat
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp"
@@ -131,4 +131,4 @@ tools:context="gh.com.payswitch.thetellerandroid.ghmobilemoney.GhMobileMoneyFrag
 
     </ScrollView>
 
-</android.support.design.widget.CoordinatorLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

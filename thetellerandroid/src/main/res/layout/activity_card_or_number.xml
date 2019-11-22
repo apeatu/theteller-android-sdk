@@ -18,7 +18,7 @@
         android:visibility="gone"
         android:id="@+id/webView_container"
         android:background="@color/white"
-        app:layout_behavior="android.support.design.widget.BottomSheetBehavior"
+        app:layout_behavior="androidx.design.widget.BottomSheetBehavior"
         android:layout_height="match_parent">
 
         <WebView
@@ -41,7 +41,7 @@
         android:id="@+id/theteller_title_textView"
         />
 
-    <android.support.v7.widget.RecyclerView
+    <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:id="@+id/theteller_recycler3"
         android:layout_height="wrap_content"/>

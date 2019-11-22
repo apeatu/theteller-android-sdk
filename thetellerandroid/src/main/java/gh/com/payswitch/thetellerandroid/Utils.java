@@ -1,7 +1,9 @@
 package gh.com.payswitch.thetellerandroid;
 
+import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
+import android.content.pm.PackageManager;
 import android.provider.Settings;
 import android.telephony.TelephonyManager;
 import android.util.Base64;
@@ -41,14 +43,22 @@ public class Utils {
 
     public static String getDeviceImei(Context c) {
 
-        TelephonyManager mTelephonyManager = (TelephonyManager) c.getSystemService(Context.TELEPHONY_SERVICE);
-        String ip = mTelephonyManager.getDeviceId();
+//        TelephonyManager mTelephonyManager = (TelephonyManager) c.getSystemService(Context.TELEPHONY_SERVICE);
+//        if (c.checkSelfPermission(Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
+//            c.requestPermissions(c, new String[]{Manifest.permission.READ_PHONE_STATE}, PERMISSION_READ_STATE);            // here to request the missing permissions, and then overriding
+//            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+//            //                                          int[] grantResults)
+//            // to handle the case where the user grants the permission. See the documentation
+//            // for Activity#requestPermissions for more details.
+//            return TODO;
+//        }
+//        String ip = mTelephonyManager.getDeviceId();
 
-        if (ip == null) {
-            ip = Settings.Secure.getString(c.getContentResolver(), Settings.Secure.ANDROID_ID);
-        }
+//        if (ip == null) {
+//            ip = Settings.Secure.getString(c.getContentResolver(), Settings.Secure.ANDROID_ID);
+//        }
 
-        return ip;
+        return "";
     }
 
     public static String minorUnitAmount(String amount) {

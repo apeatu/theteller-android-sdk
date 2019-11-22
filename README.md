@@ -29,12 +29,12 @@ The minimum supported SDK version is 15
 
     dependencies {
         implementation fileTree(dir: 'libs', include: ['*.jar'])
-        androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-            exclude group: 'com.android.support', module: 'support-annotations'
+        androidTestCompile('com.androidx.test.espresso:espresso-core:2.2.2', {
+            exclude group: 'com.androidx', module: 'support-annotations'
         })
-        implementation 'com.android.support:appcompat-v7:25.4.0'
-        implementation 'com.android.support:design:25.4.0'
-        implementation 'com.android.support:support-v4:25.4.0'
+        implementation 'com.androidx:appcompat-v7:25.4.0'
+        implementation 'com.androidx:design:25.4.0'
+        implementation 'com.androidx:support-v4:25.4.0'
         implementation 'com.squareup.picasso:picasso:2.5.2'
         implementation 'com.squareup.retrofit2:retrofit:2.4.0'
         implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
@@ -44,7 +44,7 @@ The minimum supported SDK version is 15
         implementation 'com.squareup.retrofit2:converter-scalars:2.1.0'
         implementation 'com.scottyab:aescrypt:0.0.1'
         testImplementation 'junit:junit:4.12'
-        implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+        implementation 'com.androidx.constraint:constraint-layout:1.1.2'
 	    implementation 'com.github.apeatu:theteller-android-sdk:1.0.5'
 	}
 

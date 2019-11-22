@@ -1,9 +1,8 @@
 package gh.com.payswitch.thetellerandroid.card;
 
-import android.support.v4.app.Fragment;
+import androidx.fragment.app.Fragment;
 import android.view.View;
 
-import gh.com.payswitch.thetellerandroid.Payload;
 import gh.com.payswitch.thetellerandroid.data.SavedCard;
 
 import java.util.List;
