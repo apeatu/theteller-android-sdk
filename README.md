@@ -161,6 +161,7 @@ The `theteller_results` string contains the raw JSON response from the theteller
 ```
 -keep class com.github.apeatu:theteller-android-sdk:1.0.7
 -keepattributes Annotation,Signature
+```
 
 ##  Help
 * Find a bug? [Open an issue](https://github.com/apeatu/theteller-android-sdk/issues)
